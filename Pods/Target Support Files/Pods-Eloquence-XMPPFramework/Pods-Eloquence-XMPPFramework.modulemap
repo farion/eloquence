@@ -1,0 +1,6 @@
+framework module XMPPFramework {
+  umbrella header "Pods-Eloquence-XMPPFramework-umbrella.h"
+
+  export *
+  module * { export * }
+}

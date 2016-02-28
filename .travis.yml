@@ -1,0 +1,6 @@
+language: objective-c
+osx_image: xcode7.2
+xcode_workspace: Eloquence.xcworkspace
+xcode_scheme: Eloquence
+xcode_sdk: macosx10.11
+script:  xctool -workspace Eloquence.xcworkspace -scheme Eloquence -sdk macosx10.11 build

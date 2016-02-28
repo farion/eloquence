@@ -1,0 +1,1244 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0399891AA5319251740C173 /* Pods_EloquenceIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01263B3FFC5812B31B8C0D8B /* Pods_EloquenceIOS.framework */; };
+		B3241A895BC0851FCCF2CE4D /* Pods_Eloquence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE984B5D505A24AD989997A /* Pods_Eloquence.framework */; };
+		BF3277751C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3277731C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.swift */; };
+		BF3277761C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3277741C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.xib */; };
+		BF32777D1C76A4A900C6CA48 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF32777A1C76A4A900C6CA48 /* libidn.a */; };
+		BF7F8CE61C779E7100E5BA61 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F8CE51C779E7100E5BA61 /* MainViewController.swift */; };
+		BF7F8CE81C779F1300E5BA61 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F8CE71C779F1300E5BA61 /* MainWindowController.swift */; };
+		BF981C591C803F8600FF7AC5 /* ErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF981C581C803F8600FF7AC5 /* ErrorDialog.swift */; };
+		BFA61BCD1C7BB27E00B48A21 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0B89D9ADCF56E390AC96A8 /* Pods.framework */; };
+		BFB6308C1C73CE980008179D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB6308B1C73CE980008179D /* Assets.xcassets */; };
+		BFB6309A1C73CE990008179D /* EloquenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB630991C73CE990008179D /* EloquenceTests.m */; };
+		BFB630A51C73CE990008179D /* EloquenceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB630A41C73CE990008179D /* EloquenceUITests.m */; };
+		BFB630B31C73CF150008179D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB630B21C73CF150008179D /* Security.framework */; };
+		BFB630BE1C73CF920008179D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB630BD1C73CF920008179D /* libresolv.tbd */; };
+		BFD0E6341C770D5E0085A57E /* AccountTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD0E6331C770D5D0085A57E /* AccountTableCellView.swift */; };
+		BFE55FFE1C746AE400DE25B2 /* PreferencesGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE55FFC1C746AE400DE25B2 /* PreferencesGeneralViewController.xib */; };
+		BFE560031C7512D200DE25B2 /* PreferencesAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE560011C7512D200DE25B2 /* PreferencesAccountViewController.xib */; };
+		BFE5601E1C75BE8D00DE25B2 /* PreferencesAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE5601D1C75BE8D00DE25B2 /* PreferencesAccountViewController.swift */; };
+		BFE563201C75D19F00DE25B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE5631F1C75D19F00DE25B2 /* AppDelegate.swift */; };
+		BFE563221C75D1CB00DE25B2 /* NoAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE563211C75D1CB00DE25B2 /* NoAccountViewController.swift */; };
+		BFE563261C75D47D00DE25B2 /* AppScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE563251C75D47D00DE25B2 /* AppScope.swift */; };
+		BFE5632E1C76705500DE25B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE5632D1C76705500DE25B2 /* Main.storyboard */; };
+		BFEC352F1C839DA2005CB593 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC352E1C839DA2005CB593 /* AppDelegate.swift */; };
+		BFEC35311C839DA2005CB593 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC35301C839DA2005CB593 /* ViewController.swift */; };
+		BFEC35341C839DA2005CB593 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEC35321C839DA2005CB593 /* Main.storyboard */; };
+		BFEC35361C839DA2005CB593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEC35351C839DA2005CB593 /* Assets.xcassets */; };
+		BFEC35391C839DA2005CB593 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEC35371C839DA2005CB593 /* LaunchScreen.storyboard */; };
+		BFEC35441C839DA2005CB593 /* EloquenceIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC35431C839DA2005CB593 /* EloquenceIOSTests.swift */; };
+		BFEC354F1C839DA2005CB593 /* EloquenceIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC354E1C839DA2005CB593 /* EloquenceIOSUITests.swift */; };
+		BFEC35661C83A0EE005CB593 /* PreferencesGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC35651C83A0EE005CB593 /* PreferencesGeneralViewController.swift */; };
+		BFEC35941C83A50D005CB593 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC358E1C83A50D005CB593 /* DataController.swift */; };
+		BFEC35951C83A50D005CB593 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFEC358F1C83A50D005CB593 /* DataModel.xcdatamodeld */; };
+		BFEC35961C83A50D005CB593 /* EloAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC35911C83A50D005CB593 /* EloAccount.swift */; };
+		BFEC35971C83A50D005CB593 /* EloChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC35921C83A50D005CB593 /* EloChat.swift */; };
+		BFEC35981C83A50D005CB593 /* EloChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC35931C83A50D005CB593 /* EloChatManager.swift */; };
+		BFEC35991C83A91C005CB593 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC358E1C83A50D005CB593 /* DataController.swift */; };
+		BFEC359A1C83A91C005CB593 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFEC358F1C83A50D005CB593 /* DataModel.xcdatamodeld */; };
+		BFEC359B1C83A91C005CB593 /* EloAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC35911C83A50D005CB593 /* EloAccount.swift */; };
+		BFEC359C1C83A91C005CB593 /* EloChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC35921C83A50D005CB593 /* EloChat.swift */; };
+		BFEC359D1C83A91C005CB593 /* EloChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC35931C83A50D005CB593 /* EloChatManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BFB630961C73CE990008179D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFB630771C73CE980008179D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFB6307E1C73CE980008179D;
+			remoteInfo = Eloquence;
+		};
+		BFB630A11C73CE990008179D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFB630771C73CE980008179D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFB6307E1C73CE980008179D;
+			remoteInfo = Eloquence;
+		};
+		BFEC35401C839DA2005CB593 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFB630771C73CE980008179D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFEC352B1C839DA1005CB593;
+			remoteInfo = EloquenceIOS;
+		};
+		BFEC354B1C839DA2005CB593 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFB630771C73CE980008179D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFEC352B1C839DA1005CB593;
+			remoteInfo = EloquenceIOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01263B3FFC5812B31B8C0D8B /* Pods_EloquenceIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EloquenceIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A5FDE8C9090575DBB3F781A /* Pods-Eloquence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eloquence.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Eloquence/Pods-Eloquence.debug.xcconfig"; sourceTree = "<group>"; };
+		9999746138C218BBFB88AA19 /* Pods-EloquenceIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EloquenceIOS.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-EloquenceIOS/Pods-EloquenceIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		9B0B89D9ADCF56E390AC96A8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A51378B492D5C2B0B9E8AC28 /* Pods-EloquenceIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EloquenceIOS.release.xcconfig"; path = "../Pods/Target Support Files/Pods-EloquenceIOS/Pods-EloquenceIOS.release.xcconfig"; sourceTree = "<group>"; };
+		BEE984B5D505A24AD989997A /* Pods_Eloquence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eloquence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF3277731C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesAccountDialogWindowController.swift; path = Preferences/PreferencesAccountDialogWindowController.swift; sourceTree = "<group>"; };
+		BF3277741C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesAccountDialogWindowController.xib; path = Preferences/PreferencesAccountDialogWindowController.xib; sourceTree = "<group>"; };
+		BF3277791C76A4A900C6CA48 /* idn-int.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "idn-int.h"; path = "../Pods/XMPPFramework/Vendor/libidn/idn-int.h"; sourceTree = "<group>"; };
+		BF32777A1C76A4A900C6CA48 /* libidn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libidn.a; path = ../Pods/XMPPFramework/Vendor/libidn/libidn.a; sourceTree = "<group>"; };
+		BF32777B1C76A4A900C6CA48 /* stringprep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = stringprep.h; path = ../Pods/XMPPFramework/Vendor/libidn/stringprep.h; sourceTree = "<group>"; };
+		BF7F8CE51C779E7100E5BA61 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BF7F8CE71C779F1300E5BA61 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		BF981C581C803F8600FF7AC5 /* ErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorDialog.swift; path = Dialogs/ErrorDialog.swift; sourceTree = "<group>"; };
+		BFA61BCA1C7BACF400B48A21 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../../../Users/farion/Library/Developer/Xcode/DerivedData/Eloquence-fcvfsoowvtqqauchozzlyrtoouwj/Build/Products/Debug/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
+		BFB6307F1C73CE980008179D /* Eloquence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eloquence.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB6308B1C73CE980008179D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFB630901C73CE980008179D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB630951C73CE990008179D /* EloquenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EloquenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB630991C73CE990008179D /* EloquenceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EloquenceTests.m; sourceTree = "<group>"; };
+		BFB6309B1C73CE990008179D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB630A01C73CE990008179D /* EloquenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EloquenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB630A41C73CE990008179D /* EloquenceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EloquenceUITests.m; sourceTree = "<group>"; };
+		BFB630A61C73CE990008179D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB630B21C73CF150008179D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BFB630BD1C73CF920008179D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		BFD0E6331C770D5D0085A57E /* AccountTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountTableCellView.swift; path = Preferences/AccountTableCellView.swift; sourceTree = "<group>"; };
+		BFE55FFC1C746AE400DE25B2 /* PreferencesGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesGeneralViewController.xib; path = Preferences/PreferencesGeneralViewController.xib; sourceTree = "<group>"; };
+		BFE560011C7512D200DE25B2 /* PreferencesAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesAccountViewController.xib; path = Preferences/PreferencesAccountViewController.xib; sourceTree = "<group>"; };
+		BFE5601C1C75BE8D00DE25B2 /* Eloquence-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eloquence-Bridging-Header.h"; sourceTree = "<group>"; };
+		BFE5601D1C75BE8D00DE25B2 /* PreferencesAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesAccountViewController.swift; path = Preferences/PreferencesAccountViewController.swift; sourceTree = "<group>"; };
+		BFE5631F1C75D19F00DE25B2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BFE563211C75D1CB00DE25B2 /* NoAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoAccountViewController.swift; path = ../NoAccountViewController.swift; sourceTree = "<group>"; };
+		BFE563251C75D47D00DE25B2 /* AppScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScope.swift; sourceTree = "<group>"; };
+		BFE5632D1C76705500DE25B2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BFEC352C1C839DA1005CB593 /* EloquenceIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EloquenceIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFEC352E1C839DA2005CB593 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BFEC35301C839DA2005CB593 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFEC35331C839DA2005CB593 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BFEC35351C839DA2005CB593 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFEC35381C839DA2005CB593 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BFEC353A1C839DA2005CB593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFEC353F1C839DA2005CB593 /* EloquenceIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EloquenceIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFEC35431C839DA2005CB593 /* EloquenceIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquenceIOSTests.swift; sourceTree = "<group>"; };
+		BFEC35451C839DA2005CB593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFEC354A1C839DA2005CB593 /* EloquenceIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EloquenceIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFEC354E1C839DA2005CB593 /* EloquenceIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquenceIOSUITests.swift; sourceTree = "<group>"; };
+		BFEC35501C839DA2005CB593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFEC35651C83A0EE005CB593 /* PreferencesGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesGeneralViewController.swift; path = Preferences/PreferencesGeneralViewController.swift; sourceTree = "<group>"; };
+		BFEC358E1C83A50D005CB593 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		BFEC35901C83A50D005CB593 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		BFEC35911C83A50D005CB593 /* EloAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EloAccount.swift; sourceTree = "<group>"; };
+		BFEC35921C83A50D005CB593 /* EloChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EloChat.swift; sourceTree = "<group>"; };
+		BFEC35931C83A50D005CB593 /* EloChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EloChatManager.swift; sourceTree = "<group>"; };
+		EBB504F406F01342352BB8D2 /* Pods-Eloquence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eloquence.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Eloquence/Pods-Eloquence.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFB6307C1C73CE980008179D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF32777D1C76A4A900C6CA48 /* libidn.a in Frameworks */,
+				BFB630BE1C73CF920008179D /* libresolv.tbd in Frameworks */,
+				BFB630B31C73CF150008179D /* Security.framework in Frameworks */,
+				BFA61BCD1C7BB27E00B48A21 /* Pods.framework in Frameworks */,
+				B3241A895BC0851FCCF2CE4D /* Pods_Eloquence.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB630921C73CE990008179D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB6309D1C73CE990008179D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEC35291C839DA1005CB593 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0399891AA5319251740C173 /* Pods_EloquenceIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEC353C1C839DA2005CB593 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEC35471C839DA2005CB593 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B343706DF785E15A2476E17F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A5FDE8C9090575DBB3F781A /* Pods-Eloquence.debug.xcconfig */,
+				EBB504F406F01342352BB8D2 /* Pods-Eloquence.release.xcconfig */,
+				9999746138C218BBFB88AA19 /* Pods-EloquenceIOS.debug.xcconfig */,
+				A51378B492D5C2B0B9E8AC28 /* Pods-EloquenceIOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF981C571C803F6C00FF7AC5 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				BF981C581C803F8600FF7AC5 /* ErrorDialog.swift */,
+			);
+			name = Dialogs;
+			sourceTree = "<group>";
+		};
+		BFB630761C73CE980008179D = {
+			isa = PBXGroup;
+			children = (
+				BFEC358D1C83A50D005CB593 /* Core */,
+				BFB630811C73CE980008179D /* Eloquence */,
+				BFB630981C73CE990008179D /* EloquenceTests */,
+				BFB630A31C73CE990008179D /* EloquenceUITests */,
+				BFEC352D1C839DA2005CB593 /* EloquenceIOS */,
+				BFEC35421C839DA2005CB593 /* EloquenceIOSTests */,
+				BFEC354D1C839DA2005CB593 /* EloquenceIOSUITests */,
+				BFB630801C73CE980008179D /* Products */,
+				C73775CD06BED879CE7F89EB /* Frameworks */,
+				B343706DF785E15A2476E17F /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		BFB630801C73CE980008179D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFB6307F1C73CE980008179D /* Eloquence.app */,
+				BFB630951C73CE990008179D /* EloquenceTests.xctest */,
+				BFB630A01C73CE990008179D /* EloquenceUITests.xctest */,
+				BFEC352C1C839DA1005CB593 /* EloquenceIOS.app */,
+				BFEC353F1C839DA2005CB593 /* EloquenceIOSTests.xctest */,
+				BFEC354A1C839DA2005CB593 /* EloquenceIOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFB630811C73CE980008179D /* Eloquence */ = {
+			isa = PBXGroup;
+			children = (
+				BF981C571C803F6C00FF7AC5 /* Dialogs */,
+				BFE55FF91C7466DC00DE25B2 /* Preferences */,
+				BFE5631F1C75D19F00DE25B2 /* AppDelegate.swift */,
+				BFE563211C75D1CB00DE25B2 /* NoAccountViewController.swift */,
+				BFE5601C1C75BE8D00DE25B2 /* Eloquence-Bridging-Header.h */,
+				BFE5632D1C76705500DE25B2 /* Main.storyboard */,
+				BFB6308B1C73CE980008179D /* Assets.xcassets */,
+				BFB630901C73CE980008179D /* Info.plist */,
+				BFE563251C75D47D00DE25B2 /* AppScope.swift */,
+				BF7F8CE51C779E7100E5BA61 /* MainViewController.swift */,
+				BF7F8CE71C779F1300E5BA61 /* MainWindowController.swift */,
+			);
+			path = Eloquence;
+			sourceTree = "<group>";
+		};
+		BFB630981C73CE990008179D /* EloquenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				BFB630991C73CE990008179D /* EloquenceTests.m */,
+				BFB6309B1C73CE990008179D /* Info.plist */,
+			);
+			path = EloquenceTests;
+			sourceTree = "<group>";
+		};
+		BFB630A31C73CE990008179D /* EloquenceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BFB630A41C73CE990008179D /* EloquenceUITests.m */,
+				BFB630A61C73CE990008179D /* Info.plist */,
+			);
+			path = EloquenceUITests;
+			sourceTree = "<group>";
+		};
+		BFE55FF91C7466DC00DE25B2 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				BFEC35651C83A0EE005CB593 /* PreferencesGeneralViewController.swift */,
+				BFE55FFC1C746AE400DE25B2 /* PreferencesGeneralViewController.xib */,
+				BFE5601D1C75BE8D00DE25B2 /* PreferencesAccountViewController.swift */,
+				BFE560011C7512D200DE25B2 /* PreferencesAccountViewController.xib */,
+				BF3277731C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.swift */,
+				BF3277741C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.xib */,
+				BFD0E6331C770D5D0085A57E /* AccountTableCellView.swift */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		BFEC352D1C839DA2005CB593 /* EloquenceIOS */ = {
+			isa = PBXGroup;
+			children = (
+				BFEC352E1C839DA2005CB593 /* AppDelegate.swift */,
+				BFEC35301C839DA2005CB593 /* ViewController.swift */,
+				BFEC35321C839DA2005CB593 /* Main.storyboard */,
+				BFEC35351C839DA2005CB593 /* Assets.xcassets */,
+				BFEC35371C839DA2005CB593 /* LaunchScreen.storyboard */,
+				BFEC353A1C839DA2005CB593 /* Info.plist */,
+			);
+			path = EloquenceIOS;
+			sourceTree = "<group>";
+		};
+		BFEC35421C839DA2005CB593 /* EloquenceIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				BFEC35431C839DA2005CB593 /* EloquenceIOSTests.swift */,
+				BFEC35451C839DA2005CB593 /* Info.plist */,
+			);
+			path = EloquenceIOSTests;
+			sourceTree = "<group>";
+		};
+		BFEC354D1C839DA2005CB593 /* EloquenceIOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BFEC354E1C839DA2005CB593 /* EloquenceIOSUITests.swift */,
+				BFEC35501C839DA2005CB593 /* Info.plist */,
+			);
+			path = EloquenceIOSUITests;
+			sourceTree = "<group>";
+		};
+		BFEC358D1C83A50D005CB593 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BFEC358E1C83A50D005CB593 /* DataController.swift */,
+				BFEC358F1C83A50D005CB593 /* DataModel.xcdatamodeld */,
+				BFEC35911C83A50D005CB593 /* EloAccount.swift */,
+				BFEC35921C83A50D005CB593 /* EloChat.swift */,
+				BFEC35931C83A50D005CB593 /* EloChatManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C73775CD06BED879CE7F89EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFA61BCA1C7BACF400B48A21 /* CocoaAsyncSocket.framework */,
+				BF3277791C76A4A900C6CA48 /* idn-int.h */,
+				BF32777A1C76A4A900C6CA48 /* libidn.a */,
+				BF32777B1C76A4A900C6CA48 /* stringprep.h */,
+				BFB630BD1C73CF920008179D /* libresolv.tbd */,
+				BFB630B21C73CF150008179D /* Security.framework */,
+				9B0B89D9ADCF56E390AC96A8 /* Pods.framework */,
+				BEE984B5D505A24AD989997A /* Pods_Eloquence.framework */,
+				01263B3FFC5812B31B8C0D8B /* Pods_EloquenceIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFB6307E1C73CE980008179D /* Eloquence */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB630A91C73CE990008179D /* Build configuration list for PBXNativeTarget "Eloquence" */;
+			buildPhases = (
+				52B8C756277C36DBEC03654C /* Check Pods Manifest.lock */,
+				BFB6307B1C73CE980008179D /* Sources */,
+				BFB6307C1C73CE980008179D /* Frameworks */,
+				BFB6307D1C73CE980008179D /* Resources */,
+				2C2FAE2E4EC009560B7628DA /* Embed Pods Frameworks */,
+				BB7CCAFD2D349ED2505355E8 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Eloquence;
+			productName = Eloquence;
+			productReference = BFB6307F1C73CE980008179D /* Eloquence.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BFB630941C73CE990008179D /* EloquenceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB630AC1C73CE990008179D /* Build configuration list for PBXNativeTarget "EloquenceTests" */;
+			buildPhases = (
+				BFB630911C73CE990008179D /* Sources */,
+				BFB630921C73CE990008179D /* Frameworks */,
+				BFB630931C73CE990008179D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFB630971C73CE990008179D /* PBXTargetDependency */,
+			);
+			name = EloquenceTests;
+			productName = EloquenceTests;
+			productReference = BFB630951C73CE990008179D /* EloquenceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BFB6309F1C73CE990008179D /* EloquenceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB630AF1C73CE990008179D /* Build configuration list for PBXNativeTarget "EloquenceUITests" */;
+			buildPhases = (
+				BFB6309C1C73CE990008179D /* Sources */,
+				BFB6309D1C73CE990008179D /* Frameworks */,
+				BFB6309E1C73CE990008179D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFB630A21C73CE990008179D /* PBXTargetDependency */,
+			);
+			name = EloquenceUITests;
+			productName = EloquenceUITests;
+			productReference = BFB630A01C73CE990008179D /* EloquenceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		BFEC352B1C839DA1005CB593 /* EloquenceIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFEC35571C839DA2005CB593 /* Build configuration list for PBXNativeTarget "EloquenceIOS" */;
+			buildPhases = (
+				94AFBBAF41FEBDC192B76663 /* Check Pods Manifest.lock */,
+				BFEC35281C839DA1005CB593 /* Sources */,
+				BFEC35291C839DA1005CB593 /* Frameworks */,
+				BFEC352A1C839DA1005CB593 /* Resources */,
+				C3D044B9875E8A1D0951E4EC /* Embed Pods Frameworks */,
+				0E9DD5A27933C75A3546AF58 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EloquenceIOS;
+			productName = EloquenceIOS;
+			productReference = BFEC352C1C839DA1005CB593 /* EloquenceIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BFEC353E1C839DA2005CB593 /* EloquenceIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFEC35581C839DA2005CB593 /* Build configuration list for PBXNativeTarget "EloquenceIOSTests" */;
+			buildPhases = (
+				BFEC353B1C839DA2005CB593 /* Sources */,
+				BFEC353C1C839DA2005CB593 /* Frameworks */,
+				BFEC353D1C839DA2005CB593 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFEC35411C839DA2005CB593 /* PBXTargetDependency */,
+			);
+			name = EloquenceIOSTests;
+			productName = EloquenceIOSTests;
+			productReference = BFEC353F1C839DA2005CB593 /* EloquenceIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BFEC35491C839DA2005CB593 /* EloquenceIOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFEC35591C839DA2005CB593 /* Build configuration list for PBXNativeTarget "EloquenceIOSUITests" */;
+			buildPhases = (
+				BFEC35461C839DA2005CB593 /* Sources */,
+				BFEC35471C839DA2005CB593 /* Frameworks */,
+				BFEC35481C839DA2005CB593 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFEC354C1C839DA2005CB593 /* PBXTargetDependency */,
+			);
+			name = EloquenceIOSUITests;
+			productName = EloquenceIOSUITests;
+			productReference = BFEC354A1C839DA2005CB593 /* EloquenceIOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFB630771C73CE980008179D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = TRIGONmedia;
+				TargetAttributes = {
+					BFB6307E1C73CE980008179D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					BFB630941C73CE990008179D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = BFB6307E1C73CE980008179D;
+					};
+					BFB6309F1C73CE990008179D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = BFB6307E1C73CE980008179D;
+					};
+					BFEC352B1C839DA1005CB593 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					BFEC353E1C839DA2005CB593 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = BFEC352B1C839DA1005CB593;
+					};
+					BFEC35491C839DA2005CB593 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = BFEC352B1C839DA1005CB593;
+					};
+				};
+			};
+			buildConfigurationList = BFB6307A1C73CE980008179D /* Build configuration list for PBXProject "Eloquence" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFB630761C73CE980008179D;
+			productRefGroup = BFB630801C73CE980008179D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFB6307E1C73CE980008179D /* Eloquence */,
+				BFB630941C73CE990008179D /* EloquenceTests */,
+				BFB6309F1C73CE990008179D /* EloquenceUITests */,
+				BFEC352B1C839DA1005CB593 /* EloquenceIOS */,
+				BFEC353E1C839DA2005CB593 /* EloquenceIOSTests */,
+				BFEC35491C839DA2005CB593 /* EloquenceIOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFB6307D1C73CE980008179D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF3277761C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.xib in Resources */,
+				BFB6308C1C73CE980008179D /* Assets.xcassets in Resources */,
+				BFE5632E1C76705500DE25B2 /* Main.storyboard in Resources */,
+				BFE55FFE1C746AE400DE25B2 /* PreferencesGeneralViewController.xib in Resources */,
+				BFE560031C7512D200DE25B2 /* PreferencesAccountViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB630931C73CE990008179D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB6309E1C73CE990008179D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEC352A1C839DA1005CB593 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFEC35391C839DA2005CB593 /* LaunchScreen.storyboard in Resources */,
+				BFEC35361C839DA2005CB593 /* Assets.xcassets in Resources */,
+				BFEC35341C839DA2005CB593 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEC353D1C839DA2005CB593 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEC35481C839DA2005CB593 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E9DD5A27933C75A3546AF58 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-EloquenceIOS/Pods-EloquenceIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C2FAE2E4EC009560B7628DA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Eloquence/Pods-Eloquence-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52B8C756277C36DBEC03654C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		94AFBBAF41FEBDC192B76663 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BB7CCAFD2D349ED2505355E8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Eloquence/Pods-Eloquence-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3D044B9875E8A1D0951E4EC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-EloquenceIOS/Pods-EloquenceIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFB6307B1C73CE980008179D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFE563221C75D1CB00DE25B2 /* NoAccountViewController.swift in Sources */,
+				BFE563261C75D47D00DE25B2 /* AppScope.swift in Sources */,
+				BFEC35971C83A50D005CB593 /* EloChat.swift in Sources */,
+				BFEC35981C83A50D005CB593 /* EloChatManager.swift in Sources */,
+				BF3277751C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.swift in Sources */,
+				BF981C591C803F8600FF7AC5 /* ErrorDialog.swift in Sources */,
+				BFD0E6341C770D5E0085A57E /* AccountTableCellView.swift in Sources */,
+				BFEC35941C83A50D005CB593 /* DataController.swift in Sources */,
+				BFEC35661C83A0EE005CB593 /* PreferencesGeneralViewController.swift in Sources */,
+				BFEC35961C83A50D005CB593 /* EloAccount.swift in Sources */,
+				BFE563201C75D19F00DE25B2 /* AppDelegate.swift in Sources */,
+				BFE5601E1C75BE8D00DE25B2 /* PreferencesAccountViewController.swift in Sources */,
+				BFEC35951C83A50D005CB593 /* DataModel.xcdatamodeld in Sources */,
+				BF7F8CE81C779F1300E5BA61 /* MainWindowController.swift in Sources */,
+				BF7F8CE61C779E7100E5BA61 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB630911C73CE990008179D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB6309A1C73CE990008179D /* EloquenceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB6309C1C73CE990008179D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB630A51C73CE990008179D /* EloquenceUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEC35281C839DA1005CB593 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFEC35991C83A91C005CB593 /* DataController.swift in Sources */,
+				BFEC359A1C83A91C005CB593 /* DataModel.xcdatamodeld in Sources */,
+				BFEC359B1C83A91C005CB593 /* EloAccount.swift in Sources */,
+				BFEC359C1C83A91C005CB593 /* EloChat.swift in Sources */,
+				BFEC359D1C83A91C005CB593 /* EloChatManager.swift in Sources */,
+				BFEC35311C839DA2005CB593 /* ViewController.swift in Sources */,
+				BFEC352F1C839DA2005CB593 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEC353B1C839DA2005CB593 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFEC35441C839DA2005CB593 /* EloquenceIOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEC35461C839DA2005CB593 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFEC354F1C839DA2005CB593 /* EloquenceIOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BFB630971C73CE990008179D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFB6307E1C73CE980008179D /* Eloquence */;
+			targetProxy = BFB630961C73CE990008179D /* PBXContainerItemProxy */;
+		};
+		BFB630A21C73CE990008179D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFB6307E1C73CE980008179D /* Eloquence */;
+			targetProxy = BFB630A11C73CE990008179D /* PBXContainerItemProxy */;
+		};
+		BFEC35411C839DA2005CB593 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFEC352B1C839DA1005CB593 /* EloquenceIOS */;
+			targetProxy = BFEC35401C839DA2005CB593 /* PBXContainerItemProxy */;
+		};
+		BFEC354C1C839DA2005CB593 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFEC352B1C839DA1005CB593 /* EloquenceIOS */;
+			targetProxy = BFEC354B1C839DA2005CB593 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BFEC35321C839DA2005CB593 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFEC35331C839DA2005CB593 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BFEC35371C839DA2005CB593 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFEC35381C839DA2005CB593 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BFB630A71C73CE990008179D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lxml2";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BFB630A81C73CE990008179D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-lxml2";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BFB630AA1C73CE990008179D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A5FDE8C9090575DBB3F781A /* Pods-Eloquence.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Private/XMPPFramework\"",
+					"\"${PODS_ROOT}/Headers/Private/CCNPreferencesWindowController\"",
+					"\"${PODS_ROOT}/Headers/Private/KissXML\"",
+					"\"${PODS_ROOT}/Headers/Private/KeychainSwift\"",
+					"\"${PODS_ROOT}/Headers/Private/CocoaAsyncSocket\"",
+				);
+				INFOPLIST_FILE = Eloquence/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/XMPPFramework/Vendor/libidn\"",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DDDXML_LIBXML_MODULE_ENABLED=1",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/CCNPreferencesWindowController.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/CocoaAsyncSocket.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/CocoaLumberjack.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/KissXML.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/XMPPFramework.framework/Headers\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"CocoaAsyncSocket\"",
+					"-framework",
+					"\"CocoaLumberjack\"",
+					"-framework",
+					"\"KissXML\"",
+					"-framework",
+					"\"XMPPFramework\"",
+					"-framework",
+					"\"CoreServices\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.Eloquence;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Eloquence/Eloquence-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BFB630AB1C73CE990008179D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBB504F406F01342352BB8D2 /* Pods-Eloquence.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Private/XMPPFramework\"",
+					"\"${PODS_ROOT}/Headers/Private/CCNPreferencesWindowController\"",
+					"\"${PODS_ROOT}/Headers/Private/KissXML\"",
+					"\"${PODS_ROOT}/Headers/Private/KeychainSwift\"",
+					"\"${PODS_ROOT}/Headers/Private/CocoaAsyncSocket\"",
+				);
+				INFOPLIST_FILE = Eloquence/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/XMPPFramework/Vendor/libidn\"",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DDDXML_LIBXML_MODULE_ENABLED=1",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/CCNPreferencesWindowController.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/CocoaAsyncSocket.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/CocoaLumberjack.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/KissXML.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/XMPPFramework.framework/Headers\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"CocoaAsyncSocket\"",
+					"-framework",
+					"\"CocoaLumberjack\"",
+					"-framework",
+					"\"KissXML\"",
+					"-framework",
+					"\"XMPPFramework\"",
+					"-framework",
+					"\"CoreServices\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.Eloquence;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Eloquence/Eloquence-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		BFB630AD1C73CE990008179D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EloquenceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.EloquenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eloquence.app/Contents/MacOS/Eloquence";
+			};
+			name = Debug;
+		};
+		BFB630AE1C73CE990008179D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EloquenceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.EloquenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eloquence.app/Contents/MacOS/Eloquence";
+			};
+			name = Release;
+		};
+		BFB630B01C73CE990008179D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EloquenceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.EloquenceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Eloquence;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BFB630B11C73CE990008179D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EloquenceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.EloquenceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Eloquence;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		BFEC35511C839DA2005CB593 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9999746138C218BBFB88AA19 /* Pods-EloquenceIOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(PODS_ROOT)/KissXML/libxml",
+					"\"$(PODS_ROOT)/../../../libxml\"",
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(PODS_ROOT)/KissXML/libxml",
+					"$(SDKROOT)/usr/include/libresolv",
+					"\"${PODS_ROOT}/Headers/Private/XMPPFramework\"",
+					"\"${PODS_ROOT}/Headers/Private/KissXML\"",
+					"\"${PODS_ROOT}/Headers/Private/KeychainSwift\"",
+					"\"${PODS_ROOT}/Headers/Private/CocoaAsyncSocket\"",
+				);
+				INFOPLIST_FILE = EloquenceIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PODS_ROOT)/XMPPFramework/Vendor/libidn\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.EloquenceIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFEC35521C839DA2005CB593 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A51378B492D5C2B0B9E8AC28 /* Pods-EloquenceIOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(PODS_ROOT)/KissXML/libxml",
+					"\"$(PODS_ROOT)/../../../libxml\"",
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(PODS_ROOT)/KissXML/libxml",
+					"$(SDKROOT)/usr/include/libresolv",
+					"\"${PODS_ROOT}/Headers/Private/XMPPFramework\"",
+					"\"${PODS_ROOT}/Headers/Private/KissXML\"",
+					"\"${PODS_ROOT}/Headers/Private/KeychainSwift\"",
+					"\"${PODS_ROOT}/Headers/Private/CocoaAsyncSocket\"",
+				);
+				INFOPLIST_FILE = EloquenceIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PODS_ROOT)/XMPPFramework/Vendor/libidn\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.EloquenceIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFEC35531C839DA2005CB593 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = EloquenceIOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.EloquenceIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EloquenceIOS.app/EloquenceIOS";
+			};
+			name = Debug;
+		};
+		BFEC35541C839DA2005CB593 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = EloquenceIOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.EloquenceIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EloquenceIOS.app/EloquenceIOS";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFEC35551C839DA2005CB593 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = EloquenceIOSUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.EloquenceIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_TARGET_NAME = EloquenceIOS;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BFEC35561C839DA2005CB593 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = EloquenceIOSUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trigonmedia.EloquenceIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_TARGET_NAME = EloquenceIOS;
+				USES_XCTRUNNER = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFB6307A1C73CE980008179D /* Build configuration list for PBXProject "Eloquence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB630A71C73CE990008179D /* Debug */,
+				BFB630A81C73CE990008179D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB630A91C73CE990008179D /* Build configuration list for PBXNativeTarget "Eloquence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB630AA1C73CE990008179D /* Debug */,
+				BFB630AB1C73CE990008179D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB630AC1C73CE990008179D /* Build configuration list for PBXNativeTarget "EloquenceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB630AD1C73CE990008179D /* Debug */,
+				BFB630AE1C73CE990008179D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB630AF1C73CE990008179D /* Build configuration list for PBXNativeTarget "EloquenceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB630B01C73CE990008179D /* Debug */,
+				BFB630B11C73CE990008179D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFEC35571C839DA2005CB593 /* Build configuration list for PBXNativeTarget "EloquenceIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFEC35511C839DA2005CB593 /* Debug */,
+				BFEC35521C839DA2005CB593 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFEC35581C839DA2005CB593 /* Build configuration list for PBXNativeTarget "EloquenceIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFEC35531C839DA2005CB593 /* Debug */,
+				BFEC35541C839DA2005CB593 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFEC35591C839DA2005CB593 /* Build configuration list for PBXNativeTarget "EloquenceIOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFEC35551C839DA2005CB593 /* Debug */,
+				BFEC35561C839DA2005CB593 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BFEC358F1C83A50D005CB593 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BFEC35901C83A50D005CB593 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = BFEC35901C83A50D005CB593 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BFB630771C73CE980008179D /* Project object */;
+}
