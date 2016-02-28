@@ -1,9 +1,8 @@
 //
-//  EloChatManager.swift
-//  Eloquence
+//   This file is part of Eloquence IM.
 //
-//  Created by Frieder Reinhold on 22.02.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
+//   Eloquence is licensed under the Apache License 2.0.
+//   See LICENSE file for more information.
 //
 
 import Foundation

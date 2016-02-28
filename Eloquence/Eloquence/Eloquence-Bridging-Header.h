@@ -1,5 +1,8 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//   This file is part of Eloquence IM.
+//
+//   Eloquence is licensed under the Apache License 2.0.
+//   See LICENSE file for more information.
 //
 
 #import "GCDAsyncSocket.h"
