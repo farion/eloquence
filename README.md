@@ -4,7 +4,7 @@
 
 This is an alternative XMPP/Jabber instant messenger for Mac OSX written in Swift. It was created as an alternative to Adium, which is not actively developed anymore and also is based on libpurple, which does not contain the newest XMPP features.
 
-As soon as the Mac OSX client is available, we will focus on an iOS client.
+OSX and iOS version is developed in parallel.
 
 Thanks to the [XMPPFramework](https://github.com/robbiehanson/XMPPFramework "XMPPFramework") which is the base of Eloquence.
 
