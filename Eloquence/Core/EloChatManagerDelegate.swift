@@ -5,13 +5,9 @@
 //   See LICENSE file for more information.
 //
 
-import Cocoa
+import Foundation
 
-class MainViewController: NSViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+@objc
+protocol EloChatManagerDelegate: NSObjectProtocol {
     
 }

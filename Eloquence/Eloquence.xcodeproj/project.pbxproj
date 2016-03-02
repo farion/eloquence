@@ -9,11 +9,20 @@
 /* Begin PBXBuildFile section */
 		A0399891AA5319251740C173 /* Pods_EloquenceIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01263B3FFC5812B31B8C0D8B /* Pods_EloquenceIOS.framework */; };
 		B3241A895BC0851FCCF2CE4D /* Pods_Eloquence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE984B5D505A24AD989997A /* Pods_Eloquence.framework */; };
+		BF0C5E0D1C865400000E2C21 /* RosterViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0C5E0C1C865400000E2C21 /* RosterViewControllerDelegate.swift */; };
+		BF0C5E0F1C8654B0000E2C21 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0C5E0E1C8654B0000E2C21 /* MainSplitViewController.swift */; };
+		BF1565681C84AEFD008D6809 /* EloChatManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1565671C84AEFD008D6809 /* EloChatManagerDelegate.swift */; };
+		BF1565691C84AF11008D6809 /* EloChatManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1565671C84AEFD008D6809 /* EloChatManagerDelegate.swift */; };
+		BF15656B1C84B04A008D6809 /* MulticastDelegateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15656A1C84B04A008D6809 /* MulticastDelegateContainer.swift */; };
+		BF15656F1C84ED2D008D6809 /* EloChatDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15656E1C84ED2D008D6809 /* EloChatDelegate.swift */; };
+		BF1565701C84ED39008D6809 /* MulticastDelegateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15656A1C84B04A008D6809 /* MulticastDelegateContainer.swift */; };
+		BF1565711C84ED39008D6809 /* EloChatDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15656E1C84ED2D008D6809 /* EloChatDelegate.swift */; };
+		BF1565731C84F40C008D6809 /* RosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1565721C84F40C008D6809 /* RosterViewController.swift */; };
+		BF1565741C84F40C008D6809 /* RosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1565721C84F40C008D6809 /* RosterViewController.swift */; };
 		BF3277751C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3277731C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.swift */; };
 		BF3277761C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3277741C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.xib */; };
 		BF32777D1C76A4A900C6CA48 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF32777A1C76A4A900C6CA48 /* libidn.a */; };
-		BF7F8CE61C779E7100E5BA61 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F8CE51C779E7100E5BA61 /* MainViewController.swift */; };
-		BF7F8CE81C779F1300E5BA61 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F8CE71C779F1300E5BA61 /* MainWindowController.swift */; };
+		BF7F8CE61C779E7100E5BA61 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F8CE51C779E7100E5BA61 /* MainWindowController.swift */; };
 		BF981C591C803F8600FF7AC5 /* ErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF981C581C803F8600FF7AC5 /* ErrorDialog.swift */; };
 		BFA61BCD1C7BB27E00B48A21 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0B89D9ADCF56E390AC96A8 /* Pods.framework */; };
 		BFB6308C1C73CE980008179D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB6308B1C73CE980008179D /* Assets.xcassets */; };
@@ -87,13 +96,18 @@
 		9B0B89D9ADCF56E390AC96A8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51378B492D5C2B0B9E8AC28 /* Pods-EloquenceIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EloquenceIOS.release.xcconfig"; path = "../Pods/Target Support Files/Pods-EloquenceIOS/Pods-EloquenceIOS.release.xcconfig"; sourceTree = "<group>"; };
 		BEE984B5D505A24AD989997A /* Pods_Eloquence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eloquence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0C5E0C1C865400000E2C21 /* RosterViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RosterViewControllerDelegate.swift; sourceTree = "<group>"; };
+		BF0C5E0E1C8654B0000E2C21 /* MainSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
+		BF1565671C84AEFD008D6809 /* EloChatManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EloChatManagerDelegate.swift; sourceTree = "<group>"; };
+		BF15656A1C84B04A008D6809 /* MulticastDelegateContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegateContainer.swift; sourceTree = "<group>"; };
+		BF15656E1C84ED2D008D6809 /* EloChatDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EloChatDelegate.swift; sourceTree = "<group>"; };
+		BF1565721C84F40C008D6809 /* RosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RosterViewController.swift; sourceTree = "<group>"; };
 		BF3277731C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesAccountDialogWindowController.swift; path = Preferences/PreferencesAccountDialogWindowController.swift; sourceTree = "<group>"; };
 		BF3277741C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesAccountDialogWindowController.xib; path = Preferences/PreferencesAccountDialogWindowController.xib; sourceTree = "<group>"; };
 		BF3277791C76A4A900C6CA48 /* idn-int.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "idn-int.h"; path = "../Pods/XMPPFramework/Vendor/libidn/idn-int.h"; sourceTree = "<group>"; };
 		BF32777A1C76A4A900C6CA48 /* libidn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libidn.a; path = ../Pods/XMPPFramework/Vendor/libidn/libidn.a; sourceTree = "<group>"; };
 		BF32777B1C76A4A900C6CA48 /* stringprep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = stringprep.h; path = ../Pods/XMPPFramework/Vendor/libidn/stringprep.h; sourceTree = "<group>"; };
-		BF7F8CE51C779E7100E5BA61 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		BF7F8CE71C779F1300E5BA61 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		BF7F8CE51C779E7100E5BA61 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		BF981C581C803F8600FF7AC5 /* ErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorDialog.swift; path = Dialogs/ErrorDialog.swift; sourceTree = "<group>"; };
 		BFA61BCA1C7BACF400B48A21 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../../../Users/farion/Library/Developer/Xcode/DerivedData/Eloquence-fcvfsoowvtqqauchozzlyrtoouwj/Build/Products/Debug/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
 		BFB6307F1C73CE980008179D /* Eloquence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eloquence.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,8 +264,10 @@
 				BFB6308B1C73CE980008179D /* Assets.xcassets */,
 				BFB630901C73CE980008179D /* Info.plist */,
 				BFE563251C75D47D00DE25B2 /* AppScope.swift */,
-				BF7F8CE51C779E7100E5BA61 /* MainViewController.swift */,
-				BF7F8CE71C779F1300E5BA61 /* MainWindowController.swift */,
+				BF7F8CE51C779E7100E5BA61 /* MainWindowController.swift */,
+				BF1565721C84F40C008D6809 /* RosterViewController.swift */,
+				BF0C5E0C1C865400000E2C21 /* RosterViewControllerDelegate.swift */,
+				BF0C5E0E1C8654B0000E2C21 /* MainSplitViewController.swift */,
 			);
 			path = Eloquence;
 			sourceTree = "<group>";
@@ -327,6 +343,9 @@
 				BFEC35911C83A50D005CB593 /* EloAccount.swift */,
 				BFEC35921C83A50D005CB593 /* EloChat.swift */,
 				BFEC35931C83A50D005CB593 /* EloChatManager.swift */,
+				BF1565671C84AEFD008D6809 /* EloChatManagerDelegate.swift */,
+				BF15656A1C84B04A008D6809 /* MulticastDelegateContainer.swift */,
+				BF15656E1C84ED2D008D6809 /* EloChatDelegate.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -670,6 +689,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0C5E0F1C8654B0000E2C21 /* MainSplitViewController.swift in Sources */,
+				BF1565731C84F40C008D6809 /* RosterViewController.swift in Sources */,
+				BF0C5E0D1C865400000E2C21 /* RosterViewControllerDelegate.swift in Sources */,
 				BFE563221C75D1CB00DE25B2 /* NoAccountViewController.swift in Sources */,
 				BFE563261C75D47D00DE25B2 /* AppScope.swift in Sources */,
 				BFEC35971C83A50D005CB593 /* EloChat.swift in Sources */,
@@ -677,14 +699,16 @@
 				BF3277751C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.swift in Sources */,
 				BF981C591C803F8600FF7AC5 /* ErrorDialog.swift in Sources */,
 				BFD0E6341C770D5E0085A57E /* AccountTableCellView.swift in Sources */,
+				BF15656F1C84ED2D008D6809 /* EloChatDelegate.swift in Sources */,
 				BFEC35941C83A50D005CB593 /* DataController.swift in Sources */,
 				BFEC35661C83A0EE005CB593 /* PreferencesGeneralViewController.swift in Sources */,
 				BFEC35961C83A50D005CB593 /* EloAccount.swift in Sources */,
 				BFE563201C75D19F00DE25B2 /* AppDelegate.swift in Sources */,
 				BFE5601E1C75BE8D00DE25B2 /* PreferencesAccountViewController.swift in Sources */,
+				BF15656B1C84B04A008D6809 /* MulticastDelegateContainer.swift in Sources */,
 				BFEC35951C83A50D005CB593 /* DataModel.xcdatamodeld in Sources */,
-				BF7F8CE81C779F1300E5BA61 /* MainWindowController.swift in Sources */,
-				BF7F8CE61C779E7100E5BA61 /* MainViewController.swift in Sources */,
+				BF1565681C84AEFD008D6809 /* EloChatManagerDelegate.swift in Sources */,
+				BF7F8CE61C779E7100E5BA61 /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,10 +732,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1565701C84ED39008D6809 /* MulticastDelegateContainer.swift in Sources */,
+				BF1565711C84ED39008D6809 /* EloChatDelegate.swift in Sources */,
+				BF1565691C84AF11008D6809 /* EloChatManagerDelegate.swift in Sources */,
 				BFEC35991C83A91C005CB593 /* DataController.swift in Sources */,
 				BFEC359A1C83A91C005CB593 /* DataModel.xcdatamodeld in Sources */,
 				BFEC359B1C83A91C005CB593 /* EloAccount.swift in Sources */,
 				BFEC359C1C83A91C005CB593 /* EloChat.swift in Sources */,
+				BF1565741C84F40C008D6809 /* RosterViewController.swift in Sources */,
 				BFEC359D1C83A91C005CB593 /* EloChatManager.swift in Sources */,
 				BFEC35311C839DA2005CB593 /* ViewController.swift in Sources */,
 				BFEC352F1C839DA2005CB593 /* AppDelegate.swift in Sources */,

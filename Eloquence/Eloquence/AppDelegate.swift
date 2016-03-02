@@ -27,6 +27,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // TODO disconnect
     }
     
+    @IBAction func reloadRosterMenuItemClicked(sender: AnyObject) {
+        
+    }
+    
+    
     @IBAction func preferenceMenuItemClicked(sender: AnyObject) {
         AppScope.instance.openPreferences();
     }

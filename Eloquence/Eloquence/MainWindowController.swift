@@ -13,6 +13,8 @@ class MainWindowController: NSWindowController {
         super.windowDidLoad()
     
         self.window!.titleVisibility = .Hidden;
+        
+        
     }
 
     @IBAction func toolbarPreferencesClicked(sender: AnyObject) {

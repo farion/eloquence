@@ -8,24 +8,30 @@
 import Foundation
 import XMPPFramework
 
-class EloChat: NSObject, XMPPRosterDelegate,XMPPStreamDelegate {
+class EloChat: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, MulticastDelegateContainer {
     
     var xmppStream = XMPPStream();
     var account:EloAccount;
-    let xmppRosterStorage = XMPPRosterCoreDataStorage()
-    var xmppRoster: XMPPRoster
+    var xmppRosterStorage = XMPPRosterCoreDataStorage()
+    var xmppRoster: XMPPRoster?;
 
+    typealias DelegateType = EloChatDelegate;
+    var multicastDelegate = [EloChatDelegate]()
     
     init(account:EloAccount){
         self.account = account;
-        xmppRoster = XMPPRoster(rosterStorage: xmppRosterStorage);
         super.init();
+        xmppRoster = XMPPRoster(rosterStorage: xmppRosterStorage);
+        xmppRoster!.autoFetchRoster = true;
+        xmppRoster!.autoAcceptKnownPresenceSubscriptionRequests = true;
         xmppStream.addDelegate(self, delegateQueue: dispatch_get_main_queue());
+        xmppRoster!.activate(xmppStream);
     }
+    
     
     func connect(){
         
-                NSLog("Connect");
+        NSLog("Connect");
         
         if(!xmppStream.isConnected()){
 //        var presence = XMPPPresence();
@@ -106,6 +112,18 @@ class EloChat: NSObject, XMPPRosterDelegate,XMPPStreamDelegate {
     
     func xmppStream(sender: XMPPStream!, didReceiveIQ iq: XMPPIQ!) -> Bool {
         NSLog("didReceiveIQ");
+        /*
+        let queryElement = iq.elementForName("query",xmlns:"jabber:iq:roster");
+        
+        if(queryElement != nil){
+            let itemElements = queryElement!.elementsForName("item");
+            for var i = 0; i < itemElements.count; ++i {
+                let jid = itemElements[i].attributeForName("jid")!.stringValue;
+                NSLog("%@",jid!);
+            }
+        }
+        
+        */
         return true;
     }
     
@@ -194,6 +212,22 @@ class EloChat: NSObject, XMPPRosterDelegate,XMPPStreamDelegate {
     
     func xmppStreamDidAuthenticate(sender: XMPPStream!) {
         NSLog("xmppStreamDidAuthenticate");
+        
+        
+        if (xmppRoster != nil) {
+            xmppRoster = nil;
+        }
+        
+        xmppRoster = XMPPRoster.init(rosterStorage: xmppRosterStorage);
+        
+        if(xmppRoster == nil){
+            //TODO error
+        }
+        
+        xmppRoster!.addDelegate(self, delegateQueue: dispatch_get_main_queue());
+        xmppRoster!.autoFetchRoster = true;
+        
+        
     }
     
     func xmppStreamDidChangeMyJID(xmppStream: XMPPStream!) {

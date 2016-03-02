@@ -8,9 +8,12 @@
 import Foundation
 import CoreData
 
-class EloChatManager {
+class EloChatManager: MulticastDelegateContainer {
     
     static let sharedInstance = EloChatManager();
+
+    typealias DelegateType = EloChatManagerDelegate;
+    var multicastDelegate = [EloChatManagerDelegate]()
     
     var chats = [NSManagedObjectID:EloChat]();
     
@@ -28,4 +31,7 @@ class EloChatManager {
             }
         }
     }
+    
+    
 }
+// invokeDelegate { $0.method() }

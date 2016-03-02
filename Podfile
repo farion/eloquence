@@ -9,6 +9,7 @@ target 'Eloquence' do
 end
 
 target 'EloquenceIOS' do
+#Chatto
   platform :ios, '9.0'
   pod "CocoaLumberjack", '~> 2.0'
   pod 'CocoaAsyncSocket', '~> 7.4'
