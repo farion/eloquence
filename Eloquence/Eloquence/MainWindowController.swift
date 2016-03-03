@@ -12,15 +12,12 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
     
-        self.window!.titleVisibility = .Hidden;
+        self.window!.titleVisibility = NSWindowTitleVisibility.Hidden;
+        self.window!.titlebarAppearsTransparent = true;
+        self.window!.styleMask |= NSFullSizeContentViewWindowMask;
+        
         
         
     }
 
-    @IBAction func toolbarPreferencesClicked(sender: AnyObject) {
-            AppScope.instance.openPreferences();
-    }
-    @IBAction func toolbarReloadClicked(sender: AnyObject) {
-        EloChatManager.sharedInstance.connectAllAccounts();
-    }
 }

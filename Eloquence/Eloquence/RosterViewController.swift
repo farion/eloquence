@@ -9,21 +9,24 @@
 import Foundation
 import XMPPFramework
 
-class RosterViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
+
+
+
+class RosterViewController: NSViewController, NSTableViewDelegate {
 
     @IBOutlet weak var rosterTable: NSTableView!
 
-    var data = [XMPPUserCoreDataStorageObject]();
-    
-    var delegate: RosterViewControllerDelegate? = nil;
+    dynamic var contacts = [EloContact]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        rosterTable.setDelegate(self)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshData", name: EloNotification.ROSTER_CHANGED, object: nil);
         
         refreshData();
-        rosterTable.setDelegate(self)
-        rosterTable.setDataSource(self)
 
     }
 
@@ -33,9 +36,8 @@ class RosterViewController: NSViewController, NSTableViewDataSource, NSTableView
     
     func cellDblClk(sender: AnyObject){
         if(rosterTable.clickedRow >= 0){
-            if(delegate != nil){
-                delegate!.contactActivated(data[rosterTable.clickedRow].jidStr);
-            }
+            NSLog("Jid clicked: %@",contacts[rosterTable.clickedRow].jid)
+            EloGlobalEvents.sharedInstance.activateContact(contacts[rosterTable.clickedRow]);
         }
     }
     
@@ -44,46 +46,33 @@ class RosterViewController: NSViewController, NSTableViewDataSource, NSTableView
     }
     
     func refreshData(){
+        
         let fetchRequest = NSFetchRequest(entityName: "XMPPUserCoreDataStorageObject");
-        
-        
-        data = [XMPPUserCoreDataStorageObject]();
+    
+        var contactDic = [String:EloContact]()
         do {
-            for (_,chat) in EloChatManager.sharedInstance.chats {
-                let users = try chat.xmppRosterStorage.mainThreadManagedObjectContext.executeFetchRequest(fetchRequest) as! [XMPPUserCoreDataStorageObject];
-                data.appendContentsOf(users);
+            for (_,connection) in EloConnectionManager.sharedInstance.connections {
+                
+                let users = try connection.xmppRosterStorage.mainThreadManagedObjectContext.executeFetchRequest(fetchRequest) as! [XMPPUserCoreDataStorageObject];
+                for user  in users {
+                    if(contactDic[user.jidStr] == nil){
+                        contactDic[user.jidStr] = EloContact();
+                    }
+                    contactDic[user.jidStr]!.addUser(user);
+                }
             }
         } catch {
             Swift.print(error)
         }
-        rosterTable.reloadData();
-    }
-    
-    /** NSTableViewDataSource, NSTableViewDelegate */
-    
-    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        NSLog("COUNT: %d",data.count);
-        // how many rows are needed to display the data?
-        return data.count
-    }
-    
-    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        // get an NSTableCellView with an identifier that is the same as the identifier for the column
-        // NOTE: you need to set the identifier of both the Column and the Table Cell View
-        // in this case the columns are "name" and "value"
-        let result = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! NSTableCellView
         
-        // get the "Item" for the row
-        let item = data[row]
-        
-        // get the value for this column
-        if let val = item.displayName {
-            result.textField?.stringValue = val
-        } else {
-            // if the attribute's value is missing enter a blank string
-            result.textField?.stringValue = "NIX"
+        contacts = [EloContact]();
+        for (_, contact) in contactDic {
+            contacts.append(contact);
+            NSLog("Roster: %@",contact.getJid());
         }
         
-        return result
+    }
+    func cellClick(sender:AnyObject){
+        
     }
 }

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainSplitViewController:NSSplitViewController, RosterViewControllerDelegate {
+class MainSplitViewController:NSSplitViewController {
     
     @IBOutlet weak var chatItem: NSSplitViewItem!
     
@@ -17,12 +17,5 @@ class MainSplitViewController:NSSplitViewController, RosterViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        (rosterItem.viewController as! RosterViewController).delegate = self;
-        
-    }
-    
-    func contactActivated(jid: String) {
-        //TODO
     }
 }

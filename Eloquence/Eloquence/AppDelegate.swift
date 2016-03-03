@@ -18,7 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         DDLog.addLogger(DDTTYLogger.sharedInstance(), withLevel: ddLogLevel);
         
-        EloChatManager.sharedInstance.connectAllAccounts();
+
+        EloConnectionManager.sharedInstance.connectAllAccounts();
         
     }
     
