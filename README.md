@@ -17,16 +17,19 @@ So come on. Join and fork us.
 
 Visit also our website: [www.eloquence-im.org](http://www.eloquence-im.org "Eloquence Website")
 
-Consider donating:
+## Help
+
+If you like what we are doing, please consider donating:
 
 [![Donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RBBFDAWHZT7FG)
 
+## Follow
+
 [Follow us on Twitter](https://twitter.com/EloquenceIM)
+
+[Like us on Facebook](https://facebook.com/eloquenceim)
 
 ## Milestones
 
 * 03.03.2016 First timt it is chatting (MacOSX)
 
-
-
-[Like us on Facebook](https://facebook.com/eloquenceim)
