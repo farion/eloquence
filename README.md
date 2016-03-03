@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/farion/eloquence.svg?branch=master)](https://travis-ci.org/farion/eloquence)
 
-This is an alternative XMPP/Jabber instant messenger for Mac OSX written in Swift. It was created as an alternative to Adium, which is not actively developed anymore and also is based on libpurple, which does not contain the newest XMPP features.
+This is an alternative XMPP/Jabber instant messenger for Mac OSX and iOS written in Swift. It was created as an alternative to Adium, which is not actively developed anymore and also is based on libpurple, which does not contain the newest XMPP features.
 
 OSX and iOS version is developed in parallel.
 
@@ -22,5 +22,11 @@ Consider donating:
 [![Donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RBBFDAWHZT7FG)
 
 [Follow us on Twitter](https://twitter.com/EloquenceIM)
+
+## Milestones
+
+* 03.03.2016 First timt it is chatting (MacOSX)
+
+
 
 [Like us on Facebook](https://facebook.com/eloquenceim)
