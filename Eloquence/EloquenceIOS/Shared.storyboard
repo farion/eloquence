@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Roster View Controller-->
+        <scene sceneID="GKZ-vb-SF0">
+            <objects>
+                <viewController storyboardIdentifier="Roster" id="Vda-Wx-XhL" customClass="RosterViewController" customModule="EloquenceIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kfO-lt-aEh"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Rg-Vi-G2d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U2M-aS-9SS">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lvg-lW-YJs">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RosterCell" id="LSZ-rU-pe9" customClass="RosterCell" customModule="EloquenceIOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LSZ-rU-pe9" id="HXA-vs-Iqp">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIa-Fz-Yof">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="17" y="11" width="42" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="yIa-Fz-Yof"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="yIa-Fz-Yof"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="yIa-Fz-Yof" id="pjK-VL-gRU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Rg-Vi-G2d" firstAttribute="top" secondItem="lvg-lW-YJs" secondAttribute="bottom" id="2V0-Yb-I12"/>
+                            <constraint firstItem="lvg-lW-YJs" firstAttribute="top" secondItem="kfO-lt-aEh" secondAttribute="bottom" id="aAn-2u-H9p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lvg-lW-YJs" secondAttribute="trailing" constant="-20" id="bdL-Va-Wmt"/>
+                            <constraint firstItem="lvg-lW-YJs" firstAttribute="leading" secondItem="U2M-aS-9SS" secondAttribute="leadingMargin" constant="-20" id="nAm-cX-2RS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lvg-lW-YJs"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="aAn-2u-H9p"/>
+                                <exclude reference="bdL-Va-Wmt"/>
+                                <exclude reference="nAm-cX-2RS"/>
+                                <exclude reference="2V0-Yb-I12"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="lvg-lW-YJs"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="aAn-2u-H9p"/>
+                                <include reference="bdL-Va-Wmt"/>
+                                <include reference="nAm-cX-2RS"/>
+                                <include reference="2V0-Yb-I12"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="lvg-lW-YJs" id="XaM-2y-v68"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n85-Y4-r3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.5" y="21"/>
+        </scene>
+        <!--Preferences View Controller-->
+        <scene sceneID="R4P-wz-mNv">
+            <objects>
+                <viewController id="R7U-1T-Upo" userLabel="Preferences View Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q5o-bF-xwK"/>
+                        <viewControllerLayoutGuide type="bottom" id="bOb-vP-OT0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="boe-cp-tPF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lwq-5w-loS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748.5" y="21"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="sxK-85-r8y">
+            <objects>
+                <viewController storyboardIdentifier="Message" id="XSa-PC-EOX" customClass="MessageViewController" customModule="EloquenceIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c9b-Jf-SgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="hxi-lr-WFe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wJI-8q-ioz">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQR-OM-F9u">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="50" y="263" width="69" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="KQR-OM-F9u"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="KQR-OM-F9u"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yhu-Ls-AAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464" y="21"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Sru-Uy-bXi">
+            <objects>
+                <viewController id="Xa3-iG-Sf7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bbS-Ho-DNG"/>
+                        <viewControllerLayoutGuide type="bottom" id="KbP-fq-YdU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bK0-6l-7Jv">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdI-wU-IXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

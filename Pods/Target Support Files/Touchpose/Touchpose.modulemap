@@ -1,0 +1,6 @@
+framework module Touchpose {
+  umbrella header "Touchpose-umbrella.h"
+
+  export *
+  module * { export * }
+}

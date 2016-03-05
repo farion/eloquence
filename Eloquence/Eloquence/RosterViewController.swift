@@ -11,6 +11,7 @@ import XMPPFramework
 
 
 
+@IBOutlet weak var tableView: UITableView!
 
 class RosterViewController: NSViewController, NSTableViewDelegate {
 

@@ -16,6 +16,9 @@ target 'EloquenceIOS' do
   pod 'KeychainSwift', '~> 3.0'
   pod 'KissXML', :git => 'https://github.com/farion/KissXML.git'
   pod 'XMPPFramework', :git => 'https://github.com/farion/XMPPFramework.git'
+  pod 'ODRefreshControl','~> 1.2'
+  pod 'Touchpose','~> 1.2.0'
+  pod 'WYPopoverController','~> 0.3.9'
 end
 
 workspace 'Eloquence'

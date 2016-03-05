@@ -23,6 +23,9 @@ PODS:
     - KissXML/Core
   - KissXML/Standard (5.0.3):
     - KissXML/Core
+  - ODRefreshControl (1.2)
+  - Touchpose (1.2.0)
+  - WYPopoverController (0.3.9)
   - XMPPFramework (3.6.7):
     - XMPPFramework/All (= 3.6.7)
   - XMPPFramework/All (3.6.7):
@@ -178,6 +181,9 @@ DEPENDENCIES:
   - CocoaLumberjack (~> 2.0)
   - KeychainSwift (~> 3.0)
   - KissXML (from `https://github.com/farion/KissXML.git`)
+  - ODRefreshControl (~> 1.2)
+  - Touchpose (~> 1.2.0)
+  - WYPopoverController (~> 0.3.9)
   - XMPPFramework (from `https://github.com/farion/XMPPFramework.git`)
 
 EXTERNAL SOURCES:
@@ -200,6 +206,9 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   KeychainSwift: 0a4214c910423543a42b0f30f25987d46178b6a5
   KissXML: bdaa9a4a1739d114303b2868c34b3025f19997ae
+  ODRefreshControl: 907e6149d72dde488d5917ccfabee5bd8d711a20
+  Touchpose: 219ef3dc3d1932b384ea502ec6df2f003667129b
+  WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
   XMPPFramework: e5105103b6394a5713e18f4b745bb16df27855ae
 
 COCOAPODS: 0.39.0

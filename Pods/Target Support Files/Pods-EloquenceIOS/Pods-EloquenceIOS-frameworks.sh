@@ -89,6 +89,9 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-EloquenceIOS/KeychainSwift.framework"
   install_framework "Pods-EloquenceIOS/KissXML.framework"
   install_framework "Pods-EloquenceIOS/XMPPFramework.framework"
+  install_framework "Pods-EloquenceIOS/ODRefreshControl.framework"
+  install_framework "Pods-EloquenceIOS/Touchpose.framework"
+  install_framework "Pods-EloquenceIOS/WYPopoverController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-EloquenceIOS/CocoaAsyncSocket.framework"
@@ -96,4 +99,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-EloquenceIOS/KeychainSwift.framework"
   install_framework "Pods-EloquenceIOS/KissXML.framework"
   install_framework "Pods-EloquenceIOS/XMPPFramework.framework"
+  install_framework "Pods-EloquenceIOS/ODRefreshControl.framework"
+  install_framework "Pods-EloquenceIOS/Touchpose.framework"
+  install_framework "Pods-EloquenceIOS/WYPopoverController.framework"
 fi

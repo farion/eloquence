@@ -6,7 +6,7 @@
 //  Copyright © 2016 TRIGONmedia. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 import XMPPFramework
 
 class EloContact:NSObject {

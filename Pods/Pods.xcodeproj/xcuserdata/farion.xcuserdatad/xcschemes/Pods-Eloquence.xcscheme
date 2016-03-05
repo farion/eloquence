@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2F9BE9516595FDACC378A5C1'
+               BlueprintIdentifier = '74286CBD812DEDC592291C13'
                BlueprintName = 'Pods-Eloquence'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Eloquence.framework'>

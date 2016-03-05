@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ODRefreshControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Eloquence-CocoaAsyncSocket.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -69,10 +74,45 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Touchpose.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>WYPopoverController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0A37D48B9BBBF30D48E8CA8DEFEE3BA4</key>
+		<key>02ACA1D8F223CEE44BE989C2BAA6DC4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>15A63D38D51AC75C2BC75C602A433BB8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2E4F6C3F6DA8E80EEC7483AFF4C31DCC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>33863217222516E820C42E2E8044EB22</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A401E110EE87096FCBB8767454BCEE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4741D6D23311B6B3C35E71E98B9E16B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,22 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6FE10AFC5E9561C25C1EF7760B492CDD</key>
+		<key>6DB89283AAA11D82164EC9DCD92D9D1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C174A72AA9AF24DF8FA5FA7477ACD28</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>840698C858C5040F5B5E2FB751F60538</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9C2ED08896584AC0F45E5682BEFFBB86</key>
+		<key>96F0D2BC75C835EA4980D2B06195C900</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,7 +157,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE89AFC7DEE26BE9E574A882F5F3F97D</key>
+		<key>DF0F4BD233B570615C73B865006B981C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
