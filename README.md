@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/farion/eloquence.svg?branch=master)](https://travis-ci.org/farion/eloquence)
 
-This is an alternative XMPP/Jabber instant messenger for Mac OSX and iOS written in Swift. It was created as an alternative to Adium, which is not actively developed anymore and also is based on libpurple, which does not contain the newest XMPP features.
+This is an alternative XMPP/Jabber instant messenger for Mac OSX and iOS written in Swift. It was created as an alternative to Adium, which is not actively developed anymore and also is based on libpurple, which does not contain the newest XMPP features. Also it adresses the lack of a good client for iOS ... with mod_push, which is available for ejabberd it makes sense to do that now.
 
 OSX and iOS version is developed in parallel.
 
