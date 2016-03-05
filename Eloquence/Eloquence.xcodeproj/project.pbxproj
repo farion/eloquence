@@ -40,6 +40,7 @@
 		BFD895DB1C8A560E00A6CA05 /* chevron-left.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD895D81C8A560E00A6CA05 /* chevron-left.png */; };
 		BFD895DC1C8A560E00A6CA05 /* chevron-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD895D91C8A560E00A6CA05 /* chevron-left@2x.png */; };
 		BFD895DD1C8A560E00A6CA05 /* chevron-left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD895DA1C8A560E00A6CA05 /* chevron-left@3x.png */; };
+		BFD895DF1C8A5B2B00A6CA05 /* PadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD895DE1C8A5B2B00A6CA05 /* PadViewController.swift */; };
 		BFD8BB341C86C8ED008CC251 /* EloChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8BB331C86C8ED008CC251 /* EloChat.swift */; };
 		BFD8BB361C86C979008CC251 /* EloRoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8BB351C86C979008CC251 /* EloRoster.swift */; };
 		BFD8BB3A1C882326008CC251 /* EloGlobalEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8BB391C882326008CC251 /* EloGlobalEvents.swift */; };
@@ -148,6 +149,7 @@
 		BFD895D81C8A560E00A6CA05 /* chevron-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron-left.png"; sourceTree = "<group>"; };
 		BFD895D91C8A560E00A6CA05 /* chevron-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron-left@2x.png"; sourceTree = "<group>"; };
 		BFD895DA1C8A560E00A6CA05 /* chevron-left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron-left@3x.png"; sourceTree = "<group>"; };
+		BFD895DE1C8A5B2B00A6CA05 /* PadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PadViewController.swift; sourceTree = "<group>"; };
 		BFD8BB331C86C8ED008CC251 /* EloChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EloChat.swift; sourceTree = "<group>"; };
 		BFD8BB351C86C979008CC251 /* EloRoster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EloRoster.swift; sourceTree = "<group>"; };
 		BFD8BB371C8821C6008CC251 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				BFD895C11C88FD2F00A6CA05 /* RosterViewController.swift */,
 				BFD895D61C8A517600A6CA05 /* MessageViewController.swift */,
 				BFD895C31C896D8E00A6CA05 /* PhoneMainViewController.swift */,
+				BFD895DE1C8A5B2B00A6CA05 /* PadViewController.swift */,
 			);
 			path = EloquenceIOS;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 				BFEC359B1C83A91C005CB593 /* EloAccount.swift in Sources */,
 				BFEC359C1C83A91C005CB593 /* EloConnection.swift in Sources */,
 				BFD895C41C896D8E00A6CA05 /* PhoneMainViewController.swift in Sources */,
+				BFD895DF1C8A5B2B00A6CA05 /* PadViewController.swift in Sources */,
 				BFEA5A061C88F26000EF5304 /* EloMessage.swift in Sources */,
 				BFD895D71C8A517600A6CA05 /* MessageViewController.swift in Sources */,
 				BFEC359D1C83A91C005CB593 /* EloConnectionManager.swift in Sources */,
