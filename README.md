@@ -9,7 +9,7 @@ OSX and iOS version is developed in parallel.
 Thanks to the [XMPPFramework](https://github.com/robbiehanson/XMPPFramework "XMPPFramework") which is the base of Eloquence.
 
 It is not planned to develop clients for other platforms.
-As for Android there is the outstanding [Conversations](https://conversations.im "Conversations") and for Windows and Linux there is [Gajim](https://gajim.org/ "Gajim").
+As for Android there is the outstanding [Conversations](https://conversations.im "Conversations") and for Windows and Linux there is at least standing [Gajim](https://gajim.org/ "Gajim").
 
 It is also not planned to add other protocols beneath XMPP.
 
