@@ -8,14 +8,26 @@
 
 import Foundation
 import UIKit
+import WYPopoverController;
+import XMPPFramework
 
-class PhoneMainViewController:UIViewController, EloGlobalEventActivateContactDelegate{
+class PhoneMainViewController:UIViewController, WYPopoverControllerDelegate, EMPreferencesViewControllerDelegate, EMAccountsViewControllerDelegate{
     
     @IBOutlet weak var mainView: UIView!
     
     @IBOutlet weak var secondView: UIView!
     
     @IBOutlet weak var backButton: UIBarButtonItem!
+    
+    @IBOutlet weak var toolbar: UINavigationBar!
+    
+    
+    @IBOutlet weak var titleItem: UINavigationItem!
+    
+    var settingsPopoverController:WYPopoverController?;
+    
+    var preferencesController:EMPreferencesViewController?;
+    var accountsController:EMAccountsViewController?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +49,10 @@ class PhoneMainViewController:UIViewController, EloGlobalEventActivateContactDel
         secondView.hidden = true;
         backButton.enabled = false;
 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAccounts", name: EMNotification.SHOW_ACCOUNTS, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPreferences", name: EMNotification.SHOW_PREFERENCES, object: nil);
         
-        EloGlobalEvents.sharedInstance.registerDelegate(self);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showMessage:", name: EloNotification.ACTIVATE_CONTACT, object: nil)
     }
     
     @IBAction func backClicked(sender: AnyObject) {
@@ -50,13 +64,59 @@ class PhoneMainViewController:UIViewController, EloGlobalEventActivateContactDel
             },
             completion: { finished in
                 self.backButton.enabled = false;
+                self.titleItem.title = "Eloquence"
         })
 
 
     }
     
-    /** DELEGATE **/
-    func contactActivated(contact: EloContact) {
+    func close(){
+        settingsPopoverController!.dismissPopoverAnimated(false, completion: {
+            self.popoverControllerDidDismissPopover(self.settingsPopoverController!);
+        });
+    }
+    
+    @IBAction func menuClicked(sender: AnyObject) {
+        
+        if (settingsPopoverController == nil)
+        {
+            let btn = sender as! UIBarButtonItem;
+        
+            let view = toolbar.subviews[3];
+        
+            
+            let settings = UIStoryboard.init(name: "Shared", bundle: nil).instantiateViewControllerWithIdentifier("GlobalMenu") ;
+            
+            settingsPopoverController = WYPopoverController(contentViewController: settings);
+            settingsPopoverController!.delegate = self;
+            settingsPopoverController!.passthroughViews = [btn];
+            settingsPopoverController!.popoverLayoutMargins = UIEdgeInsetsMake(10, 10, 10, 10);
+            settingsPopoverController!.wantsDefaultContentAppearance = false;
+            settingsPopoverController!.theme.fillTopColor = UIColor(white: 1, alpha: 1);
+  
+            settingsPopoverController!.presentPopoverFromRect(
+                view.bounds,
+                inView: view,
+                permittedArrowDirections:WYPopoverArrowDirection.Any,
+                animated:true);
+            
+            }
+        else
+        {
+            close();
+        }
+
+        
+        
+    }
+    
+
+    func showMessage(notification: NSNotification) {
+        
+        let user = notification.object as! XMPPUserCoreDataStorageObject
+        
+        titleItem.title = user.displayName
+        
         if(secondView.hidden){
             secondView.hidden = false;
             secondView.frame.origin.x = secondView.frame.width;
@@ -77,4 +137,52 @@ class PhoneMainViewController:UIViewController, EloGlobalEventActivateContactDel
     func didReceiveChat(msg: EloMessage) {
 
     }
+    
+    
+    
+    func popoverControllerDidDismissPopover(controller:WYPopoverController?) {
+        if(settingsPopoverController != nil){
+            settingsPopoverController!.dismissPopoverAnimated(true);
+            settingsPopoverController!.delegate = nil;
+            settingsPopoverController = nil;
+        }
+    }
+    
+    //pragma EMPreferencesViewControllerDelegate
+    func didClickDoneInPreferencesViewController(){
+        if(preferencesController != nil){
+            preferencesController!.dismissViewControllerAnimated(true, completion: nil)
+            preferencesController!.delegate = nil;
+            preferencesController = nil;
+        }
+    }
+    
+    //pragma EMAccountsViewControllerDelegate
+    func didClickDoneInAccountsViewController(){
+        if(accountsController != nil){
+            accountsController!.dismissViewControllerAnimated(true, completion: nil)
+            accountsController!.delegate = nil;
+            accountsController = nil;
+        }
+    }
+    
+    //private
+    
+    func showAccounts() {
+        popoverControllerDidDismissPopover(settingsPopoverController);
+        
+        accountsController = UIStoryboard.init(name: "Shared", bundle: nil).instantiateViewControllerWithIdentifier("Accounts") as? EMAccountsViewController;
+        accountsController!.delegate = self;
+        self.presentViewController(accountsController!, animated: true, completion: {})
+    }
+    
+    func showPreferences() {
+        popoverControllerDidDismissPopover(settingsPopoverController);
+        
+        preferencesController = UIStoryboard.init(name: "Shared", bundle: nil).instantiateViewControllerWithIdentifier("Preferences") as? EMPreferencesViewController;
+        preferencesController!.delegate = self;
+        self.presentViewController(preferencesController!, animated: true, completion: {})
+    }
+    
+
 }

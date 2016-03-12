@@ -23,12 +23,19 @@ class EloAccount: NSManagedObject {
     
     func isAutoConnect() -> Bool {
         
-        NSLog("isauto %@",autoconnect!);
-        
         if(autoconnect == nil){
-            return false;
+            return true;
         }
         return (autoconnect?.boolValue)!;
+    }
+    
+    func setAutoConnect(autoconnect:Bool){
+        if(autoconnect){
+            self.autoconnect = 1
+        } else {
+            self.autoconnect = 0
+        }
+        DataController.sharedInstance.save()
     }
     
     
@@ -84,5 +91,6 @@ class EloAccount: NSManagedObject {
         //directly get again, to trigger permission dialog
         keychain.get(keychainPasswordPrefix + safeJid);
     }
+    
     
 }

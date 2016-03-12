@@ -16,12 +16,15 @@ class MessageViewController: NSViewController, EloGlobalEventActivateContactDele
     
     
 
+    @IBOutlet var bottomLayoutGuid: NSObject!
     @IBOutlet weak var mainInput: NSTextField!
     @IBOutlet weak var sendButton: NSButton!
     @IBOutlet weak var toJid: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        @IBAction func clickSend(sender: AnyObject) {
+        }
         NSLog("Load message controller");
         EloGlobalEvents.sharedInstance.registerDelegate(self);
         
@@ -32,6 +35,14 @@ class MessageViewController: NSViewController, EloGlobalEventActivateContactDele
     @IBAction func clickSendButton(sender: AnyObject) {
 
         let text = mainInput.stringValue;
+        @IBAction func clickSend(sender: AnyObject) {
+        }
+        @IBAction func clickSend(sender: AnyObject) {
+        }
+        @IBAction func clickSend(sender: AnyObject) {
+        }
+        @IBAction func clickSend(sender: AnyObject) {
+        }
         mainInput.stringValue = "";
         let msg = EloMessage();
         msg.text = "Ich: " + text;

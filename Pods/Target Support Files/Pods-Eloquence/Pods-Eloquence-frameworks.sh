@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Eloquence/CocoaLumberjack.framework"
   install_framework "Pods-Eloquence/KeychainSwift.framework"
   install_framework "Pods-Eloquence/KissXML.framework"
+  install_framework "Pods-Eloquence/SwiftyUserDefaults.framework"
   install_framework "Pods-Eloquence/XMPPFramework.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -97,5 +98,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Eloquence/CocoaLumberjack.framework"
   install_framework "Pods-Eloquence/KeychainSwift.framework"
   install_framework "Pods-Eloquence/KissXML.framework"
+  install_framework "Pods-Eloquence/SwiftyUserDefaults.framework"
   install_framework "Pods-Eloquence/XMPPFramework.framework"
 fi

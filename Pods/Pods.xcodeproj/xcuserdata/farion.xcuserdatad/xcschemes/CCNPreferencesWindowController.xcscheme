@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CE68F9B229031C7D557E3ADF'
+               BlueprintIdentifier = 'D8CA897E6502D63403400804'
                BlueprintName = 'CCNPreferencesWindowController'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'CCNPreferencesWindowController.framework'>

@@ -14,5 +14,6 @@ public struct EloNotification {
     static let CONNECTION_ONLINE = PREFIX + "connectionOnline"
     static let CONNECTION_OFFLINE = PREFIX + "connectionOffline"
     static let ROSTER_CHANGED = PREFIX + "rosterChanged"
+    static let ACTIVATE_CONTACT = PREFIX + "activateContact"
     
 }

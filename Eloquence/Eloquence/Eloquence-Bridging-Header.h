@@ -9,3 +9,4 @@
 #import "XMPP.h"
 #import "XMPPLogging.h"
 #import "CCNPreferencesWindowController.h"
+#import "EloXMPPRosterCoreDataStorage.h"

@@ -21,8 +21,10 @@ class EloConnectionManager: MulticastDelegateContainer {
     typealias DelegateType = EloConnectionManagerDelegate;
     var multicastDelegate = [EloConnectionManagerDelegate]()
     
-    var connections = [NSManagedObjectID:EloConnection]();
+    var connections = [String:EloConnection]();
     
+    //TODO threadsafe
+
     func connectAllAccounts(){
         
         let accounts = DataController.sharedInstance.getAccounts();
@@ -32,9 +34,9 @@ class EloConnectionManager: MulticastDelegateContainer {
         NSLog("accountcount: %d",accounts.count);
         for account in accounts {
                     NSLog("%@",account.getJid()!);
-            connections[account.objectID] = EloConnection(account: account);
+            connections[account.getJid()!] = EloConnection(account: account);
             if(account.isAutoConnect()){
-                connections[account.objectID]!.connect();
+                connections[account.getJid()!]!.connect();
             }
         }
     }
@@ -42,6 +44,10 @@ class EloConnectionManager: MulticastDelegateContainer {
     func getChat(contact: EloContact) -> EloChat {
         let (_,connection) = connections.first!
         return EloChat(jid: contact.jid, connection: connection); //TODO
+    }
+    
+    func getConnectionByJid(jid:String) -> EloConnection? {
+        return connections[jid];
     }
     
     

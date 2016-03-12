@@ -14,12 +14,13 @@ protocol EloConnectionDelegate: NSObjectProtocol {
     
 }
 
-class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, MulticastDelegateContainer {
+class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabilitiesDelegate, MulticastDelegateContainer {
     
     var xmppStream = XMPPStream();
     var account:EloAccount;
-    var xmppRosterStorage = XMPPRosterCoreDataStorage()
     var xmppRoster: XMPPRoster?;
+    var xmppCapabilities: XMPPCapabilities?
+    var xmppvCardTempModule: XMPPvCardTempModule?;
 
     typealias DelegateType = EloConnectionDelegate;
     var multicastDelegate = [EloConnectionDelegate]()
@@ -27,12 +28,40 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, MulticastD
     init(account:EloAccount){
         self.account = account;
         super.init();
-        xmppRoster = XMPPRoster(rosterStorage: xmppRosterStorage);
+        xmppRoster = XMPPRoster(rosterStorage: EloXMPPRosterCoreDataStorage.sharedInstance())
+//        xmppvCardTempModule = XMPPvCardTempModule.init(withvCardStorage: XMPPvCardCoreDataStorage.sharedInstance())
+//        xmppvCardTempModule!.activate(xmppStream)
         xmppRoster!.autoFetchRoster = true;
         xmppRoster!.autoAcceptKnownPresenceSubscriptionRequests = true;
-        xmppStream.addDelegate(self, delegateQueue: dispatch_get_main_queue());
+        xmppStream.addDelegate(self, delegateQueue:  dispatch_get_main_queue());
         xmppRoster!.activate(xmppStream);
         xmppRoster!.addDelegate(self, delegateQueue: dispatch_get_main_queue());
+        
+        
+        xmppCapabilities = XMPPCapabilities(capabilitiesStorage: XMPPCapabilitiesCoreDataStorage.sharedInstance());
+        //get server capabilities => XEP0030
+        xmppCapabilities!.autoFetchMyServerCapabilities = true;
+        xmppCapabilities!.activate(xmppStream)
+        xmppCapabilities!.addDelegate(self, delegateQueue: dispatch_get_main_queue());
+     
+        
+    }
+    
+    func getServerJid() -> XMPPJID {
+        let myJid = xmppStream.myJID
+        return XMPPJID.jidWithUser(nil, domain: myJid.domain, resource: nil)
+    }
+    
+    func getCapabilities() -> [String] {
+        let query = XMPPCapabilitiesCoreDataStorage.sharedInstance().capabilitiesForJID(getServerJid() , xmppStream: xmppStream)
+        
+        var capabilities = [String]();
+    
+        for feature in query.elementsForName("feature") {
+            capabilities.append((feature as! NSXMLElement).attributeStringValueForName("var"))
+        }
+        
+        return capabilities;
     }
     
     
@@ -261,17 +290,13 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, MulticastD
     
     func xmppRosterDidEndPopulating(sender: XMPPRoster!) {
         NSLog("xmppRosterDidEndPopulating");
-        NSNotificationCenter.defaultCenter().postNotificationName(EloNotification.ROSTER_CHANGED, object: self);
     }
     
     func xmppRoster(sender: XMPPRoster!, didReceiveRosterPush iq: XMPPIQ!) {
-        NSLog("xmppRosterdidReceiveRosterPush");
-        NSNotificationCenter.defaultCenter().postNotificationName(EloNotification.ROSTER_CHANGED, object: self);
     }
     
     func xmppRoster(sender: XMPPRoster!, didReceiveRosterItem item: NSXMLElement!) {
-        NSLog("xmppRosterdidReceiveRosterPush");
-        NSNotificationCenter.defaultCenter().postNotificationName(EloNotification.ROSTER_CHANGED, object: self);
+
     }
 
     func xmppRoster(sender: XMPPRoster!, didReceivePresenceSubscriptionRequest presence: XMPPPresence!) {
@@ -281,4 +306,9 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, MulticastD
     func xmppRosterDidBeginPopulating(sender: XMPPRoster!, withVersion version: String!) {
         NSLog("xmppRosterdidReceivePresenceSubscriptionRequest");
     }
+    
+    func xmppCapabilities(sender: XMPPCapabilities!, didDiscoverCapabilities caps: DDXMLElement!, forJID jid: XMPPJID!){
+        NSLog("xmppCapabilities %@",jid.bare());
+    }
+    
 }
