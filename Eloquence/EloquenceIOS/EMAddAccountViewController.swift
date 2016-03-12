@@ -24,12 +24,36 @@ class EMAddAccountViewController:UIViewController {
     
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var infoText: UILabel!
     
     override func viewWillAppear(animated: Bool) {
         if(account != nil){
+            
+            let safeAccount = account!
+            
             titleBar!.items![0].title = "Account Details"
-            jidField.text = account!.getJid()
-            passwordField.text = account!.getPassword()
+            jidField.text = safeAccount.getJid()
+            passwordField.text = safeAccount.getPassword()
+            
+            var infoTextString = "Server Info";
+                
+            let capabilities = EloCapabilities().getCapabilities(safeAccount)
+                
+            for capability in capabilities {
+                var supported = "No"
+                if(capability.supportedByServer){ supported = "Yes" }
+                infoTextString.appendContentsOf("\n" + capability.xep + " " + capability.name + "\t" + supported)
+            }
+            
+            infoText.sizeToFit()
+            if(capabilities.count == 0){
+                infoText.numberOfLines = 2
+                infoTextString.appendContentsOf("Account currently offline")
+            }else{
+                infoText.numberOfLines = 1 + capabilities.count
+            }
+            infoText.text = infoTextString
+            
         }else{
              titleBar!.items![0].title = "New Account"
         }

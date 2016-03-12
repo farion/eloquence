@@ -50,6 +50,9 @@ class EloConnectionManager: MulticastDelegateContainer {
         return connections[jid];
     }
     
+    func getConnection(account:EloAccount) -> EloConnection? {
+        return connections[account.getJid()!];
+    }
     
 }
 // invokeDelegate { $0.method() }

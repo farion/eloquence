@@ -414,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ico-H5-AKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1529.0666666666666" y="37.866666666666667"/>
+            <point key="canvasLocation" x="1529" y="19"/>
         </scene>
         <!--Add Account View Controller-->
         <scene sceneID="LUM-Ef-5lZ">
@@ -425,7 +425,7 @@
                         <viewControllerLayoutGuide type="bottom" id="k3H-0B-9qg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0c6-fV-SfK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ro7-os-htj">
@@ -454,8 +454,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="je0-Jx-AqO">
-                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="je0-Jx-AqO">
+                                <rect key="frame" x="-4" y="64" width="328" height="736"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFQ-ja-leI">
                                         <rect key="frame" x="14" y="20" width="300" height="21"/>
@@ -589,6 +589,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kq7-0Y-k12">
+                                        <rect key="frame" x="20" y="471" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="AKH-KQ-jpk" firstAttribute="leading" secondItem="FRD-FC-YKs" secondAttribute="trailing" constant="20" id="5rV-yp-bnn"/>
@@ -599,6 +605,8 @@
                                     <constraint firstItem="FRD-FC-YKs" firstAttribute="top" secondItem="8pr-K2-FZz" secondAttribute="bottom" constant="20" id="CSs-ez-Aec"/>
                                     <constraint firstItem="aAs-lY-HGY" firstAttribute="top" secondItem="AKH-KQ-jpk" secondAttribute="bottom" constant="8" id="G90-JO-dqL"/>
                                     <constraint firstItem="9ol-hO-AXh" firstAttribute="top" secondItem="FOd-gd-eEE" secondAttribute="bottom" constant="20" id="G9h-eN-EsB"/>
+                                    <constraint firstAttribute="bottom" secondItem="kq7-0Y-k12" secondAttribute="bottom" constant="20" id="K8P-j2-lCC"/>
+                                    <constraint firstAttribute="trailing" secondItem="kq7-0Y-k12" secondAttribute="trailing" constant="20" id="NwU-Pz-Vwp"/>
                                     <constraint firstItem="9ol-hO-AXh" firstAttribute="centerX" secondItem="je0-Jx-AqO" secondAttribute="centerX" id="Ojj-BR-CIg"/>
                                     <constraint firstItem="OHD-zG-SBz" firstAttribute="top" secondItem="39F-RY-5uC" secondAttribute="bottom" constant="20" id="QDG-ea-90B"/>
                                     <constraint firstItem="39F-RY-5uC" firstAttribute="centerX" secondItem="je0-Jx-AqO" secondAttribute="centerX" id="RDa-I3-MB8"/>
@@ -609,12 +617,14 @@
                                     <constraint firstItem="yVG-A7-Xj2" firstAttribute="centerX" secondItem="je0-Jx-AqO" secondAttribute="centerX" id="boY-ar-MKW"/>
                                     <constraint firstItem="Kca-4A-8vP" firstAttribute="top" secondItem="yVG-A7-Xj2" secondAttribute="bottom" constant="25" id="c7Q-d8-AEa"/>
                                     <constraint firstItem="FOd-gd-eEE" firstAttribute="top" secondItem="0we-4v-B7Q" secondAttribute="bottom" constant="8" id="d3W-k6-WBr"/>
+                                    <constraint firstItem="kq7-0Y-k12" firstAttribute="top" secondItem="m3E-OO-AFG" secondAttribute="bottom" constant="20" id="dOZ-BA-ToH"/>
                                     <constraint firstItem="WNs-dc-42i" firstAttribute="leading" secondItem="Kca-4A-8vP" secondAttribute="trailing" constant="16" id="e5O-VW-n5O"/>
                                     <constraint firstItem="AKH-KQ-jpk" firstAttribute="top" secondItem="8pr-K2-FZz" secondAttribute="bottom" constant="20" id="eYf-BV-MPm"/>
                                     <constraint firstItem="fFQ-ja-leI" firstAttribute="centerX" secondItem="je0-Jx-AqO" secondAttribute="centerX" id="fBA-0f-lLb"/>
                                     <constraint firstItem="yVG-A7-Xj2" firstAttribute="top" secondItem="OHD-zG-SBz" secondAttribute="bottom" constant="8" id="jO3-13-yMe"/>
                                     <constraint firstItem="FRD-FC-YKs" firstAttribute="centerX" secondItem="je0-Jx-AqO" secondAttribute="centerX" constant="-58" id="jmG-Vk-ng0"/>
                                     <constraint firstItem="m3E-OO-AFG" firstAttribute="top" secondItem="FRD-FC-YKs" secondAttribute="bottom" constant="8" id="jsc-O0-a36"/>
+                                    <constraint firstItem="kq7-0Y-k12" firstAttribute="leading" secondItem="je0-Jx-AqO" secondAttribute="leading" constant="20" id="kJl-Kp-WNt"/>
                                     <constraint firstItem="aAs-lY-HGY" firstAttribute="leading" secondItem="m3E-OO-AFG" secondAttribute="trailing" constant="20" id="nZc-hD-vm3"/>
                                     <constraint firstItem="WNs-dc-42i" firstAttribute="top" secondItem="yVG-A7-Xj2" secondAttribute="bottom" constant="30" id="qRm-Co-VPx"/>
                                     <constraint firstItem="8pr-K2-FZz" firstAttribute="top" secondItem="9ol-hO-AXh" secondAttribute="bottom" constant="8" id="r7K-oZ-WKY"/>
@@ -633,7 +643,10 @@
                             <constraint firstItem="je0-Jx-AqO" firstAttribute="leading" secondItem="0c6-fV-SfK" secondAttribute="leadingMargin" constant="-20" id="kXK-WH-2Y1"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="800"/>
                     <connections>
+                        <outlet property="infoText" destination="kq7-0Y-k12" id="HH6-6M-sGQ"/>
                         <outlet property="jidField" destination="39F-RY-5uC" id="Rcb-BW-lWh"/>
                         <outlet property="passwordField" destination="yVG-A7-Xj2" id="eaa-ez-0Oi"/>
                         <outlet property="titleBar" destination="ro7-os-htj" id="bj8-Sz-OGo"/>
@@ -641,7 +654,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JkF-KW-j0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1879.4666666666667" y="37.866666666666667"/>
+            <point key="canvasLocation" x="1887" y="135"/>
         </scene>
     </scenes>
     <resources>

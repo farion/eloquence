@@ -104,10 +104,7 @@ class PhoneMainViewController:UIViewController, WYPopoverControllerDelegate, EMP
         else
         {
             close();
-        }
-
-        
-        
+        }    
     }
     
 

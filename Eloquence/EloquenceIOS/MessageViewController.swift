@@ -21,10 +21,7 @@ class MessageViewController:JSQMessagesViewController, UIActionSheetDelegate, JS
         super.viewDidLoad()
         
         self.title = "";
-        
-        let size = self.collectionView!.frame.size;
-            self.view!.frame = CGRectMake(0,0,200, 1000);
-        
+
         /**
         *  You MUST set your senderId and display name
         */
@@ -33,10 +30,12 @@ class MessageViewController:JSQMessagesViewController, UIActionSheetDelegate, JS
         
  //       self.inputToolbar.contentView.textView.pasteDelegate = self;
 
-        
+        self.view!.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadChat:", name: EloNotification.ACTIVATE_CONTACT, object: nil)
     }
+    
+    
     
     func loadChat(notification:NSNotification){
 //        let user = notification.object as! XMPPUserCoreDataStorageObject

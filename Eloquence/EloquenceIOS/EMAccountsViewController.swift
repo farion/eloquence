@@ -88,15 +88,7 @@ class EMAccountsViewController: UIViewController, UITableViewDelegate, UITableVi
         addController!.delegate = self;
         addController!.account = data[indexPath.row];
         self.presentViewController(addController!, animated: true, completion: {})
-        
-        //TODO ui
-        let connection = EloConnectionManager.sharedInstance.getConnectionByJid(data[indexPath.row].getJid()!);
-        
-        NSLog("Tapped %@",data[indexPath.row].getJid()! );
-        for capability in connection!.getCapabilities() {
-            NSLog("%@",capability);
-        }
-        
+                
     }
 
     

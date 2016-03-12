@@ -92,5 +92,4 @@ class EloAccount: NSManagedObject {
         keychain.get(keychainPasswordPrefix + safeJid);
     }
     
-    
 }
