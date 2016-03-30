@@ -59,6 +59,7 @@ class RosterViewController: NSViewController , EloRosterDelegate, JNWCollectionV
     }
     
     //Mark: JNWCollectionViewDataSource
+    
     func collectionView(collectionView: JNWCollectionView!, numberOfItemsInSection section: Int) -> UInt {
         return UInt(roster.numberOfRows());
     }

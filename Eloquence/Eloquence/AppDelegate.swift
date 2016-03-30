@@ -11,6 +11,8 @@ import CocoaLumberjack
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    private let preferences = CCNPreferencesWindowController();
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
         
@@ -18,6 +20,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         DDLog.addLogger(DDTTYLogger.sharedInstance(), withLevel: ddLogLevel);
         
+        //TODO move to subclass?
+        preferences.centerToolbarItems = true;
+        preferences.setPreferencesViewControllers([
+            PreferencesGeneralViewController(window: preferences.window!)!,
+            PreferencesAccountViewController(window: preferences.window!)!
+            ])
 
         EloConnections.sharedInstance.connectAllAccounts();
         
@@ -34,7 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     @IBAction func preferenceMenuItemClicked(sender: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName(EloConstants.SHOW_PREFERENCES, object: self);
+        preferences.showPreferencesWindow();
     }
     
 }

@@ -35,23 +35,23 @@
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <scrollView misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2p-uG-K9v" customClass="JNWCollectionView">
+                        <scrollView misplaced="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2p-uG-K9v" customClass="JNWCollectionView">
                             <rect key="frame" x="0.0" y="-65" width="450" height="308"/>
                             <clipView key="contentView" id="Soo-Uj-sck">
-                                <rect key="frame" x="1" y="1" width="448" height="306"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="308"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3zK-BB-QeW">
-                                        <rect key="frame" x="-13" y="120" width="154" height="162"/>
+                                        <rect key="frame" x="-13" y="122" width="154" height="162"/>
                                     </view>
                                 </subviews>
                             </clipView>
                             <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="VfG-1q-UVI">
-                                <rect key="frame" x="1" y="291" width="448" height="16"/>
+                                <rect key="frame" x="0.0" y="292" width="450" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                             <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="lVn-cS-SaZ">
-                                <rect key="frame" x="433" y="1" width="16" height="306"/>
+                                <rect key="frame" x="435" y="0.0" width="15" height="308"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                         </scrollView>

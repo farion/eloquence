@@ -38,7 +38,7 @@ class MessageViewController: NSViewController, JNWCollectionViewDelegate, JNWCol
         
         scrollView.delegate = self
         scrollView.dataSource = self
-        scrollView.reloadData()
+        reloadAndScroll()
         
     }
 
@@ -68,6 +68,24 @@ class MessageViewController: NSViewController, JNWCollectionViewDelegate, JNWCol
         
     }
     
+    private func reloadAndScroll() {
+        scrollView.reloadData()
+        scrollView.scrollToItemAtIndexPath( NSIndexPath(forItem: chat.numberOfRows()-1, inSection: 0) , atScrollPosition: JNWCollectionViewScrollPosition.Top, animated: true)
+    }
+    
+    //Mark: EloChatDelegate
+    func chatWillChangeContent() {
+        
+    }
+    
+    func chat(didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: EloFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        
+    }
+    func chatDidChangeContent() {
+
+        reloadAndScroll();
+    }
+    
     
     //Mark: JNWCollectionViewDelegate
     func collectionView(collectionView: JNWCollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
@@ -86,7 +104,7 @@ class MessageViewController: NSViewController, JNWCollectionViewDelegate, JNWCol
         
         let cell = scrollView.dequeueReusableCellWithIdentifier("textMessageCell") as! EXTextMessageCell;
         
-        cell.setItem(message);
+        cell.setItem(EloMessage(message));
         
         return cell;
     }
