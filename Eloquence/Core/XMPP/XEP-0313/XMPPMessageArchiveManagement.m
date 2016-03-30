@@ -223,7 +223,12 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
 {
     XMPPLogTrace();
     
-    [xmppMessageArchiveManagementStorage archiveMessage:[message forwardedMessage] outgoing:NO xmppStream:sender];
+    if([message forwardedMessage] != nil){
+        [xmppMessageArchiveManagementStorage archiveMessage: [message forwardedMessage] outgoing:NO xmppStream:sender];
+    }else{
+        [xmppMessageArchiveManagementStorage archiveMessage: message outgoing:NO xmppStream:sender];
+    }
+    
 }
 
 @end

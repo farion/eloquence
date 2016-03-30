@@ -344,14 +344,15 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
     NSError *error = nil;
     NSArray *results = [moc executeFetchRequest:fetchRequest error:&error];
     
+    //TODO error handling
+    
     if ([results count] == 0){
         return nil;
     }
     
     return results[0];
-
-
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark Storage Protocol
