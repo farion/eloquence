@@ -1,11 +1,3 @@
-//
-//  GlobalMenuViewController.swift
-//  Eloquence
-//
-//  Created by Frieder Reinhold on 05.03.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -110,10 +102,10 @@ class GlobalMenuViewController:  UIViewController, UITableViewDataSource, UITabl
 
         switch(items[indexPath.row].type){
             case ItemType.Accounts:
-                NSNotificationCenter.defaultCenter().postNotificationName(EMNotification.SHOW_ACCOUNTS, object: self);
+                NSNotificationCenter.defaultCenter().postNotificationName(EloConstants.SHOW_ACCOUNTS, object: self);
             break
             case ItemType.Preferences:
-                NSNotificationCenter.defaultCenter().postNotificationName(EMNotification.SHOW_PREFERENCES, object: self);
+                NSNotificationCenter.defaultCenter().postNotificationName(EloConstants.SHOW_PREFERENCES, object: self);
             break
         }
         

@@ -1,10 +1,3 @@
-//
-//   This file is part of Eloquence IM.
-//
-//   Eloquence is licensed under the Apache License 2.0.
-//   See LICENSE file for more information.
-//
-
 import Foundation
 import XMPPFramework
 
@@ -16,11 +9,12 @@ protocol EloConnectionDelegate: NSObjectProtocol {
 
 class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabilitiesDelegate, MulticastDelegateContainer {
 
-    let account:EloAccount
-    let xmppStream:XMPPStream
-    let xmppRoster:XMPPRoster
-    let xmppCapabilities:XMPPCapabilities
-//    let xmppvCardTempModule:XMPPvCardTempModule
+    private let account:EloAccount
+    private let xmppStream:XMPPStream
+    private let xmppRoster:XMPPRoster
+    private let xmppCapabilities:XMPPCapabilities
+    private let xmppMessageArchiveManagement: XMPPMessageArchiveManagement
+    //    let xmppvCardTempModule:XMPPvCardTempModule
 
     typealias DelegateType = EloConnectionDelegate;
     var multicastDelegate = [EloConnectionDelegate]()
@@ -36,30 +30,29 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
 
         xmppRoster.activate(xmppStream);
 
-        
-        
         xmppCapabilities = XMPPCapabilities(capabilitiesStorage: XMPPCapabilitiesCoreDataStorage.sharedInstance());
         //get server capabilities => XEP0030
         xmppCapabilities.autoFetchMyServerCapabilities = true;
         xmppCapabilities.activate(xmppStream)
-
+        
+        xmppMessageArchiveManagement = XMPPMessageArchiveManagement(messageArchiveManagementStorage: XMPPMessageArchiveManagementCoreDataStorage.sharedInstance())
+        xmppMessageArchiveManagement.activate(xmppStream)
         
         super.init();
         
-        xmppRoster.addDelegate(self, delegateQueue: dispatch_get_main_queue());
-        xmppStream.addDelegate(self, delegateQueue:  dispatch_get_main_queue());
-        xmppCapabilities.addDelegate(self, delegateQueue: dispatch_get_main_queue());
+        xmppRoster.addDelegate(self, delegateQueue: dispatch_get_main_queue())
+        xmppStream.addDelegate(self, delegateQueue:  dispatch_get_main_queue())
+        xmppCapabilities.addDelegate(self, delegateQueue: dispatch_get_main_queue())
+        xmppMessageArchiveManagement.addDelegate(self, delegateQueue: dispatch_get_main_queue())
 
-        
     }
     
     func isConnected() -> Bool {
         return xmppStream.isConnected();
     }
     
-    func getServerJid() -> XMPPJID {
-        let myJid = xmppStream.myJID
-        return XMPPJID.jidWithUser(nil, domain: myJid.domain, resource: nil)
+    func getXMPPStream() -> XMPPStream {
+        return xmppStream;
     }
     
     func connect(){
@@ -75,7 +68,7 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
                 resource = "Eloquence";
             }
         
-            xmppStream.myJID = XMPPJID.jidWithString(account.getJid(),resource:resource);
+            xmppStream.myJID = XMPPJID.jidWithString(account.getJid().jid,resource:resource);
         
             let port = account.getPort();
             if(port != nil && port > 0){
@@ -119,7 +112,7 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
     }
     
     func xmppStream(sender: XMPPStream!, didFailToSendIQ iq: XMPPIQ!, error: NSError!) {
-        NSLog("didFailToSendIQ");
+        NSLog("didFailToSendIQ: %@",iq.XMLString );
     }
     
     func xmppStream(sender: XMPPStream!, didFailToSendMessage message: XMPPMessage!, error: NSError!) {
@@ -246,8 +239,8 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
     func xmppStreamDidAuthenticate(sender: XMPPStream!) {
         NSLog("xmppStreamDidAuthenticate");
         
-        NSNotificationCenter.defaultCenter().postNotificationName(EloNotification.CONNECTION_ONLINE, object: self);
-        
+        NSNotificationCenter.defaultCenter().postNotificationName(EloConstants.CONNECTION_ONLINE, object: self);
+        xmppMessageArchiveManagement.mamQueryWith(sender.myJID , andStart: nil, andEnd: nil, andResultSet: nil)
         
     }
     
@@ -302,7 +295,7 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
         NSLog("xmppRosterdidReceivePresenceSubscriptionRequest");
     }
     
-    func xmppCapabilities(sender: XMPPCapabilities!, didDiscoverCapabilities caps: DDXMLElement!, forJID jid: XMPPJID!){
+    func xmppCapabilities(sender: XMPPCapabilities!, didDiscoverCapabilities caps: NSXMLElement!, forJID jid: XMPPJID!) {
         NSLog("xmppCapabilities %@",jid.bare());
     }
     

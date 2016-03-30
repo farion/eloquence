@@ -1,77 +1,74 @@
-//
-//  RosterController.swift
-//  Eloquence
-//
-//  Created by Frieder Reinhold on 29.02.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
-//
-
 import Foundation
 import XMPPFramework
+import JNWCollectionView
 
+protocol RosterViewControllerDelegate {
+    func didClickContact(chatId:EloChatId);
+}
 
+class RosterViewController: NSViewController , EloRosterDelegate, JNWCollectionViewDataSource, JNWCollectionViewDelegate, JNWCollectionViewListLayoutDelegate {
 
-class RosterViewController: NSViewController, NSTableViewDelegate {
+    @IBOutlet var rosterScrollView: JNWCollectionView!
 
-    @IBOutlet weak var rosterTable: NSTableView!
-
-    dynamic var contacts = [EloContact]()
-    
+    var roster = EloRoster()
+    var delegate:RosterViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        rosterTable.setDelegate(self)
+//        rosterTable.setDelegate(self)
+//        rosterTable.setDataSource(self)
+//        rosterScrollView!.delegate
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshData", name: EloNotification.ROSTER_CHANGED, object: nil);
+        roster.delegate = self
+        roster.initializeData()
         
-        refreshData();
-
+        
+        let listLayout = JNWCollectionViewListLayout(collectionView: rosterScrollView)
+        listLayout.rowHeight = 60
+        listLayout.delegate = self
+        
+        rosterScrollView .collectionViewLayout = listLayout
+        
+        rosterScrollView.registerClass(EXRosterContactCell.self, forCellWithReuseIdentifier: "contactCell")
+        
+        rosterScrollView.delegate = self
+        rosterScrollView.dataSource = self
+        rosterScrollView.reloadData()
     }
 
-    override func awakeFromNib() {
-        rosterTable.doubleAction = "cellDblClk:";
+    //Mark: EloRosterDelegate
+    func rosterWillChangeContent() {
+        
     }
     
-    func cellDblClk(sender: AnyObject){
-        if(rosterTable.clickedRow >= 0){
-            NSLog("Jid clicked: %@",contacts[rosterTable.clickedRow].jid)
-            EloGlobalEvents.sharedInstance.activateContact(contacts[rosterTable.clickedRow]);
+    func roster(didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: EloFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        
+    }
+    func rosterDidChangeContent() {
+        rosterScrollView.reloadData()
+        
+    }
+    
+    //Mark: JNWCollectionViewDelegate
+    func collectionView(collectionView: JNWCollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
+        if(indexPath.item >= 0 && delegate != nil){
+            delegate!.didClickContact(roster.getChatId(indexPath.item))
+//            roster.chatWishedByUserAction(indexPath.item);
         }
     }
     
-    @IBAction func reloadClick(sender: AnyObject) {
-        refreshData();
+    //Mark: JNWCollectionViewDataSource
+    func collectionView(collectionView: JNWCollectionView!, numberOfItemsInSection section: Int) -> UInt {
+        return UInt(roster.numberOfRows());
     }
     
-    func refreshData(){
+    /// Asks the data source for the view that should be used for the cell at the specified index path. The returned
+    func collectionView(collectionView: JNWCollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> JNWCollectionViewCell! {
+        let cell = rosterScrollView.dequeueReusableCellWithIdentifier("contactCell") as! EXRosterContactCell;
         
-        let fetchRequest = NSFetchRequest(entityName: "XMPPUserCoreDataStorageObject");
-    
-        var contactDic = [String:EloContact]()
-        do {
-            for (_,connection) in EloConnectionManager.sharedInstance.connections {
-                
-                let users = try connection.xmppRosterStorage.mainThreadManagedObjectContext.executeFetchRequest(fetchRequest) as! [XMPPUserCoreDataStorageObject];
-                for user  in users {
-                    if(contactDic[user.jidStr] == nil){
-                        contactDic[user.jidStr] = EloContact();
-                    }
-                    contactDic[user.jidStr]!.addUser(user);
-                }
-            }
-        } catch {
-            Swift.print(error)
-        }
+        cell.setItem(roster.getUser(indexPath.item));
         
-        contacts = [EloContact]();
-        for (_, contact) in contactDic {
-            contacts.append(contact);
-            NSLog("Roster: %@",contact.getJid());
-        }
-        
-    }
-    func cellClick(sender:AnyObject){
-        
+        return cell;
     }
 }

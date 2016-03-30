@@ -1,13 +1,9 @@
-//
-//   This file is part of Eloquence IM.
-//
-//   Eloquence is licensed under the Apache License 2.0.
-//   See LICENSE file for more information.
-//
-
 import Cocoa
+import XMPPFramework
 
 class MainWindowController: NSWindowController {
+    
+    private let preferences = CCNPreferencesWindowController();
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -16,7 +12,19 @@ class MainWindowController: NSWindowController {
         self.window!.titlebarAppearsTransparent = true;
         self.window!.styleMask |= NSFullSizeContentViewWindowMask;
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPreferences:", name: EloConstants.SHOW_PREFERENCES, object: nil)
         
+        //TODO move to subclass?
+        preferences.centerToolbarItems = true;
+        preferences.setPreferencesViewControllers([
+            PreferencesGeneralViewController(window: preferences.window!)!,
+            PreferencesAccountViewController(window: preferences.window!)!
+            ])
+        
+    }
+    
+    func showPreferences(){
+        preferences.showPreferencesWindow();
         
     }
 

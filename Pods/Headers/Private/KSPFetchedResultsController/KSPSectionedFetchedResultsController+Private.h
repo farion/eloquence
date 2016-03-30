@@ -1,0 +1,1 @@
+../../../KSPFetchedResultsController/KSPSectionedFetchedResultsController+Private.h

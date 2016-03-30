@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DDLog.addLogger(DDTTYLogger.sharedInstance(), withLevel: ddLogLevel);
         
 
-        EloConnectionManager.sharedInstance.connectAllAccounts();
+        EloConnections.sharedInstance.connectAllAccounts();
         
     }
     
@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     @IBAction func preferenceMenuItemClicked(sender: AnyObject) {
-        AppScope.instance.openPreferences();
+        NSNotificationCenter.defaultCenter().postNotificationName(EloConstants.SHOW_PREFERENCES, object: self);
     }
     
 }

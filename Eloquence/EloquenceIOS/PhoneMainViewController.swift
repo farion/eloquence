@@ -1,11 +1,3 @@
-//
-//  PhoneMainViewController.swift
-//  Eloquence
-//
-//  Created by Frieder Reinhold on 04.03.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import WYPopoverController;
@@ -20,7 +12,6 @@ class PhoneMainViewController:UIViewController, WYPopoverControllerDelegate, EMP
     @IBOutlet weak var backButton: UIBarButtonItem!
     
     @IBOutlet weak var toolbar: UINavigationBar!
-    
     
     @IBOutlet weak var titleItem: UINavigationItem!
     
@@ -49,10 +40,9 @@ class PhoneMainViewController:UIViewController, WYPopoverControllerDelegate, EMP
         secondView.hidden = true;
         backButton.enabled = false;
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAccounts", name: EMNotification.SHOW_ACCOUNTS, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPreferences", name: EMNotification.SHOW_PREFERENCES, object: nil);
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showMessage:", name: EloNotification.ACTIVATE_CONTACT, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAccounts", name: EloConstants.SHOW_ACCOUNTS, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPreferences", name: EloConstants.SHOW_PREFERENCES, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showMessage:", name: EloConstants.ACTIVATE_CONTACT, object: nil)
     }
     
     @IBAction func backClicked(sender: AnyObject) {
@@ -109,10 +99,6 @@ class PhoneMainViewController:UIViewController, WYPopoverControllerDelegate, EMP
     
 
     func showMessage(notification: NSNotification) {
-        
-        let user = notification.object as! XMPPUserCoreDataStorageObject
-        
-        titleItem.title = user.displayName
         
         if(secondView.hidden){
             secondView.hidden = false;

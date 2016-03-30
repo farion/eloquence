@@ -1,11 +1,3 @@
-//
-//  EMAccountsViewController.swift
-//  Eloquence
-//
-//  Created by Frieder Reinhold on 08.03.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import XMPPFramework
@@ -70,7 +62,7 @@ class EMAccountsViewController: UIViewController, UITableViewDelegate, UITableVi
             if(cell == nil) {
                 cell = EMAccountCell(style: UITableViewCellStyle.Default, reuseIdentifier: "AccountCell");
             }
-            cell!.jidLabel.text = data[indexPath.row].getJid();
+            cell!.jidLabel.text = data[indexPath.row].getJid().jid;
             cell!.disableSwitch.on = data[indexPath.row].isAutoConnect()
             cell!.account = data[indexPath.row];
             return cell!;

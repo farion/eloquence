@@ -9,12 +9,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JNWCollectionView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JNWScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>JSQSystemSoundPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>KSPFetchedResultsController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -112,7 +127,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0079D94218639E68ADC381A9908F02FC</key>
+		<key>00F11C1D5B2E5086D6CE667E436DC198</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,32 +147,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1563F3A71204C93D7351D656FB295E91</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>15A63D38D51AC75C2BC75C602A433BB8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>192B02ADD17D65AACEC8256778C802AB</key>
+		<key>387053DF53593FE8E9F1C77360A2D4DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>33355B2CEC1DDABA40620E34046C9146</key>
+		<key>3E47F4D8E535882ADDF1A61940081AA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>4185DC4E6EAAE8640BFC2F1BF733B222</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6582534F53E214E58F8B7C582CB257A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -177,12 +182,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8030E57D26CAF16910A9E5709EFB02F7</key>
+		<key>8AD27F434C11677E626D127283331140</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>92D5C03238C91327925018F9C10C78E8</key>
+		<key>8CF0AA5E1917BBE3F44A8A7D31C29AED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -202,6 +207,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>CB5E7D797264D8B61CDD9210B1DB9FD2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBE8E0A5EC265F34B58CB3A47AED49B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D2FF0FAA03A89B4C1388FCC284E00AB9</key>
 		<dict>
 			<key>primary</key>
@@ -212,7 +227,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>E047C2E766ED8AEDDB6AE24798C7F60D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EDA125ADA52355B7CA6DF7BA96918357</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC1E19909ABF0AC6D3A4AA613167E004</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD7E221509E5FD85702F8EE2F2E75ED9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

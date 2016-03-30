@@ -1,10 +1,3 @@
-//
-//   This file is part of Eloquence IM.
-//
-//   Eloquence is licensed under the Apache License 2.0.
-//   See LICENSE file for more information.
-//
-
 import CoreData
 import Foundation
 import KeychainSwift
@@ -12,21 +5,17 @@ import KeychainSwift
 
 class EloAccount: NSManagedObject {
     
-    @NSManaged var jid:NSString?;
-    @NSManaged var resource: NSString?;
-    @NSManaged var port: NSNumber?;
-    @NSManaged var server: NSString?;
-    @NSManaged var priority: NSNumber?;
-    @NSManaged var autoconnect: NSNumber?;
+    @NSManaged var jid:NSString
+    @NSManaged var resource: NSString?
+    @NSManaged var port: NSNumber?
+    @NSManaged var server: NSString?
+    @NSManaged var priority: NSNumber
+    @NSManaged var autoconnect: NSNumber
     
-    let keychainPasswordPrefix = "Eloquence password for ";
+    let keychainPasswordPrefix = "Eloquence password for "
     
     func isAutoConnect() -> Bool {
-        
-        if(autoconnect == nil){
-            return true;
-        }
-        return (autoconnect?.boolValue)!;
+        return autoconnect.boolValue
     }
     
     func setAutoConnect(autoconnect:Bool){
@@ -39,12 +28,12 @@ class EloAccount: NSManagedObject {
     }
     
     
-    func getJid() -> String? {
-        return jid as? String;
+    func getJid() -> EloAccountJid {
+        return EloAccountJid(jid as String)
     }
 
     func getResource() -> String? {
-        return resource as? String;
+        return resource as? String
     }
     
     
@@ -53,25 +42,24 @@ class EloAccount: NSManagedObject {
     }
     
     func getPort() -> Int? {
-        return port as? Int;
+        return port as? Int
     }
     
-    func getPriority() -> Int? {
-        return priority as? Int;
+    func getPriority() -> Int {
+        return priority as Int
     }
     
-    func getPassword() -> String? {
+    func getPassword() -> String {
         
-        let jid = getJid();
+        let jid = getJid()
+
+        let keychain = KeychainSwift()
+        let password = keychain.get(keychainPasswordPrefix + jid.jid)
         
-        if(jid == nil){
-            return nil;
+        if(password != nil){
+            return password!
         }
-        
-        let safeJid = jid!;
-        
-        let keychain = KeychainSwift();
-        return keychain.get(keychainPasswordPrefix + safeJid);
+        return ""
         
     }
     
@@ -79,17 +67,11 @@ class EloAccount: NSManagedObject {
         
         let jid = getJid();
         
-        if(jid == nil){
-            return;
-        }
-        
-        let safeJid = jid!;
-        
         let keychain = KeychainSwift();
-        keychain.set(password, forKey: keychainPasswordPrefix + safeJid);
+        keychain.set(password, forKey: keychainPasswordPrefix + jid.jid);
         
         //directly get again, to trigger permission dialog
-        keychain.get(keychainPasswordPrefix + safeJid);
+        keychain.get(keychainPasswordPrefix + jid.jid);
     }
     
 }

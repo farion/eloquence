@@ -1,10 +1,3 @@
-//
-//   This file is part of Eloquence IM.
-//
-//   Eloquence is licensed under the Apache License 2.0.
-//   See LICENSE file for more information.
-//
-
 import Cocoa
 
 class PreferencesAccountDialogWindowController: NSWindowController {
@@ -46,15 +39,14 @@ class PreferencesAccountDialogWindowController: NSWindowController {
             autoConnect.state = 0;
         }else{
             let safeAccount = account!;
-            jidText.stringValue = safeAccount.getJid()!
-            passwordText.stringValue = safeAccount.getPassword()!;
+            jidText.stringValue = safeAccount.getJid().jid
+            passwordText.stringValue = safeAccount.getPassword();
             
             let priority = safeAccount.getPriority();
             
-            NSLog("%d",priority!);
             
-            if(priority != nil &&  priority > 0){
-                priorityText.stringValue = String(priority!);
+            if(priority > 0){
+                priorityText.stringValue = String(priority);
             }else{
                 priorityText.stringValue = "";
             }

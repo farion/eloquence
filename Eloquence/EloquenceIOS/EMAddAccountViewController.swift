@@ -1,11 +1,3 @@
-//
-//  EMAddAccountViewController.swift
-//  Eloquence
-//
-//  Created by Frieder Reinhold on 08.03.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -32,12 +24,12 @@ class EMAddAccountViewController:UIViewController {
             let safeAccount = account!
             
             titleBar!.items![0].title = "Account Details"
-            jidField.text = safeAccount.getJid()
+            jidField.text = safeAccount.getJid().jid
             passwordField.text = safeAccount.getPassword()
             
             var infoTextString = "Server Info";
                 
-            let capabilities = EloCapabilities().getCapabilities(safeAccount)
+            let capabilities = EloCapabilities().getCapabilities(safeAccount.getJid())
                 
             for capability in capabilities {
                 var supported = "No"
@@ -71,7 +63,7 @@ class EMAddAccountViewController:UIViewController {
         }
         
         let safeAccount = account!;
-        safeAccount.jid = jidField.text;
+        safeAccount.jid = NSString(UTF8String: jidField.text!)!;
 /*        safeAccount.priority = priorityText.integerValue;
         safeAccount.resource = resourceText.stringValue;
         safeAccount.server = serverText.stringValue;

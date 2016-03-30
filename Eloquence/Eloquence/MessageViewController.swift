@@ -1,65 +1,95 @@
-//
-//  ChatViewController.swift
-//  Eloquence
-//
-//  Created by Frieder Reinhold on 03.03.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
-//
-
 import Cocoa
+import JNWCollectionView
 
-class MessageViewController: NSViewController, EloGlobalEventActivateContactDelegate, EloChatDelegate {
+class MessageViewController: NSViewController, JNWCollectionViewDelegate, JNWCollectionViewDataSource, JNWCollectionViewListLayoutDelegate, EloChatDelegate {
     
-    var contact: EloContact?;
-    var chat:EloChat?;
+    var chat:EloChat;
     dynamic var messages = [EloMessage]();
-    
-    
 
-    @IBOutlet var bottomLayoutGuid: NSObject!
     @IBOutlet weak var mainInput: NSTextField!
     @IBOutlet weak var sendButton: NSButton!
-    @IBOutlet weak var toJid: NSTextField!
+    @IBOutlet var adressLabel: NSTextField!
+    @IBOutlet var scrollView: JNWCollectionView!
+    
+    init(nibName nibNameOrNil:String?, chatId:EloChatId){
+        chat = EloChats.sharedInstance.getChat(chatId.from, to: chatId.to);
+        super.init(nibName: nibNameOrNil, bundle: nil)!;
+        chat.delegate = self;
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        @IBAction func clickSend(sender: AnyObject) {
-        }
+        adressLabel.stringValue = chat.to.jid + " via " + chat.from.jid;
         NSLog("Load message controller");
-        EloGlobalEvents.sharedInstance.registerDelegate(self);
+        view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
+        
+        let listLayout = JNWCollectionViewListLayout(collectionView: scrollView)
+        listLayout.rowHeight = 60
+        listLayout.delegate = self
+        
+        scrollView .collectionViewLayout = listLayout
+        
+        scrollView.registerClass(EXTextMessageCell.self, forCellWithReuseIdentifier: "textMessageCell")
+        
+        scrollView.delegate = self
+        scrollView.dataSource = self
+        scrollView.reloadData()
         
     }
 
     
-    
     @IBAction func clickSendButton(sender: AnyObject) {
 
         let text = mainInput.stringValue;
-        @IBAction func clickSend(sender: AnyObject) {
-        }
-        @IBAction func clickSend(sender: AnyObject) {
-        }
-        @IBAction func clickSend(sender: AnyObject) {
-        }
-        @IBAction func clickSend(sender: AnyObject) {
-        }
+ 
         mainInput.stringValue = "";
         let msg = EloMessage();
         msg.text = "Ich: " + text;
         messages.append(msg);
-        chat!.sendTextMessage(text);
+        try! chat.sendTextMessage(text); //TODO
     }
     
     /** DELEGATE **/
-    func contactActivated(contact: EloContact) {
-        self.contact = contact;
-        chat = EloConnectionManager.sharedInstance.getChat(contact);
-        toJid.stringValue = contact.jid;
-        chat!.delegate = self;
+
+    
+    func didReceiveMessage(msg: EloMessage) {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.messages.append(msg);
+        })
+
     }
     
-    func didReceiveChat(msg: EloMessage) {
-        messages.append(msg);
+    func didFailSendMessage(msg: EloMessage){
+        
     }
+    
+    
+    //Mark: JNWCollectionViewDelegate
+    func collectionView(collectionView: JNWCollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
+        //TODO ?
+    }
+    
+    //Mark: JNWCollectionViewDataSource
+    func collectionView(collectionView: JNWCollectionView!, numberOfItemsInSection section: Int) -> UInt {
+        return UInt(chat.numberOfRows());
+    }
+    
+    /// Asks the data source for the view that should be used for the cell at the specified index path. The returned
+    func collectionView(collectionView: JNWCollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> JNWCollectionViewCell! {
+        
+        let message = chat.getMessage(indexPath.item)
+        
+        let cell = scrollView.dequeueReusableCellWithIdentifier("textMessageCell") as! EXTextMessageCell;
+        
+        cell.setItem(message);
+        
+        return cell;
+    }
+    
     
 }

@@ -1,11 +1,3 @@
-//
-//  EloCapabilities.swift
-//  Eloquence
-//
-//  Created by Frieder Reinhold on 12.03.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
-//
-
 import Foundation
 import XMPPFramework
 
@@ -17,17 +9,15 @@ class EloCapabilities {
         let supportedByServer:Bool
     }
     
-    func getCapabilities(account:EloAccount) -> [EloCapability] {
+    func getCapabilities(jid: EloAccountJid) -> [EloCapability] {
 
-        let connection = EloConnectionManager.sharedInstance.getConnection(account)
+        let xmppStream = EloConnections.sharedInstance.getXMPPStream(jid);
         
-        if(connection == nil || !connection!.isConnected()){
+        if(!xmppStream.isConnected()){
             return []
         }
         
-        let safeConnection = connection!
-        
-        let query = XMPPCapabilitiesCoreDataStorage.sharedInstance().capabilitiesForJID(safeConnection.getServerJid() , xmppStream: safeConnection.xmppStream)
+        let query = XMPPCapabilitiesCoreDataStorage.sharedInstance().capabilitiesForJID(XMPPJID.jidWithUser(nil, domain: xmppStream.myJID.domain, resource: nil) , xmppStream: xmppStream)
 
         var serverCapabilities = [String]()
         

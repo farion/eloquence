@@ -1,56 +1,76 @@
-//
-//  EloChat.swift
-//  Eloquence
-//
-//  Created by Frieder Reinhold on 02.03.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
-//
-
 import Foundation
 import XMPPFramework
 
 protocol EloChatDelegate {
-    func didReceiveChat(text: EloMessage);
+    func didReceiveMessage(msg: EloMessage);
+    func didFailSendMessage(msg: EloMessage);
 }
 
-class EloChat: XMPPStreamDelegate {
+enum EloChatError:ErrorType {
+  case NotConnected
+}
+
+class EloChat:XMPPStreamDelegate {
     
-    var possibleConnections = [EloConnection]();
+    var delegate: EloChatDelegate?
     
-    var currentConnection: EloConnection?;
+    let from:EloAccountJid
+    let to:EloContactJid
+    let xmppStream:XMPPStream
     
-    var delegate: EloChatDelegate?;
-    
-    let jid: String;
-    
-    init(jid: String, connection: EloConnection){
-        currentConnection = connection;
-        self.jid = jid;
-        connection.xmppStream.addDelegate(self, delegateQueue:  dispatch_get_main_queue());
+    init(from: EloAccountJid, to: EloContactJid){
+        self.from = from
+        self.to = to
+        
+        xmppStream = EloConnections.sharedInstance.getXMPPStream(from)
+        xmppStream.addDelegate(self, delegateQueue: GlobalUserInteractiveQueue)
     }
     
-    func sendTextMessage(text: String){
-        NSLog("Send Message: %@",text);
+    private func getXMPPStream() throws -> XMPPStream {
         
-        let msg = XMPPMessage(type: "chat", to: XMPPJID.jidWithString(jid) );
+        if(xmppStream.isConnected()){
+                return xmppStream
+        }
+        
+        throw EloChatError.NotConnected
+    }
+    
+    func sendTextMessage(text: String) {
+        
+        let msg = XMPPMessage(type: "chat", to: to.xmppJid );
         msg.addBody(text);
-        currentConnection?.xmppStream.sendElement(msg);
-
+        
+        do {
+            let xmppStream = try getXMPPStream();
+            xmppStream.sendElement(msg);
+        } catch {
+            if(delegate != nil){
+                delegate!.didFailSendMessage(EloMessage())
+            }
+        }
+    }
+    
+    func numberOfRows() -> Int{
+        return 10; //TODO
+    }
+    
+    func getMessage(index:NSInteger) -> EloMessage{
+        let message = EloMessage();
+        message.text = "foo"
+        return message; //TODO
     }
     
     @objc func xmppStream(sender: XMPPStream!, didReceiveMessage message: XMPPMessage!) {
 
-        
-        NSLog("VON: %@ == %@", message.from().bare(),jid);
-        if(message.from().bare() == jid){
+        if(message.from().bare() == to.jid){
             if(delegate != nil){
-                let msg = EloMessage();
-                msg.text = jid + ": " + message.body();
-                delegate?.didReceiveChat(msg);
+                if(message.isChatMessageWithBody()){
+                    let msg = EloMessage();
+                    msg.author = to.jid;
+                    msg.text = to.jid + ": " + message.body();
+                    delegate!.didReceiveMessage(msg);
+                }
             }
-        }else{
-            NSLog("nix für mich");
         }
     }
-    
 }

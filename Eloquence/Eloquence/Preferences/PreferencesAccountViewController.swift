@@ -1,9 +1,3 @@
-//
-//   This file is part of Eloquence IM.
-//
-//   Eloquence is licensed under the Apache License 2.0.
-//   See LICENSE file for more information.
-//
 
 import Cocoa
 
@@ -94,7 +88,7 @@ extension PreferencesAccountViewController : NSTableViewDelegate {
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         if let cell = tableView.makeViewWithIdentifier("account", owner: nil) as? NSTableCellView {
-            cell.textField?.stringValue = (self.data[row].getJid()! as String);
+            cell.textField?.stringValue = (self.data[row].getJid().jid as String);
             return cell
         }
         return nil

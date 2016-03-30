@@ -7,10 +7,11 @@ target 'Eloquence' do
   pod 'KissXML', :git => 'https://github.com/farion/KissXML.git'
   pod 'XMPPFramework', :git => 'https://github.com/farion/XMPPFramework.git'
   pod 'SwiftyUserDefaults','~> 2.1.3'
+  pod 'KSPFetchedResultsController', '~> 1.1.1'
+  pod 'JNWCollectionView', :git => 'https://github.com/jwilling/JNWCollectionView.git'
 end
 
 target 'EloquenceIOS' do
-#Chatto
   platform :ios, '9.0'
   pod "CocoaLumberjack", '~> 2.0'
   pod 'CocoaAsyncSocket', '~> 7.4'

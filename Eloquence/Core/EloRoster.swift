@@ -1,30 +1,17 @@
-//
-//  EloRoster.swift
-//  Eloquence
-//
-//  Created by Frieder Reinhold on 02.03.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
-//
-
 import Foundation
 import XMPPFramework
 
-#if os(iOS)
-
-#else
-    
-#endif
 
 protocol EloRosterDelegate:NSObjectProtocol {
     
     func rosterWillChangeContent();
-    func roster(didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?);
+    func roster(didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: EloFetchedResultsChangeType, newIndexPath: NSIndexPath?);
     func rosterDidChangeContent();
 }
 
-class EloRoster:NSObject, NSFetchedResultsControllerDelegate {
+class EloRoster:NSObject, EloFetchedResultsControllerDelegate {
     
-    var fetchedResultsController:NSFetchedResultsController!;
+    var fetchedResultsController: EloFetchedResultsController!;
     
     var delegate:EloRosterDelegate?;
     
@@ -39,7 +26,8 @@ class EloRoster:NSObject, NSFetchedResultsControllerDelegate {
         request.sortDescriptors = [departmentSort]
         
         let moc = EloXMPPRosterCoreDataStorage.sharedInstance().mainThreadManagedObjectContext
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath:nil, cacheName: nil)
+        
+        initFRC(request,managedObjectContext: moc);
         fetchedResultsController.delegate = self
     
         do {
@@ -49,6 +37,17 @@ class EloRoster:NSObject, NSFetchedResultsControllerDelegate {
         }
     }
     
+#if os(iOS)
+    func initFRC(request: NSFetchRequest, managedObjectContext: NSManagedObjectContext){
+        fetchedResultsController = EloFetchedResultsController(fetchRequest: request, managedObjectContext: managedObjectContext, sectionNameKeyPath:nil, cacheName: nil)
+    }
+#else
+    func initFRC(request: NSFetchRequest, managedObjectContext: NSManagedObjectContext){
+        fetchedResultsController = EloFetchedResultsController(fetchRequest: request, managedObjectContext: managedObjectContext)
+    }
+#endif
+    
+#if os(iOS)
     func numberOfRowsInSection(section: Int) -> Int {
     
         if(fetchedResultsController.sections!.count > 0){
@@ -58,26 +57,63 @@ class EloRoster:NSObject, NSFetchedResultsControllerDelegate {
             return 0
         }
     }
-
-    func getUser(atIndexPath: NSIndexPath) -> XMPPUserCoreDataStorageObject {
-        return fetchedResultsController.objectAtIndexPath(atIndexPath) as! XMPPUserCoreDataStorageObject
+#else
+    
+    func numberOfRows() -> Int {
+        return fetchedResultsController.fetchedObjects!.count;
     }
     
-    /* NSFetchedResultsControllerDelegate */
+#endif
     
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    
+    
+
+    func getUser(index: Int) -> XMPPUserCoreDataStorageObject {
+#if os(iOS)
+        return fetchedResultsController.objectAtIndexPath(NSIndexPath(index: index)) as! XMPPUserCoreDataStorageObject
+#else
+        return fetchedResultsController.fetchedObjects![index] as! XMPPUserCoreDataStorageObject
+#endif
+    }
+    
+    func chatWishedByUserAction(index:Int) {
+        let user = getUser(index);
+        let chatId = EloChatId(from: EloAccountJid(user.streamBareJidStr) ,to: EloContactJid(user.jidStr))
+        NSNotificationCenter.defaultCenter().postNotificationName(EloConstants.ACTIVATE_CONTACT, object: chatId)
+
+    }
+    
+    func getChatId(index:Int) -> EloChatId {
+        let user = getUser(index);
+        return EloChatId(from: EloAccountJid(user.streamBareJidStr) ,to: EloContactJid(user.jidStr))
+    }
+    
+    /* EloFetchedResultsControllerDelegate */
+    
+    func controllerWillChangeContent(controller: EloFetchedResultsController) {
         if(delegate != nil){
             delegate!.rosterWillChangeContent()
         }
     }
     
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+#if os(iOS)
+    func controller(controller: EloFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: EloFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         if(delegate != nil){
             delegate!.roster(didChangeObject: anObject, atIndexPath:indexPath,forChangeType: type, newIndexPath: newIndexPath)
         }
     }
+    #else
+    func controller(controller: EloFetchedResultsController, didChangeObject anObject: NSManagedObject, atIndex index: UInt, forChangeType type: EloFetchedResultsChangeType, newIndex: UInt) {
+        if(delegate != nil){
+            delegate!.roster(didChangeObject: anObject, atIndexPath:NSIndexPath(index: Int(index)),forChangeType: type, newIndexPath: NSIndexPath(index:Int(newIndex)))
+        }
+    }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    #endif
+    
+    
+    func controllerDidChangeContent(controller: EloFetchedResultsController) {
+        NSLog("Didchange")
         if(delegate != nil){
             delegate!.rosterDidChangeContent()
         }

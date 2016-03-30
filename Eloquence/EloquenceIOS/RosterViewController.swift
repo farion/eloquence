@@ -1,11 +1,3 @@
-//
-//  RosterViewController.swift
-//  Eloquence
-//
-//  Created by Frieder Reinhold on 04.03.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import XMPPFramework
@@ -16,6 +8,10 @@ class RosterViewController:UIViewController, UITableViewDelegate, UITableViewDat
 
     var roster = EloRoster()
     
+    @IBOutlet var rosterScrollView: NSScrollView!
+    @IBOutlet var rosterScrollView: NSScrollView!
+    @IBOutlet weak var rosterScrollView: NSScrollView!
+    @IBOutlet weak var rosterScrollView: NSScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,13 +20,12 @@ class RosterViewController:UIViewController, UITableViewDelegate, UITableViewDat
 
         roster.delegate = self
         roster.initializeData()
-
     }
     
     /* private */
     
     func configureCell(cell:RosterCell, atIndexPath: NSIndexPath){
-        let user = roster.getUser(atIndexPath);
+        let user = roster.getUser(atIndexPath.row);
         cell.name.text = user.displayName
         cell.viaLabel.text = "via " + user.streamBareJidStr!
         cell.imageView!.image = user.photo;
@@ -50,12 +45,13 @@ class RosterViewController:UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        NSNotificationCenter.defaultCenter().postNotificationName(EloNotification.ACTIVATE_CONTACT, object: roster.getUser(indexPath));
+        roster.chatWishedByUserAction(indexPath.row)
     }
     
     /* NSFetchedResultsControllerDelegate */
     
     func rosterWillChangeContent() {
+        NSLog("rosterwillchange")
         tableView.beginUpdates()
     }
     

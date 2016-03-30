@@ -1,0 +1,6 @@
+framework module KSPFetchedResultsController {
+  umbrella header "KSPFetchedResultsController-umbrella.h"
+
+  export *
+  module * { export * }
+}
