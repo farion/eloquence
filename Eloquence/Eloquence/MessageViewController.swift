@@ -41,6 +41,10 @@ class MessageViewController: NSViewController, JNWCollectionViewDelegate, JNWCol
         reloadAndScroll()
         
     }
+    
+    override func viewDidAppear() {
+        scrollToBottom();
+    }
 
     
     @IBAction func clickSendButton(sender: AnyObject) {
@@ -68,9 +72,13 @@ class MessageViewController: NSViewController, JNWCollectionViewDelegate, JNWCol
         
     }
     
+    private func scrollToBottom(){
+        scrollView.scrollToItemAtIndexPath( NSIndexPath(forItem: chat.numberOfRows()-1, inSection: 0) , atScrollPosition: JNWCollectionViewScrollPosition.Top, animated: true)
+    }
+    
     private func reloadAndScroll() {
         scrollView.reloadData()
-        scrollView.scrollToItemAtIndexPath( NSIndexPath(forItem: chat.numberOfRows()-1, inSection: 0) , atScrollPosition: JNWCollectionViewScrollPosition.Top, animated: true)
+        scrollToBottom();
     }
     
     //Mark: EloChatDelegate
