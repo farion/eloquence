@@ -22,18 +22,18 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
     
     let from:EloAccountJid
     let to:EloContactJid
-    let xmppStream:XMPPStream
+    let connection:EloConnection
     var fetchedResultsController: EloFetchedResultsController!;
     
     init(from: EloAccountJid, to: EloContactJid){
         self.from = from
         self.to = to
-        xmppStream = EloConnections.sharedInstance.getXMPPStream(from)
+        connection = EloConnections.sharedInstance.getConnection(from)
         
         super.init()
         
-        xmppStream.addDelegate(self, delegateQueue: GlobalUserInteractiveQueue)
-        
+        connection.getXMPPStream().addDelegate(self, delegateQueue: GlobalUserInteractiveQueue)
+
         let moc = XMPPMessageArchiveManagementCoreDataStorage.sharedInstance().mainThreadManagedObjectContext
         
         let predicate = NSPredicate(format: "bareJidStr == %@ AND streamBareJidStr = %@",to.xmppJid.bare(),from.xmppJid.bare());
@@ -91,8 +91,8 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
     
     private func getXMPPStream() throws -> XMPPStream {
         
-        if(xmppStream.isConnected()){
-                return xmppStream
+        if(connection.getXMPPStream().isConnected()){
+                return connection.getXMPPStream()
         }
         
         throw EloChatError.NotConnected
@@ -158,5 +158,71 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
         }
     }
     
+    
+    
+    private func archivedMessage(contactBareJidStr:NSString, streamBareJidStr:NSString, ascending:Bool)-> XMPPMessageArchiveManagement_Message_CoreDataObject? {
+    
+        let moc = XMPPMessageArchiveManagementCoreDataStorage.sharedInstance().mainThreadManagedObjectContext
+        let entity = NSEntityDescription.entityForName("XMPPMessageArchiveManagement_Message_CoreDataObject", inManagedObjectContext: moc)
+        
+        let predicate = NSPredicate(format: "bareJidStr == %@ AND streamBareJidStr == %@ AND messageId != nil", contactBareJidStr, streamBareJidStr)
+    
+        let fetchRequest = NSFetchRequest()
+        fetchRequest.entity = entity
+        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [ NSSortDescriptor.init(key: "timestamp", ascending: ascending) ]
+        
+        do {
+            let results = try moc.executeFetchRequest(fetchRequest)
+            
+            if(results.count == 0){
+                return nil
+            }
+            
+            return results[0] as? XMPPMessageArchiveManagement_Message_CoreDataObject
+        } catch {
+                    //TODO error handling
+            return nil
+        }
+    }
+    
+    func earliestArchivedMessage(contactBareJidStr:NSString, streamBareJidStr:NSString)-> XMPPMessageArchiveManagement_Message_CoreDataObject? {
+        return archivedMessage(contactBareJidStr, streamBareJidStr: streamBareJidStr, ascending: true)
+    }
+    
+    func latestArchivedMessage(contactBareJidStr:NSString, streamBareJidStr:NSString)-> XMPPMessageArchiveManagement_Message_CoreDataObject? {
+        return archivedMessage(contactBareJidStr, streamBareJidStr: streamBareJidStr, ascending: false)
+    }
+    
+    func loadInitialArchive() {
+        
+        let archive = connection.getArchive()
+
+        //TODO ignore local messages
+        let first = earliestArchivedMessage(to.xmppJid.bare(), streamBareJidStr: from.xmppJid.bare())
+
+        //if no message exists yet, get now + 100
+        if(first == nil){
+            archive.mamQueryWith(to.xmppJid, andStart: nil, andEnd: NSDate(), andResultSet: XMPPResultSet(max: 100))
+            
+        //otherwise, get now - newest in history
+        }else{
+            archive.mamQueryWith(to.xmppJid, andStart: first!.timestamp, andEnd: NSDate(), andResultSet: nil)
+        }
+    }
+    
+    func loadNextArchivePart(){
+        
+        let archive = connection.getArchive()
+        
+        let latest = latestArchivedMessage(to.xmppJid.bare(), streamBareJidStr: from.xmppJid.bare())
+        
+        if(latest == nil) {
+            archive.mamQueryWith(to.xmppJid, andStart: NSDate(), andEnd: nil, andResultSet: XMPPResultSet(max: 100))
+        }else{
+            archive.mamQueryWith(to.xmppJid, andStart: latest!.timestamp, andEnd: nil, andResultSet: XMPPResultSet(max: 100))
+        }
+    }
     
 }

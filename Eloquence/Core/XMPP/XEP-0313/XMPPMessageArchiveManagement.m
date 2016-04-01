@@ -24,6 +24,9 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
 
 @implementation XMPPMessageArchiveManagement
 
+static dispatch_queue_t queue;
+static int queryId = 0;
+
 - (id)init
 {
     // This will cause a crash - it's designed to.
@@ -98,6 +101,25 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
     [super deactivate];
 }
 
+- (NSString*) getNextQueryId {
+    
+    //TODO: is that a reliable way to synchronize the access to queryId globally?
+    
+    static dispatch_once_t queueCreationGuard;
+
+    dispatch_once(&queueCreationGuard, ^{
+        queue = dispatch_queue_create("xmppframework.xep0313.queryIdQueue", DISPATCH_QUEUE_CONCURRENT);
+    });
+    
+    __block int nextQueryId;
+    
+    dispatch_sync(queue, ^{
+        nextQueryId = queryId;
+        queryId++;
+    });
+    
+    return [NSString stringWithFormat:@"q%d",nextQueryId];
+}
 
 - (NSXMLElement*)getFormField:(NSString*) var withValue:(NSString*) value {
     
@@ -107,6 +129,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
     [fieldEl addChild:valueEl];
     return fieldEl;
 }
+
 
 - (void)mamQueryWith: (XMPPJID*) jid andStart: (NSDate*) start andEnd: (NSDate*) end andResultSet: (XMPPResultSet*) resultSet{
     
@@ -121,8 +144,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
     
         NSXMLElement *query = [NSXMLElement elementWithName:@"query" xmlns:XMLNS_XMPP_MAM];
 
-        //TODO increment
-//        [query addAttributeWithName:@"queryid" stringValue: queryId];
+        [query addAttributeWithName:@"queryid" stringValue: [self getNextQueryId]];
     
         if(jid != nil || start != nil || end != nil) {
             NSXMLElement *filterForm = [NSXMLElement elementWithName:@"x" xmlns:XMLNS_XMPP_MAM_FORM];
@@ -150,13 +172,13 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
         
             [query addChild:filterForm];
         }
-    
+
+        if(resultSet != nil){
+            [query addChild: resultSet];
+        }
+        
         [iq addChild:query];
     
-        if(resultSet != nil){
-            [iq addChild: resultSet];
-        }
-
         [xmppStream sendElement:iq];
             
         [responseTracker addElement:iq
@@ -177,7 +199,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
     
     /*
      Basically this happens once per query and does not contain any additional information.
-     Maybe some kind of error hanling? 
+     Maybe some kind of error handling?
      TODO
      */
 }
@@ -212,21 +234,29 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
     return YES;
 }
 
+- (void)insertMessageIntoStorage:(XMPPStream *)sender message:(XMPPMessage *)message {
+    
+    BOOL outgoing = [message.from.bare isEqualToString: sender.myJID.bare];
+    [xmppMessageArchiveManagementStorage archiveMessage: message outgoing:outgoing xmppStream:sender];
+}
+
 - (void)xmppStream:(XMPPStream *)sender didSendMessage:(XMPPMessage *)message
 {
     XMPPLogTrace();
     
-    [xmppMessageArchiveManagementStorage archiveMessage:message outgoing:YES xmppStream:sender];
+    [self insertMessageIntoStorage:sender message:message];
 }
 
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
 {
     XMPPLogTrace();
     
-    if([message forwardedMessage] != nil){
-        [xmppMessageArchiveManagementStorage archiveMessage: [message forwardedMessage] outgoing:NO xmppStream:sender];
+    XMPPMessage* forwardedMessage = [message forwardedMessage];
+    
+    if(forwardedMessage != nil){
+        [self insertMessageIntoStorage:sender message:forwardedMessage];
     }else{
-        [xmppMessageArchiveManagementStorage archiveMessage: message outgoing:NO xmppStream:sender];
+        [self insertMessageIntoStorage:sender message:message];
     }
     
 }

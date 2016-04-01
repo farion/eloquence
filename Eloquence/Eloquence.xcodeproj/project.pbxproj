@@ -1191,6 +1191,7 @@
 					"\"${PODS_ROOT}/Headers/Private/KSPFetchedResultsController\"",
 					"\"${PODS_ROOT}/Headers/Private/JNWScrollView\"",
 					"\"${PODS_ROOT}/Headers/Private/JNWCollectionView\"",
+					"\"${PODS_ROOT}/Headers/Private/Atomics\"",
 				);
 				INFOPLIST_FILE = Eloquence/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -1251,6 +1252,7 @@
 					"\"${PODS_ROOT}/Headers/Private/KSPFetchedResultsController\"",
 					"\"${PODS_ROOT}/Headers/Private/JNWScrollView\"",
 					"\"${PODS_ROOT}/Headers/Private/JNWCollectionView\"",
+					"\"${PODS_ROOT}/Headers/Private/Atomics\"",
 				);
 				INFOPLIST_FILE = Eloquence/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -1370,6 +1372,7 @@
 					"\"${PODS_ROOT}/Headers/Private/CocoaAsyncSocket\"",
 					"\"${PODS_ROOT}/Headers/Private/WYPopoverController\"",
 					"\"${PODS_ROOT}/Headers/Private/JSQMessagesViewController\"",
+					"\"${PODS_ROOT}/Headers/Private/Atomics\"",
 				);
 				INFOPLIST_FILE = EloquenceIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -1413,6 +1416,7 @@
 					"\"${PODS_ROOT}/Headers/Private/CocoaAsyncSocket\"",
 					"\"${PODS_ROOT}/Headers/Private/WYPopoverController\"",
 					"\"${PODS_ROOT}/Headers/Private/JSQMessagesViewController\"",
+					"\"${PODS_ROOT}/Headers/Private/Atomics\"",
 				);
 				INFOPLIST_FILE = EloquenceIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;

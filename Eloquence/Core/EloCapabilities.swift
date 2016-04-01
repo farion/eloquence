@@ -11,7 +11,7 @@ class EloCapabilities {
     
     func getCapabilities(jid: EloAccountJid) -> [EloCapability] {
 
-        let xmppStream = EloConnections.sharedInstance.getXMPPStream(jid);
+        let xmppStream = EloConnections.sharedInstance.getConnection(jid).getXMPPStream();
         
         if(!xmppStream.isConnected()){
             return []

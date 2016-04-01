@@ -38,6 +38,9 @@ class MessageViewController: NSViewController, JNWCollectionViewDelegate, JNWCol
         
         scrollView.delegate = self
         scrollView.dataSource = self
+        
+        chat.loadInitialArchive();
+        
         reloadAndScroll()
         
     }

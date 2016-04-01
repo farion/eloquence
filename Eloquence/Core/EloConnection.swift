@@ -55,6 +55,10 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
         return xmppStream;
     }
     
+    func getArchive() -> XMPPMessageArchiveManagement {
+        return xmppMessageArchiveManagement;
+    }
+    
     func connect(){
         
         NSLog("Connect");
@@ -240,7 +244,7 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
         NSLog("xmppStreamDidAuthenticate");
         
         NSNotificationCenter.defaultCenter().postNotificationName(EloConstants.CONNECTION_ONLINE, object: self);
-        xmppMessageArchiveManagement.mamQueryWith(sender.myJID , andStart: nil, andEnd: nil, andResultSet: nil)
+//        xmppMessageArchiveManagement.mamQueryWith(sender.myJID , andStart: nil, andEnd: nil, andResultSet: nil)
         
     }
     

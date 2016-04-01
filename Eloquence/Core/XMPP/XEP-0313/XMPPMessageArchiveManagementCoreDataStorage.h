@@ -49,6 +49,12 @@
                                                               streamBareJidStr:(NSString *)streamBareJidStr
                                                           managedObjectContext:(NSManagedObjectContext *)moc;
 
+- (XMPPMessageArchiveManagement_Contact_CoreDataObject *)earliestArchivedMessageWithBareJidStr:(NSString *)contactBareJidStr
+                                                                               streamBareJid:(NSString *)streamBareJidStr;
+
+- (XMPPMessageArchiveManagement_Contact_CoreDataObject *)latestArchivedMessageWithBareJidStr:(NSString *)contactBareJidStr
+                                                                             streamBareJid:(NSString *)streamBareJidStr;
+
 /* Inherited from XMPPCoreDataStorage
  * Please see the XMPPCoreDataStorage header file for extensive documentation.
  

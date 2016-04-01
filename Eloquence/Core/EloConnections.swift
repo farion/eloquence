@@ -36,8 +36,8 @@ class EloConnections: MulticastDelegateContainer {
         }
     }
     
-    func getXMPPStream(accountJid:EloAccountJid) -> XMPPStream {
-        return connections[accountJid]!.getXMPPStream() ; //otherwise it is a bad bug
+    func getConnection(accountJid:EloAccountJid) -> EloConnection {
+        return connections[accountJid]! ; //otherwise it is a bad bug
     }
     
 }
