@@ -1,6 +1,0 @@
-framework module KissXML {
-  umbrella header "Pods-EloquenceIOS-KissXML-umbrella.h"
-
-  export *
-  module * { export * }
-}

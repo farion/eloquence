@@ -1,6 +1,0 @@
-CODE_SIGN_IDENTITY =
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/JNWScrollView" "${PODS_ROOT}/Headers/Public"
-OTHER_LDFLAGS = -framework "Cocoa" -framework "QuartzCore"
-PODS_ROOT = ${SRCROOT}
-SKIP_INSTALL = YES

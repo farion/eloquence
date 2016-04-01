@@ -1,1 +1,0 @@
-../../../JNWCollectionView/JNWCollectionView/NSIndexPath+JNWAdditions.h

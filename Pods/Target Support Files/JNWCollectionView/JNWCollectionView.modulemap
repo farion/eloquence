@@ -1,6 +1,0 @@
-framework module JNWCollectionView {
-  umbrella header "JNWCollectionView-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,1 +1,0 @@
-../../../KSPFetchedResultsController/KSPFetchedResultsControllerDelegate.h

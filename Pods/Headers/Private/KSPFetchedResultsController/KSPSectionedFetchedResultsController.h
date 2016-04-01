@@ -1,1 +1,0 @@
-../../../KSPFetchedResultsController/KSPSectionedFetchedResultsController.h

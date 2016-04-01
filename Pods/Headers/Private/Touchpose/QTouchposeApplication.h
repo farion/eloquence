@@ -1,1 +1,0 @@
-../../../Touchpose/Touchpose Example/Source/QTouchposeApplication.h

@@ -1,1 +1,0 @@
-../../../JNWCollectionView/JNWCollectionView/JNWCollectionView.h
