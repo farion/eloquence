@@ -187,7 +187,7 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
         }
     }
     
-    func earliestArchivedMessage(contactBareJidStr:NSString, streamBareJidStr:NSString)-> XMPPMessageArchiveManagement_Message_CoreDataObject? {
+    func oldestArchivedMessage(contactBareJidStr:NSString, streamBareJidStr:NSString)-> XMPPMessageArchiveManagement_Message_CoreDataObject? {
         return archivedMessage(contactBareJidStr, streamBareJidStr: streamBareJidStr, ascending: true)
     }
     
@@ -195,20 +195,30 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
         return archivedMessage(contactBareJidStr, streamBareJidStr: streamBareJidStr, ascending: false)
     }
     
+    private func mamQueryLatest100(archive:XMPPMessageArchiveManagement) {
+        archive.mamQueryWith(to.xmppJid, andStart: nil, andEnd: NSDate(), andResultSet: XMPPResultSet(max: 100, before: "" ));
+    }
+    
+    private func mamQueryCatchup(archive:XMPPMessageArchiveManagement, latestArchived:XMPPMessageArchiveManagement_Message_CoreDataObject ) {
+        archive.mamQueryWith(to.xmppJid, andStart: latestArchived.timestamp, andEnd: NSDate(), andResultSet: nil)
+    }
+    
+    private func mamQueryNextHistory(archive:XMPPMessageArchiveManagement, oldestArchived:XMPPMessageArchiveManagement_Message_CoreDataObject){
+        archive.mamQueryWith(to.xmppJid, andStart: oldestArchived.timestamp, andEnd: nil, andResultSet: XMPPResultSet(max: 100))
+    }
+    
     func loadInitialArchive() {
         
         let archive = connection.getArchive()
 
         //TODO ignore local messages
-        let first = earliestArchivedMessage(to.xmppJid.bare(), streamBareJidStr: from.xmppJid.bare())
-
-        //if no message exists yet, get now + 100
-        if(first == nil){
-            archive.mamQueryWith(to.xmppJid, andStart: nil, andEnd: NSDate(), andResultSet: XMPPResultSet(max: 100))
-            
-        //otherwise, get now - newest in history
+        
+        let latestArchived = latestArchivedMessage(to.xmppJid.bare(), streamBareJidStr: from.xmppJid.bare())
+        
+        if(latestArchived == nil){
+            mamQueryLatest100(archive)
         }else{
-            archive.mamQueryWith(to.xmppJid, andStart: first!.timestamp, andEnd: NSDate(), andResultSet: nil)
+            mamQueryCatchup(archive, latestArchived:latestArchived!)
         }
     }
     
@@ -216,12 +226,14 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
         
         let archive = connection.getArchive()
         
-        let latest = latestArchivedMessage(to.xmppJid.bare(), streamBareJidStr: from.xmppJid.bare())
+        let oldestArchived = oldestArchivedMessage(to.xmppJid.bare(), streamBareJidStr: from.xmppJid.bare())
         
-        if(latest == nil) {
-            archive.mamQueryWith(to.xmppJid, andStart: NSDate(), andEnd: nil, andResultSet: XMPPResultSet(max: 100))
+        if(oldestArchived == nil) {
+            //job should already be done by initial load
+            mamQueryLatest100(archive)
         }else{
-            archive.mamQueryWith(to.xmppJid, andStart: latest!.timestamp, andEnd: nil, andResultSet: XMPPResultSet(max: 100))
+            //TODO how to stop loading?
+            mamQueryNextHistory(archive, oldestArchived:oldestArchived!)
         }
     }
     
