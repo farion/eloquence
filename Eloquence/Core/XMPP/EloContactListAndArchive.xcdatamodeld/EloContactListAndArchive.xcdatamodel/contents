@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="XMPPGroupCoreDataStorageObject" representedClassName="XMPPGroupCoreDataStorageObject" syncable="YES">
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="XMPPUserCoreDataStorageObject" inverseName="groups" inverseEntity="XMPPUserCoreDataStorageObject" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="XMPPMessageArchiveManagement_Contact_CoreDataObject" representedClassName="XMPPMessageArchiveManagement_Contact_CoreDataObject" syncable="YES">
+        <attribute name="bareJid" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="bareJidStr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mostRecentMessageBody" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mostRecentMessageOutgoing" attributeType="Boolean" syncable="YES"/>
+        <attribute name="mostRecentMessageTimestamp" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="streamBareJidStr" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="XMPPMessageArchiveManagement_Message_CoreDataObject" representedClassName="XMPPMessageArchiveManagement_Message_CoreDataObject" syncable="YES">
+        <attribute name="bareJid" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="bareJidStr" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="composing" attributeType="Boolean" indexed="YES" syncable="YES"/>
+        <attribute name="message" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="messageId" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="messageStr" attributeType="String" syncable="YES"/>
+        <attribute name="outgoing" attributeType="Boolean" indexed="YES" syncable="YES"/>
+        <attribute name="streamBareJidStr" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="thread" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Date" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="XMPPResourceCoreDataStorageObject" representedClassName="XMPPResourceCoreDataStorageObject" syncable="YES">
+        <attribute name="jidStr" attributeType="String" syncable="YES"/>
+        <attribute name="presence" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="presenceDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="presenceStr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priorityNum" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="show" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="showNum" attributeType="Integer 32" defaultValueString="3" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streamBareJidStr" attributeType="String" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="type" attributeType="String" defaultValueString="available" syncable="YES"/>
+        <relationship name="primaryResourceInverse" optional="YES" minCount="1" maxCount="1" deletionRule="No Action" destinationEntity="XMPPUserCoreDataStorageObject" inverseName="primaryResource" inverseEntity="XMPPUserCoreDataStorageObject" indexed="YES" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="No Action" destinationEntity="XMPPUserCoreDataStorageObject" inverseName="resources" inverseEntity="XMPPUserCoreDataStorageObject" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="XMPPUserCoreDataStorageObject" representedClassName="XMPPUserCoreDataStorageObject" syncable="YES">
+        <attribute name="ask" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayName" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="jid" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="jidStr" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Transformable" valueTransformerName="RFImageToDataTransformer" syncable="YES"/>
+        <attribute name="section" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="sectionName" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sectionNum" attributeType="Integer 32" defaultValueString="2" indexed="YES" syncable="YES"/>
+        <attribute name="streamBareJidStr" attributeType="String" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="subscription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unreadMessages" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="groups" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="XMPPGroupCoreDataStorageObject" inverseName="users" inverseEntity="XMPPGroupCoreDataStorageObject" indexed="YES" syncable="YES"/>
+        <relationship name="primaryResource" optional="YES" minCount="1" maxCount="1" deletionRule="No Action" destinationEntity="XMPPResourceCoreDataStorageObject" inverseName="primaryResourceInverse" inverseEntity="XMPPResourceCoreDataStorageObject" indexed="YES" syncable="YES"/>
+        <relationship name="resources" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="XMPPResourceCoreDataStorageObject" inverseName="user" inverseEntity="XMPPResourceCoreDataStorageObject" indexed="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="XMPPGroupCoreDataStorageObject" positionX="-9" positionY="36" width="128" height="75"/>
+        <element name="XMPPUserCoreDataStorageObject" positionX="-218" positionY="-54" width="128" height="270"/>
+        <element name="XMPPResourceCoreDataStorageObject" positionX="-477" positionY="-54" width="128" height="225"/>
+        <element name="XMPPMessageArchiveManagement_Contact_CoreDataObject" positionX="-351" positionY="279" width="128" height="135"/>
+        <element name="XMPPMessageArchiveManagement_Message_CoreDataObject" positionX="-549" positionY="249" width="128" height="210"/>
+    </elements>
+</model>

@@ -35,7 +35,7 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
         xmppCapabilities.autoFetchMyServerCapabilities = true;
         xmppCapabilities.activate(xmppStream)
         
-        xmppMessageArchiveManagement = XMPPMessageArchiveManagement(messageArchiveManagementStorage: XMPPMessageArchiveManagementCoreDataStorage.sharedInstance())
+        xmppMessageArchiveManagement = XMPPMessageArchiveManagement(messageArchiveManagementStorage: EloXMPPMessageArchiveManagementCoreDataStorage.sharedInstance())
         xmppMessageArchiveManagement.activate(xmppStream)
         
         super.init();

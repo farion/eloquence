@@ -16,12 +16,21 @@
 		BF1565701C84ED39008D6809 /* MulticastDelegateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15656A1C84B04A008D6809 /* MulticastDelegateContainer.swift */; };
 		BF1565731C84F40C008D6809 /* RosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1565721C84F40C008D6809 /* RosterViewController.swift */; };
 		BF1E87BF1C88EB6800B94E55 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8BB371C8821C6008CC251 /* MessageViewController.swift */; };
+		BF2EB5101CB8092B0038F3E2 /* EloXMPPMessageArchiveManagementCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EB50F1CB8092B0038F3E2 /* EloXMPPMessageArchiveManagementCoreDataStorage.m */; };
+		BF2EB5111CB8092B0038F3E2 /* EloXMPPMessageArchiveManagementCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EB50F1CB8092B0038F3E2 /* EloXMPPMessageArchiveManagementCoreDataStorage.m */; };
+		BF2EB5141CB80B800038F3E2 /* EloContactListCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EB5131CB80B800038F3E2 /* EloContactListCoreDataStorage.m */; };
+		BF2EB5151CB80B800038F3E2 /* EloContactListCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EB5131CB80B800038F3E2 /* EloContactListCoreDataStorage.m */; };
+		BF2EB5181CB851260038F3E2 /* EloContactList_Item_CoreDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EB5171CB851260038F3E2 /* EloContactList_Item_CoreDataObject.m */; };
+		BF2EB5191CB851260038F3E2 /* EloContactList_Item_CoreDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EB5171CB851260038F3E2 /* EloContactList_Item_CoreDataObject.m */; };
+		BF2EB51C1CB906D60038F3E2 /* EloContactList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2EB51A1CB906D60038F3E2 /* EloContactList.xcdatamodeld */; };
+		BF2EB51D1CB906D60038F3E2 /* EloContactList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2EB51A1CB906D60038F3E2 /* EloContactList.xcdatamodeld */; };
 		BF30A51D1C8B555D00ADA6E0 /* PhoneMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF30A51C1C8B555D00ADA6E0 /* PhoneMainViewController.swift */; };
 		BF30A51F1C8B584E00ADA6E0 /* GlobalMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF30A51E1C8B584E00ADA6E0 /* GlobalMenuViewController.swift */; };
 		BF30A5211C8B598C00ADA6E0 /* PreferencesAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF30A5201C8B598C00ADA6E0 /* PreferencesAccountViewController.swift */; };
 		BF3277751C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3277731C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.swift */; };
 		BF3277761C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3277741C767F8F00C6CA48 /* PreferencesAccountDialogWindowController.xib */; };
 		BF32777D1C76A4A900C6CA48 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF32777A1C76A4A900C6CA48 /* libidn.a */; };
+		BF3342F01CBC4739006BFED5 /* EloXMPPRoster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF3342EE1CBC4739006BFED5 /* EloXMPPRoster.xcdatamodeld */; };
 		BF35630A1C8F1E0700262548 /* EMPreferencesSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3563091C8F1E0700262548 /* EMPreferencesSwitchCell.swift */; };
 		BF35630C1C8F567C00262548 /* EMAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35630B1C8F567C00262548 /* EMAccountsViewController.swift */; };
 		BF35630E1C8F577100262548 /* EMAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35630D1C8F577100262548 /* EMAccountCell.swift */; };
@@ -41,8 +50,6 @@
 		BF7CB5721C91714E001D4287 /* EloXMPPRosterCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7CB5701C91714E001D4287 /* EloXMPPRosterCoreDataStorage.m */; };
 		BF7CB5741C91DD86001D4287 /* EloRoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CB5731C91DD86001D4287 /* EloRoster.swift */; };
 		BF7CB5751C91DD86001D4287 /* EloRoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CB5731C91DD86001D4287 /* EloRoster.swift */; };
-		BF7CB5781C91E01E001D4287 /* EloXMPPRoster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF7CB5761C91E01E001D4287 /* EloXMPPRoster.xcdatamodeld */; };
-		BF7CB5791C91E01E001D4287 /* EloXMPPRoster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF7CB5761C91E01E001D4287 /* EloXMPPRoster.xcdatamodeld */; };
 		BF7CB57B1C91FE5F001D4287 /* RosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CB57A1C91FE5F001D4287 /* RosterCell.swift */; };
 		BF7F8CE61C779E7100E5BA61 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F8CE51C779E7100E5BA61 /* MainWindowController.swift */; };
 		BF84B0F11C8668410076EAB1 /* Pods_Eloquence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE984B5D505A24AD989997A /* Pods_Eloquence.framework */; };
@@ -159,6 +166,13 @@
 		BF0C5E0E1C8654B0000E2C21 /* MainSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
 		BF15656A1C84B04A008D6809 /* MulticastDelegateContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegateContainer.swift; sourceTree = "<group>"; };
 		BF1565721C84F40C008D6809 /* RosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RosterViewController.swift; sourceTree = "<group>"; };
+		BF2EB50E1CB8092B0038F3E2 /* EloXMPPMessageArchiveManagementCoreDataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EloXMPPMessageArchiveManagementCoreDataStorage.h; path = XMPP/EloXMPPMessageArchiveManagementCoreDataStorage.h; sourceTree = "<group>"; };
+		BF2EB50F1CB8092B0038F3E2 /* EloXMPPMessageArchiveManagementCoreDataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EloXMPPMessageArchiveManagementCoreDataStorage.m; path = XMPP/EloXMPPMessageArchiveManagementCoreDataStorage.m; sourceTree = "<group>"; };
+		BF2EB5121CB80B800038F3E2 /* EloContactListCoreDataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EloContactListCoreDataStorage.h; path = XMPP/EloContactListCoreDataStorage.h; sourceTree = "<group>"; };
+		BF2EB5131CB80B800038F3E2 /* EloContactListCoreDataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EloContactListCoreDataStorage.m; path = XMPP/EloContactListCoreDataStorage.m; sourceTree = "<group>"; };
+		BF2EB5161CB851260038F3E2 /* EloContactList_Item_CoreDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EloContactList_Item_CoreDataObject.h; path = XMPP/EloContactList_Item_CoreDataObject.h; sourceTree = "<group>"; };
+		BF2EB5171CB851260038F3E2 /* EloContactList_Item_CoreDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EloContactList_Item_CoreDataObject.m; path = XMPP/EloContactList_Item_CoreDataObject.m; sourceTree = "<group>"; };
+		BF2EB51B1CB906D60038F3E2 /* EloContactList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EloContactList.xcdatamodel; sourceTree = "<group>"; };
 		BF30A51C1C8B555D00ADA6E0 /* PhoneMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMainViewController.swift; sourceTree = "<group>"; };
 		BF30A51E1C8B584E00ADA6E0 /* GlobalMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMenuViewController.swift; sourceTree = "<group>"; };
 		BF30A5201C8B598C00ADA6E0 /* PreferencesAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesAccountViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +181,7 @@
 		BF3277791C76A4A900C6CA48 /* idn-int.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "idn-int.h"; path = "../Pods/XMPPFramework/Vendor/libidn/idn-int.h"; sourceTree = "<group>"; };
 		BF32777A1C76A4A900C6CA48 /* libidn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libidn.a; path = ../Pods/XMPPFramework/Vendor/libidn/libidn.a; sourceTree = "<group>"; };
 		BF32777B1C76A4A900C6CA48 /* stringprep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = stringprep.h; path = ../Pods/XMPPFramework/Vendor/libidn/stringprep.h; sourceTree = "<group>"; };
+		BF3342EF1CBC4739006BFED5 /* EloXMPPRoster.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EloXMPPRoster.xcdatamodel; sourceTree = "<group>"; };
 		BF3563091C8F1E0700262548 /* EMPreferencesSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMPreferencesSwitchCell.swift; sourceTree = "<group>"; };
 		BF35630B1C8F567C00262548 /* EMAccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMAccountsViewController.swift; sourceTree = "<group>"; };
 		BF35630D1C8F577100262548 /* EMAccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMAccountCell.swift; sourceTree = "<group>"; };
@@ -182,7 +197,6 @@
 		BF7CB56F1C91714E001D4287 /* EloXMPPRosterCoreDataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EloXMPPRosterCoreDataStorage.h; sourceTree = "<group>"; };
 		BF7CB5701C91714E001D4287 /* EloXMPPRosterCoreDataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EloXMPPRosterCoreDataStorage.m; sourceTree = "<group>"; };
 		BF7CB5731C91DD86001D4287 /* EloRoster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EloRoster.swift; sourceTree = "<group>"; };
-		BF7CB5771C91E01E001D4287 /* EloXMPPRoster.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EloXMPPRoster.xcdatamodel; sourceTree = "<group>"; };
 		BF7CB57A1C91FE5F001D4287 /* RosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RosterCell.swift; sourceTree = "<group>"; };
 		BF7F8CE51C779E7100E5BA61 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		BF981C581C803F8600FF7AC5 /* ErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorDialog.swift; path = Dialogs/ErrorDialog.swift; sourceTree = "<group>"; };
@@ -352,7 +366,14 @@
 				BFED7DAE1CA7E2A3000A226B /* XEP-0313 */,
 				BF7CB56F1C91714E001D4287 /* EloXMPPRosterCoreDataStorage.h */,
 				BF7CB5701C91714E001D4287 /* EloXMPPRosterCoreDataStorage.m */,
-				BF7CB5761C91E01E001D4287 /* EloXMPPRoster.xcdatamodeld */,
+				BF2EB50E1CB8092B0038F3E2 /* EloXMPPMessageArchiveManagementCoreDataStorage.h */,
+				BF2EB50F1CB8092B0038F3E2 /* EloXMPPMessageArchiveManagementCoreDataStorage.m */,
+				BF2EB5121CB80B800038F3E2 /* EloContactListCoreDataStorage.h */,
+				BF2EB5131CB80B800038F3E2 /* EloContactListCoreDataStorage.m */,
+				BF2EB5161CB851260038F3E2 /* EloContactList_Item_CoreDataObject.h */,
+				BF2EB5171CB851260038F3E2 /* EloContactList_Item_CoreDataObject.m */,
+				BF2EB51A1CB906D60038F3E2 /* EloContactList.xcdatamodeld */,
+				BF3342EE1CBC4739006BFED5 /* EloXMPPRoster.xcdatamodeld */,
 			);
 			name = XMPP;
 			sourceTree = "<group>";
@@ -926,8 +947,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2EB5101CB8092B0038F3E2 /* EloXMPPMessageArchiveManagementCoreDataStorage.m in Sources */,
 				BFDC159A1CAC3C0500E8A39C /* XMPPMessage+XEP_0313.m in Sources */,
-				BF7CB5781C91E01E001D4287 /* EloXMPPRoster.xcdatamodeld in Sources */,
 				BFED7DBD1CA888E0000A226B /* XMPPMessageArchiveManagement.m in Sources */,
 				BFABEAD01CA9BE700035F0AF /* XMPPMessageArchiveManagement.xcdatamodeld in Sources */,
 				BF1E87BF1C88EB6800B94E55 /* MessageViewController.swift in Sources */,
@@ -938,6 +959,7 @@
 				BF9D76B51C97240000CC7727 /* EloAccountJid.swift in Sources */,
 				BFED7DC51CA9B546000A226B /* XMPPMessageArchiveManagement_Message_CoreDataObject.m in Sources */,
 				BFEC35971C83A50D005CB593 /* EloConnection.swift in Sources */,
+				BF2EB5141CB80B800038F3E2 /* EloContactListCoreDataStorage.m in Sources */,
 				BF48749C1CA4522800029110 /* EXTextMessageCell.swift in Sources */,
 				BFEC35981C83A50D005CB593 /* EloConnections.swift in Sources */,
 				BFEA5A051C88F26000EF5304 /* EloMessage.swift in Sources */,
@@ -955,11 +977,14 @@
 				BFE563201C75D19F00DE25B2 /* AppDelegate.swift in Sources */,
 				BFED7DC61CA9B546000A226B /* XMPPMessageArchiveManagementCoreDataStorage.m in Sources */,
 				BFE5601E1C75BE8D00DE25B2 /* PreferencesAccountViewController.swift in Sources */,
+				BF3342F01CBC4739006BFED5 /* EloXMPPRoster.xcdatamodeld in Sources */,
 				BFED7DC41CA9B546000A226B /* XMPPMessageArchiveManagement_Contact_CoreDataObject.m in Sources */,
 				BF15656B1C84B04A008D6809 /* MulticastDelegateContainer.swift in Sources */,
 				BF9D76BB1C97685600CC7727 /* EloUtils.swift in Sources */,
+				BF2EB51C1CB906D60038F3E2 /* EloContactList.xcdatamodeld in Sources */,
 				BFDC159D1CAC630900E8A39C /* README.md in Sources */,
 				BF4F41D51C94B3A600EE5390 /* EloChats.swift in Sources */,
+				BF2EB5181CB851260038F3E2 /* EloContactList_Item_CoreDataObject.m in Sources */,
 				BFEC35951C83A50D005CB593 /* DataModel.xcdatamodeld in Sources */,
 				BF4F41CF1C94541F00EE5390 /* EloCapabilities.swift in Sources */,
 				BF7F8CE61C779E7100E5BA61 /* MainWindowController.swift in Sources */,
@@ -1002,6 +1027,7 @@
 				BF03C6501C8DEA8100C4EF25 /* GlobalMenuCell.swift in Sources */,
 				BFD895C21C88FD2F00A6CA05 /* RosterViewController.swift in Sources */,
 				BFEC359A1C83A91C005CB593 /* DataModel.xcdatamodeld in Sources */,
+				BF2EB5111CB8092B0038F3E2 /* EloXMPPMessageArchiveManagementCoreDataStorage.m in Sources */,
 				BF30A51F1C8B584E00ADA6E0 /* GlobalMenuViewController.swift in Sources */,
 				BF30A5211C8B598C00ADA6E0 /* PreferencesAccountViewController.swift in Sources */,
 				BFEC359B1C83A91C005CB593 /* EloAccount.swift in Sources */,
@@ -1013,15 +1039,17 @@
 				BF9D76B91C97242600CC7727 /* EloContactJid.swift in Sources */,
 				BF4F41D01C94541F00EE5390 /* EloCapabilities.swift in Sources */,
 				BFEA5A061C88F26000EF5304 /* EloMessage.swift in Sources */,
+				BF2EB5151CB80B800038F3E2 /* EloContactListCoreDataStorage.m in Sources */,
 				BF35630C1C8F567C00262548 /* EMAccountsViewController.swift in Sources */,
-				BF7CB5791C91E01E001D4287 /* EloXMPPRoster.xcdatamodeld in Sources */,
 				BF7CB5721C91714E001D4287 /* EloXMPPRosterCoreDataStorage.m in Sources */,
 				BF4F41DC1C94C1D300EE5390 /* EloPseudoStructs.swift in Sources */,
+				BF2EB51D1CB906D60038F3E2 /* EloContactList.xcdatamodeld in Sources */,
 				BFDC159E1CAC630900E8A39C /* README.md in Sources */,
 				BFD895D71C8A517600A6CA05 /* MessageViewController.swift in Sources */,
 				BFEC359D1C83A91C005CB593 /* EloConnections.swift in Sources */,
 				BFEC35311C839DA2005CB593 /* ViewController.swift in Sources */,
 				BF4F41D61C94B3A600EE5390 /* EloChats.swift in Sources */,
+				BF2EB5191CB851260038F3E2 /* EloContactList_Item_CoreDataObject.m in Sources */,
 				BF9D76B61C97240000CC7727 /* EloAccountJid.swift in Sources */,
 				BF3563101C8F722A00262548 /* EMAddAccountViewController.swift in Sources */,
 				BF03C6521C8E3BE100C4EF25 /* EMNotification.swift in Sources */,
@@ -1565,13 +1593,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BF7CB5761C91E01E001D4287 /* EloXMPPRoster.xcdatamodeld */ = {
+		BF2EB51A1CB906D60038F3E2 /* EloContactList.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BF7CB5771C91E01E001D4287 /* EloXMPPRoster.xcdatamodel */,
+				BF2EB51B1CB906D60038F3E2 /* EloContactList.xcdatamodel */,
 			);
-			currentVersion = BF7CB5771C91E01E001D4287 /* EloXMPPRoster.xcdatamodel */;
-			path = EloXMPPRoster.xcdatamodeld;
+			currentVersion = BF2EB51B1CB906D60038F3E2 /* EloContactList.xcdatamodel */;
+			name = EloContactList.xcdatamodeld;
+			path = XMPP/EloContactList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		BF3342EE1CBC4739006BFED5 /* EloXMPPRoster.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BF3342EF1CBC4739006BFED5 /* EloXMPPRoster.xcdatamodel */,
+			);
+			currentVersion = BF3342EF1CBC4739006BFED5 /* EloXMPPRoster.xcdatamodel */;
+			name = EloXMPPRoster.xcdatamodeld;
+			path = XMPP/EloXMPPRoster.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

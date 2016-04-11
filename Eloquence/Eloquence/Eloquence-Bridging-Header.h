@@ -5,4 +5,7 @@
 #import "KSPFetchedResultsController.h"
 #import "EloXMPPRosterCoreDataStorage.h"
 #import "JNWCollectionView.h"
-#import "XMPPMessageArchiveManagementCoreDataStorage.h"
+#import "XMPPMessageArchiveManagement.h"
+#import "EloXMPPMessageArchiveManagementCoreDataStorage.h"
+#import "EloContactListCoreDataStorage.h"
+#import "EloContactList_Item_CoreDataObject.h"

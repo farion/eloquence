@@ -68,7 +68,7 @@ class RosterViewController: NSViewController , EloRosterDelegate, JNWCollectionV
     func collectionView(collectionView: JNWCollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> JNWCollectionViewCell! {
         let cell = rosterScrollView.dequeueReusableCellWithIdentifier("contactCell") as! EXRosterContactCell;
         
-        cell.setItem(roster.getUser(indexPath.item));
+        cell.setItem(roster.getContactListItem(indexPath.item));
         
         return cell;
     }

@@ -21,11 +21,11 @@ class EloRoster:NSObject, EloFetchedResultsControllerDelegate {
 
     func initializeData(){
     
-        let request = NSFetchRequest(entityName: "XMPPUserCoreDataStorageObject");
-        let departmentSort = NSSortDescriptor(key: "jidStr", ascending: true)
+        let request = NSFetchRequest(entityName: "EloContactList_Item_CoreDataObject");
+        let departmentSort = NSSortDescriptor(key: "bareJidStr", ascending: true)
         request.sortDescriptors = [departmentSort]
         
-        let moc = EloXMPPRosterCoreDataStorage.sharedInstance().mainThreadManagedObjectContext
+        let moc = EloContactListCoreDataStorage.sharedInstance().mainThreadManagedObjectContext
         
         initFRC(request,managedObjectContext: moc);
         fetchedResultsController.delegate = self
@@ -68,24 +68,24 @@ class EloRoster:NSObject, EloFetchedResultsControllerDelegate {
     
     
 
-    func getUser(index: Int) -> XMPPUserCoreDataStorageObject {
+    func getContactListItem(index: Int) -> EloContactList_Item_CoreDataObject {
 #if os(iOS)
-        return fetchedResultsController.objectAtIndexPath(NSIndexPath(index: index)) as! XMPPUserCoreDataStorageObject
+        return fetchedResultsController.objectAtIndexPath(NSIndexPath(index: index)) as! EloContactList_Item_CoreDataObject
 #else
-        return fetchedResultsController.fetchedObjects![index] as! XMPPUserCoreDataStorageObject
+        return fetchedResultsController.fetchedObjects![index] as! EloContactList_Item_CoreDataObject
 #endif
     }
     
     func chatWishedByUserAction(index:Int) {
-        let user = getUser(index);
-        let chatId = EloChatId(from: EloAccountJid(user.streamBareJidStr) ,to: EloContactJid(user.jidStr))
+        let contactListItem = getContactListItem(index);
+        let chatId = EloChatId(from: EloAccountJid(contactListItem.streamBareJidStr) ,to: EloContactJid(contactListItem.bareJidStr))
         NSNotificationCenter.defaultCenter().postNotificationName(EloConstants.ACTIVATE_CONTACT, object: chatId)
 
     }
     
     func getChatId(index:Int) -> EloChatId {
-        let user = getUser(index);
-        return EloChatId(from: EloAccountJid(user.streamBareJidStr) ,to: EloContactJid(user.jidStr))
+        let contactListItem = getContactListItem(index);
+        return EloChatId(from: EloAccountJid(contactListItem.streamBareJidStr) ,to: EloContactJid(contactListItem.bareJidStr))
     }
     
     /* EloFetchedResultsControllerDelegate */

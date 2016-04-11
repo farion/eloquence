@@ -33,8 +33,8 @@ class EXRosterContactCell:JNWCollectionViewCell {
     }
     
     
-    func setItem(user: XMPPUserCoreDataStorageObject) {
-        nameLabel.stringValue = user.jidStr;
+    func setItem(user: EloContactList_Item_CoreDataObject) {
+        nameLabel.stringValue = user.bareJidStr;
         viaLabel.stringValue = "via " + user.streamBareJidStr;
     }
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="EloContactList_Item_CoreDataObject" representedClassName="EloContactList_Item_CoreDataObject" syncable="YES">
+        <attribute name="bareJid" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="bareJidStr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streamBareJidStr" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="EloContactList_Item_CoreDataObject" positionX="-45" positionY="0" width="128" height="90"/>
+    </elements>
+</model>

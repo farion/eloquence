@@ -60,7 +60,7 @@ static int queryId = 0;
         }
         else
         {
-            XMPPLogError(@"%@: %@ - Unable to configure storage!", THIS_FILE, THIS_METHOD);
+            XMPPLogError(@"%@: %@ - Unable to configure storageb!", THIS_FILE, THIS_METHOD);
         }
     }
     return self;
