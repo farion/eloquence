@@ -80,11 +80,11 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
     }
     #endif
     
-    func getMessage(index: Int) -> XMPPMessageArchiveManagement_Message_CoreDataObject {
+    func getMessage(index: Int) -> EloMessage {
         #if os(iOS)
-            return fetchedResultsController.objectAtIndexPath(NSIndexPath(index: index)) as! XMPPMessageArchiveManagement_Message_CoreDataObject
+            return EloMessage(fetchedResultsController.objectAtIndexPath(NSIndexPath(index: index)) as! XMPPMessageArchiveManagement_Message_CoreDataObject)
         #else
-            return fetchedResultsController.fetchedObjects![index] as! XMPPMessageArchiveManagement_Message_CoreDataObject
+            return EloMessage(fetchedResultsController.fetchedObjects![index] as! XMPPMessageArchiveManagement_Message_CoreDataObject)
         #endif
     }
     

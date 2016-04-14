@@ -34,7 +34,8 @@ class MessageViewController: NSViewController, JNWCollectionViewDelegate, JNWCol
         
         scrollView .collectionViewLayout = listLayout
         
-        scrollView.registerClass(EXTextMessageCell.self, forCellWithReuseIdentifier: "textMessageCell")
+        scrollView.registerClass(EXMessageViewCellIncoming.self, forCellWithReuseIdentifier: "incomingCell")
+        scrollView.registerClass(EXMessageViewCellOutgoing.self, forCellWithReuseIdentifier: "outgoingCell")
         
         scrollView.delegate = self
         scrollView.dataSource = self
@@ -108,14 +109,34 @@ class MessageViewController: NSViewController, JNWCollectionViewDelegate, JNWCol
         return UInt(chat.numberOfRows());
     }
     
+    
+    //Mark: JNWCollectionViewListLayoutDelegate
+   func collectionView(collectionView: JNWCollectionView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+
+        let message = chat.getMessage(indexPath.item)
+
+        let maximumLabelSize = CGSizeMake(scrollView.frame.size.width, CGFloat(FLT_MAX))
+        let textRect = NSString(string:message.text!).boundingRectWithSize(maximumLabelSize, options: .UsesLineFragmentOrigin , attributes: [ NSFontAttributeName: NSFont.systemFontOfSize(13) ], context: nil)
+    
+        return textRect.height + 80
+    }
+    
     /// Asks the data source for the view that should be used for the cell at the specified index path. The returned
     func collectionView(collectionView: JNWCollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> JNWCollectionViewCell! {
         
         let message = chat.getMessage(indexPath.item)
         
-        let cell = scrollView.dequeueReusableCellWithIdentifier("textMessageCell") as! EXTextMessageCell;
+        var cell:EXMessageViewCell
         
-        cell.setItem(EloMessage(message));
+        if(message.isOutgoing){
+            cell = scrollView.dequeueReusableCellWithIdentifier("outgoingCell") as! EXMessageViewCellOutgoing
+        }else{
+            cell = scrollView.dequeueReusableCellWithIdentifier("incomingCell") as! EXMessageViewCellIncoming
+        }
+        
+        cell.setMessage(message);
+        
+        
         
         return cell;
     }

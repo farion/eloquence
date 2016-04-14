@@ -2,11 +2,16 @@ import Foundation
 import JNWCollectionView
 import XMPPFramework
 
-class EXTextMessageCell:JNWCollectionViewCell {
+class EXMessageViewCell:JNWCollectionViewCell {
     
     @IBOutlet var cellView: NSView!
-
-    @IBOutlet var text: NSTextField!
+    @IBOutlet var cellTopLabel: NSTextField!
+    @IBOutlet var bubbleTopLabel: NSTextField!
+    @IBOutlet var cellBottomLabel: NSTextField!
+    @IBOutlet var avatarImage: NSImageView!
+    @IBOutlet var messageContentView: NSView!
+    @IBOutlet var textLabel: NSTextField!
+    
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -19,7 +24,9 @@ class EXTextMessageCell:JNWCollectionViewCell {
     }
     
     private func commonInit(frame:NSRect){
-        NSBundle.mainBundle().loadNibNamed("EXTextMessageCell", owner: self, topLevelObjects: nil)
+
+        NSBundle.mainBundle().loadNibNamed(getNibName(), owner: self, topLevelObjects: nil)
+        
         
         let contentFrame = NSMakeRect(0,0,frame.size.width,frame.size.height)
         self.cellView.frame = contentFrame
@@ -29,12 +36,24 @@ class EXTextMessageCell:JNWCollectionViewCell {
         contentView.addSubview(nameLabel)
         nameLabel.stringValue = "LABEL"
         nameLabel.sizeToFit()*/
+    
     }
     
+    /*
+    func getHeight() -> Int {
+        return 100;
+    }*/
     
-    func setItem(message: EloMessage) {
-        text.stringValue = message.text!
+    
+    func setMessage(message: EloMessage) {
+        textLabel.stringValue = message.text!
  //       nameLabel.stringValue = user.jidStr;
 //        viaLabel.stringValue = "via " + user.streamBareJidStr;
+    }
+
+    
+    
+    func getNibName() -> String {
+        fatalError("Subclasses need to implement the `getNibName()` method.")
     }
 }
