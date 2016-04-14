@@ -5,8 +5,6 @@ import XMPPFramework
 class EXMessageViewCell:JNWCollectionViewCell {
     
     @IBOutlet var cellView: NSView!
-    @IBOutlet var cellTopLabel: NSTextField!
-    @IBOutlet var bubbleTopLabel: NSTextField!
     @IBOutlet var cellBottomLabel: NSTextField!
     @IBOutlet var avatarImage: NSImageView!
     @IBOutlet var messageContentView: NSView!
@@ -47,6 +45,11 @@ class EXMessageViewCell:JNWCollectionViewCell {
     
     func setMessage(message: EloMessage) {
         textLabel.stringValue = message.text!
+        
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .ShortStyle
+        cellBottomLabel.stringValue = formatter.stringFromDate(message.timestamp)
  //       nameLabel.stringValue = user.jidStr;
 //        viaLabel.stringValue = "via " + user.streamBareJidStr;
     }

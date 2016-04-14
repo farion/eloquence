@@ -118,7 +118,8 @@ class MessageViewController: NSViewController, JNWCollectionViewDelegate, JNWCol
         let maximumLabelSize = CGSizeMake(scrollView.frame.size.width, CGFloat(FLT_MAX))
         let textRect = NSString(string:message.text!).boundingRectWithSize(maximumLabelSize, options: .UsesLineFragmentOrigin , attributes: [ NSFontAttributeName: NSFont.systemFontOfSize(13) ], context: nil)
     
-        return textRect.height + 80
+
+        return max(48 /* avatar height */,textRect.height + 20 /* the date */ + 30 /* text padding */) + 20 /* cell padding */
     }
     
     /// Asks the data source for the view that should be used for the cell at the specified index path. The returned
