@@ -5,16 +5,11 @@ import JSQMessagesViewController
 
 
 class MessageViewController:JSQMessagesViewController, UIActionSheetDelegate, JSQMessagesComposerTextViewPasteDelegate, EloChatDelegate {
-    
-    @IBOutlet var splitView: NSSplitView!
-    @IBOutlet var splitView: NSSplitView!
-    @IBOutlet var splitView: NSSplitView!
-    @IBOutlet var splitView: NSSplitView!
+
     private var chat: EloChat?;
     var outgoingBubbleImageView: JSQMessagesBubbleImage!
     var incomingBubbleImageView: JSQMessagesBubbleImage!
-    @IBOutlet var scrollView: JNWCollectionView!
-    @IBOutlet var splitView: NSSplitView!
+
     var messages = [JSQMessage]()
     
     override func viewDidLoad() {
@@ -95,7 +90,19 @@ class MessageViewController:JSQMessagesViewController, UIActionSheetDelegate, JS
     }
     
     func didFailSendMessage(msg: EloMessage) {
-        
+            //TODO        
+    }
+
+    func chatWillChangeContent() {
+            //TODO
+    }
+    
+    func chat(didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: EloFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+            //TODO
+    }
+    
+    func chatDidChangeContent() {
+            //TODO
     }
     
     

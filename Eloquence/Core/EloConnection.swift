@@ -116,7 +116,7 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
     }
     
     func xmppStream(sender: XMPPStream!, didFailToSendIQ iq: XMPPIQ!, error: NSError!) {
-        NSLog("didFailToSendIQ: %@",iq.XMLString );
+        NSLog("didFailToSendIQ");
     }
     
     func xmppStream(sender: XMPPStream!, didFailToSendMessage message: XMPPMessage!, error: NSError!) {

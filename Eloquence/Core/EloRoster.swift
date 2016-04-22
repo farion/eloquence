@@ -70,7 +70,7 @@ class EloRoster:NSObject, EloFetchedResultsControllerDelegate {
 
     func getContactListItem(index: Int) -> EloContactList_Item_CoreDataObject {
 #if os(iOS)
-        return fetchedResultsController.objectAtIndexPath(NSIndexPath(index: index)) as! EloContactList_Item_CoreDataObject
+        return fetchedResultsController.objectAtIndexPath(NSIndexPath(forItem: index, inSection: 0) ) as! EloContactList_Item_CoreDataObject
 #else
         return fetchedResultsController.fetchedObjects![index] as! EloContactList_Item_CoreDataObject
 #endif

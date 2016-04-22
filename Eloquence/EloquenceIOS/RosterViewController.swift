@@ -7,11 +7,7 @@ class RosterViewController:UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableView: UITableView!
 
     var roster = EloRoster()
-    
-    @IBOutlet var rosterScrollView: NSScrollView!
-    @IBOutlet var rosterScrollView: NSScrollView!
-    @IBOutlet weak var rosterScrollView: NSScrollView!
-    @IBOutlet weak var rosterScrollView: NSScrollView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,10 +21,11 @@ class RosterViewController:UIViewController, UITableViewDelegate, UITableViewDat
     /* private */
     
     func configureCell(cell:RosterCell, atIndexPath: NSIndexPath){
-        let user = roster.getUser(atIndexPath.row);
-        cell.name.text = user.displayName
-        cell.viaLabel.text = "via " + user.streamBareJidStr!
-        cell.imageView!.image = user.photo;
+        NSLog("IP %d",atIndexPath.row)
+        let contactListItem = roster.getContactListItem(atIndexPath.row);
+        cell.name.text = contactListItem.bareJidStr
+        cell.viaLabel.text = "via " + contactListItem.streamBareJidStr
+//        cell.imageView!.image = user.photo;
     }
     
     /* UITableViewDataSource */
