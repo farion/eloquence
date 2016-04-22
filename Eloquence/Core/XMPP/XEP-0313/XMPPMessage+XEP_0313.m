@@ -14,7 +14,20 @@
 
 - (XMPPMessage *) forwardedMessage
 {
-    return [XMPPMessage messageFromElement: [[[self elementForName:@"result" xmlns:@"urn:xmpp:mam:0"] elementForName:@"forwarded" xmlns:@"urn:xmpp:forward:0"] elementForName:@"message" xmlns: @"jabber:client"]];
+    //TODO support mam:tmp and mam:1
+    NSXMLElement* forwardedElement = [[self elementForName:@"result" xmlns:@"urn:xmpp:mam:0"] elementForName:@"forwarded" xmlns:@"urn:xmpp:forward:0"];
+    
+    NSXMLElement* messageElement = [forwardedElement elementForName:@"message" xmlns: @"jabber:client"];
+    
+    //XEP-0313 adds a delay element outside message instead inside.
+    //So we "fix" the element to work as expected internally.
+    
+    NSXMLElement* delayElement = [forwardedElement elementForName:@"delay" xmlns: @"urn:xmpp:delay"];
+    
+    [messageElement removeElementForName:@"delay"]; //sometimes server sends additional delay. Noticed on ejabberd.
+    [messageElement addChild: [delayElement copy]];
+    
+    return [XMPPMessage messageFromElement: messageElement];
 }
 
 @end
