@@ -27,6 +27,57 @@ PODS:
   - SwiftyUserDefaults (2.1.3)
   - Touchpose (1.2.0)
   - WYPopoverController (0.3.9)
+  - XMPPFramework (3.7.0):
+    - XMPPFramework/All (= 3.7.0)
+  - XMPPFramework/All (3.7.0):
+    - XMPPFramework/BandwidthMonitor
+    - XMPPFramework/Core
+    - XMPPFramework/CoreDataStorage
+    - XMPPFramework/FileTransfer
+    - XMPPFramework/GoogleSharedStatus
+    - XMPPFramework/ProcessOne
+    - XMPPFramework/Reconnect
+    - XMPPFramework/Roster
+    - XMPPFramework/SystemInputActivityMonitor
+    - XMPPFramework/XEP-0009
+    - XMPPFramework/XEP-0012
+    - XMPPFramework/XEP-0016
+    - XMPPFramework/XEP-0045
+    - XMPPFramework/XEP-0054
+    - XMPPFramework/XEP-0059
+    - XMPPFramework/XEP-0060
+    - XMPPFramework/XEP-0065
+    - XMPPFramework/XEP-0066
+    - XMPPFramework/XEP-0077
+    - XMPPFramework/XEP-0082
+    - XMPPFramework/XEP-0085
+    - XMPPFramework/XEP-0092
+    - XMPPFramework/XEP-0100
+    - XMPPFramework/XEP-0106
+    - XMPPFramework/XEP-0115
+    - XMPPFramework/XEP-0136
+    - XMPPFramework/XEP-0147
+    - XMPPFramework/XEP-0153
+    - XMPPFramework/XEP-0172
+    - XMPPFramework/XEP-0184
+    - XMPPFramework/XEP-0191
+    - XMPPFramework/XEP-0198
+    - XMPPFramework/XEP-0199
+    - XMPPFramework/XEP-0202
+    - XMPPFramework/XEP-0203
+    - XMPPFramework/XEP-0223
+    - XMPPFramework/XEP-0224
+    - XMPPFramework/XEP-0280
+    - XMPPFramework/XEP-0297
+    - XMPPFramework/XEP-0308
+    - XMPPFramework/XEP-0313
+    - XMPPFramework/XEP-0333
+    - XMPPFramework/XEP-0334
+    - XMPPFramework/XEP-0335
+    - XMPPFramework/XEP-0352
+    - XMPPFramework/XEP-0357
+    - XMPPFramework/XEP-0363
+    - XMPPFramework/XMPPMUCLight
   - XMPPFramework/BandwidthMonitor (3.7.0):
     - XMPPFramework/Core
   - XMPPFramework/Core (3.7.0):
@@ -84,6 +135,10 @@ PODS:
   - XMPPFramework/XEP-0115 (3.7.0):
     - XMPPFramework/Core
     - XMPPFramework/CoreDataStorage
+  - XMPPFramework/XEP-0136 (3.7.0):
+    - XMPPFramework/CoreDataStorage
+    - XMPPFramework/XEP-0085
+    - XMPPFramework/XEP-0203
   - XMPPFramework/XEP-0147 (3.7.0):
     - XMPPFramework/Core
   - XMPPFramework/XEP-0153 (3.7.0):
@@ -116,6 +171,9 @@ PODS:
     - XMPPFramework/XEP-0203
   - XMPPFramework/XEP-0308 (3.7.0):
     - XMPPFramework/Core
+  - XMPPFramework/XEP-0313 (3.7.0):
+    - XMPPFramework/Core
+    - XMPPFramework/XEP-0059
   - XMPPFramework/XEP-0333 (3.7.0):
     - XMPPFramework/Core
   - XMPPFramework/XEP-0334 (3.7.0):
@@ -140,66 +198,23 @@ DEPENDENCIES:
   - JNWCollectionView (from `https://github.com/jwilling/JNWCollectionView.git`)
   - JSQMessagesViewController (~> 7.2.0)
   - KeychainSwift (~> 3.0)
-  - KissXML (from `https://github.com/robbiehanson/KissXML.git`)
+  - KissXML (from `https://github.com/robbiehanson/KissXML.git`, commit `ca4aaeaa38bedaf0f42b450e7c75170dc3a788da`)
   - KSPFetchedResultsController (~> 1.1.1)
   - ODRefreshControl (~> 1.2)
   - SwiftySettings (~> 0.0.3)
   - SwiftyUserDefaults (~> 2.1.3)
   - Touchpose (~> 1.2.0)
   - WYPopoverController (~> 0.3.9)
-  - XMPPFramework/BandwidthMonitor (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/Core (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/CoreDataStorage (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/FileTransfer (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/GoogleSharedStatus (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/ProcessOne (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/Reconnect (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/Roster (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/SystemInputActivityMonitor (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0009 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0012 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0016 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0045 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0054 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0059 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0060 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0065 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0066 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0077 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0082 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0085 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0092 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0100 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0106 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0115 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0147 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0153 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0172 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0184 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0191 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0198 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0199 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0202 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0203 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0223 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0224 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0280 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0297 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0308 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0333 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0334 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0335 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0352 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0357 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XEP-0363 (from `https://github.com/robbiehanson/XMPPFramework.git`)
-  - XMPPFramework/XMPPMUCLight (from `https://github.com/robbiehanson/XMPPFramework.git`)
+  - XMPPFramework (from `https://github.com/robbiehanson/XMPPFramework.git`, commit `c5ab86ffd9c74b41626910813bc5955eb900c07f`)
 
 EXTERNAL SOURCES:
   JNWCollectionView:
     :git: https://github.com/jwilling/JNWCollectionView.git
   KissXML:
+    :commit: ca4aaeaa38bedaf0f42b450e7c75170dc3a788da
     :git: https://github.com/robbiehanson/KissXML.git
   XMPPFramework:
+    :commit: c5ab86ffd9c74b41626910813bc5955eb900c07f
     :git: https://github.com/robbiehanson/XMPPFramework.git
 
 CHECKOUT OPTIONS:
@@ -231,6 +246,6 @@ SPEC CHECKSUMS:
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
   XMPPFramework: 977eef5d00c20fe9fb19c30d84a89c2d5564252d
 
-PODFILE CHECKSUM: 6e050757ce879889009e8b32abd1d30e52f0cd94
+PODFILE CHECKSUM: ca71d3026cd35960ff991b190eeb8da3eb49c210
 
 COCOAPODS: 1.0.1

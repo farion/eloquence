@@ -3,7 +3,7 @@
 #import <XMPPFramework/NSDate+XMPPDateTimeProfiles.h>
 #import <XMPPFramework/NSNumber+XMPP.h>
 
-#import "XMPPMessageArchiveManagement.h"
+#import "EloXMPPMessageArchiveManagement.h"
 
 #if ! __has_feature(objc_arc)
 #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
@@ -22,7 +22,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
 #define XMLNS_XMPP_MAM_FORM @"jabber:x:data"
 
 
-@implementation XMPPMessageArchiveManagement
+@implementation EloXMPPMessageArchiveManagement
 
 static dispatch_queue_t queue;
 static int queryId = 0;
@@ -30,7 +30,7 @@ static int queryId = 0;
 - (id)init
 {
     // This will cause a crash - it's designed to.
-    // Only the init methods listed in XMPPMessageArchiveManagement are supported.
+    // Only the init methods listed in EloXMPPMessageArchiveManagement are supported.
     
     return [self initWithMessageArchiveManagementStorage:nil dispatchQueue:NULL];
 }
@@ -38,17 +38,17 @@ static int queryId = 0;
 - (id)initWithDispatchQueue:(dispatch_queue_t)queue
 {
     // This will cause a crash - it's designed to.
-    // Only the init methods listed in XMPPMessageArchiveManagement.h are supported.
+    // Only the init methods listed in EloXMPPMessageArchiveManagement.h are supported.
     
     return [self initWithMessageArchiveManagementStorage:nil dispatchQueue:queue];
 }
 
-- (id)initWithMessageArchiveManagementStorage:(id <XMPPMessageArchiveManagementStorage>)storage
+- (id)initWithMessageArchiveManagementStorage:(id <EloXMPPMessageArchiveManagementStorage>)storage
 {
     return [self initWithMessageArchiveManagementStorage:storage dispatchQueue:NULL];
 }
 
-- (id)initWithMessageArchiveManagementStorage:(id <XMPPMessageArchiveManagementStorage>)storage dispatchQueue:(dispatch_queue_t)queue
+- (id)initWithMessageArchiveManagementStorage:(id <EloXMPPMessageArchiveManagementStorage>)storage dispatchQueue:(dispatch_queue_t)queue
 {
     NSParameterAssert(storage != nil);
     
@@ -56,7 +56,7 @@ static int queryId = 0;
     {
         if ([storage configureWithParent:self queue:moduleQueue])
         {
-            xmppMessageArchiveManagementStorage = storage;
+            EloXMPPMessageArchiveManagementStorage = storage;
         }
         else
         {
@@ -209,11 +209,11 @@ static int queryId = 0;
 #pragma mark Properties
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (id <XMPPMessageArchiveManagementStorage>)xmppMessageArchiveManagementStorage
+- (id <EloXMPPMessageArchiveManagementStorage>)EloXMPPMessageArchiveManagementStorage
 {
-    // Note: The xmppMessageArchiveManagementStorage variable is read-only (set in the init method)
+    // Note: The EloXMPPMessageArchiveManagementStorage variable is read-only (set in the init method)
     
-    return xmppMessageArchiveManagementStorage;
+    return EloXMPPMessageArchiveManagementStorage;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -237,7 +237,7 @@ static int queryId = 0;
 - (void)insertMessageIntoStorage:(XMPPStream *)sender message:(XMPPMessage *)message {
     
     BOOL outgoing = [message.from.bare isEqualToString: sender.myJID.bare];
-    [xmppMessageArchiveManagementStorage archiveMessage: message outgoing:outgoing xmppStream:sender];
+    [EloXMPPMessageArchiveManagementStorage archiveMessage: message outgoing:outgoing xmppStream:sender];
 }
 
 - (void)xmppStream:(XMPPStream *)sender didSendMessage:(XMPPMessage *)message

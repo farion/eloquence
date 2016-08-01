@@ -13,7 +13,7 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
     private let xmppStream:XMPPStream
     private let xmppRoster:XMPPRoster
     private let xmppCapabilities:XMPPCapabilities
-    private let xmppMessageArchiveManagement: XMPPMessageArchiveManagement
+    private let xmppMessageArchiveManagement: EloXMPPMessageArchiveManagement
     //    let xmppvCardTempModule:XMPPvCardTempModule
 
     typealias DelegateType = EloConnectionDelegate;
@@ -35,7 +35,7 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
         xmppCapabilities.autoFetchMyServerCapabilities = true;
         xmppCapabilities.activate(xmppStream)
         
-        xmppMessageArchiveManagement = XMPPMessageArchiveManagement(messageArchiveManagementStorage: EloXMPPMessageArchiveManagementCoreDataStorage.sharedInstance())
+        xmppMessageArchiveManagement = EloXMPPMessageArchiveManagement(messageArchiveManagementStorage: EloXMPPMessageArchiveManagementWithContactCoreDataStorage.sharedInstance())
         xmppMessageArchiveManagement.activate(xmppStream)
         
         super.init();
@@ -55,7 +55,7 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
         return xmppStream;
     }
     
-    func getArchive() -> XMPPMessageArchiveManagement {
+    func getArchive() -> EloXMPPMessageArchiveManagement {
         return xmppMessageArchiveManagement;
     }
     
@@ -126,19 +126,46 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
     func xmppStream(sender: XMPPStream!, didFailToSendPresence presence: XMPPPresence!, error: NSError!) {
         NSLog("didFailToSendPresence");
     }
+    
+    #if os(iOS)
     func xmppStream(sender: XMPPStream!, didNotAuthenticate error: DDXMLElement!) {
+       NSLog("didNotAuthenticate");
+    }
+    #else
+    func xmppStream(sender: XMPPStream!, didNotAuthenticate error: NSXMLElement!) {
         NSLog("didNotAuthenticate");
     }
+    #endif
+    
+    #if os(iOS)
     func xmppStream(sender: XMPPStream!, didNotRegister error: DDXMLElement!) {
         NSLog("didNotRegister");
     }
+    #else
+    func xmppStream(sender: XMPPStream!, didNotRegister error: NSXMLElement!) {
+        NSLog("didNotRegister");
+    }
+    #endif
+    
+    #if os(iOS)
     func xmppStream(sender: XMPPStream!, didReceiveCustomElement element: DDXMLElement!) {
         NSLog("didReceiveCustomElement");
     }
+    #else
+    func xmppStream(sender: XMPPStream!, didReceiveCustomElement element: NSXMLElement!) {
+        NSLog("didReceiveCustomElement");
+    }
+    #endif
     
+    #if os(iOS)
     func xmppStream(sender: XMPPStream!, didReceiveError error: DDXMLElement!) {
         NSLog("didReceiveError");
     }
+    #else
+    func xmppStream(sender: XMPPStream!, didReceiveError error: NSXMLElement!) {
+        NSLog("didReceiveError");
+    }
+    #endif
     
     func xmppStream(sender: XMPPStream!, didReceiveIQ iq: XMPPIQ!) -> Bool {
         NSLog("didReceiveIQ");
@@ -161,9 +188,16 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
         NSLog("didReceiveMessage");
     }
     
+    
+    #if os(iOS)
     func xmppStream(sender: XMPPStream!, didReceiveP2PFeatures streamFeatures: DDXMLElement!) {
         NSLog("didReceiveP2PFeatures");
     }
+    #else
+    func xmppStream(sender: XMPPStream!, didReceiveP2PFeatures streamFeatures: NSXMLElement!) {
+        NSLog("didReceiveP2PFeatures");
+    }
+    #endif
     
     func xmppStream(sender: XMPPStream!, didReceivePresence presence: XMPPPresence!) {
         NSLog("didReceivePresence");
@@ -177,9 +211,15 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
                 NSLog("didRegisterModule");
     }
     
+    #if os(iOS)
     func xmppStream(sender: XMPPStream!, didSendCustomElement element: DDXMLElement!) {
         NSLog("didSendCustomElement");
     }
+    #else
+    func xmppStream(sender: XMPPStream!, didSendCustomElement element: NSXMLElement!) {
+        NSLog("didSendCustomElement");
+    }
+    #endif
     
     func xmppStream(sender: XMPPStream!, didSendIQ iq: XMPPIQ!) {
         NSLog("didSendIQ");
@@ -223,9 +263,15 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
         return message;
     }
     
+    #if os(iOS)
     func xmppStream(sender: XMPPStream!, willSendP2PFeatures streamFeatures: DDXMLElement!) {
         NSLog("willSendP2PFeatures");
     }
+    #else
+    func xmppStream(sender: XMPPStream!, willSendP2PFeatures streamFeatures: NSXMLElement!) {
+        NSLog("willSendP2PFeatures");
+    }
+    #endif
     
     func xmppStream(sender: XMPPStream!, willSendPresence presence: XMPPPresence!) -> XMPPPresence! {
                 NSLog("willSendPresence");
@@ -244,7 +290,7 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
         NSLog("xmppStreamDidAuthenticate");
         
         NSNotificationCenter.defaultCenter().postNotificationName(EloConstants.CONNECTION_ONLINE, object: self);
-//        xmppMessageArchiveManagement.mamQueryWith(sender.myJID , andStart: nil, andEnd: nil, andResultSet: nil)
+//        EloXMPPMessageArchiveManagement.mamQueryWith(sender.myJID , andStart: nil, andEnd: nil, andResultSet: nil)
         
     }
     
@@ -287,10 +333,16 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
     func xmppRoster(sender: XMPPRoster!, didReceiveRosterPush iq: XMPPIQ!) {
     }
     
+    #if os(iOS)
     func xmppRoster(sender: XMPPRoster!, didReceiveRosterItem item: DDXMLElement!) {
 
     }
-
+    #else
+    func xmppRoster(sender: XMPPRoster!, didReceiveRosterItem item: NSXMLElement!) {
+        
+    }
+    #endif
+    
     func xmppRoster(sender: XMPPRoster!, didReceivePresenceSubscriptionRequest presence: XMPPPresence!) {
         NSLog("xmppRosterdidReceivePresenceSubscriptionRequest");
     }
@@ -299,8 +351,14 @@ class EloConnection: NSObject, XMPPRosterDelegate,XMPPStreamDelegate, XMPPCapabi
         NSLog("xmppRosterdidReceivePresenceSubscriptionRequest");
     }
     
+    #if os(iOS)
     func xmppCapabilities(sender: XMPPCapabilities!, didDiscoverCapabilities caps: DDXMLElement!, forJID jid: XMPPJID!) {
         NSLog("xmppCapabilities %@",jid.bare());
     }
+    #else
+    func xmppCapabilities(sender: XMPPCapabilities!, didDiscoverCapabilities caps: NSXMLElement!, forJID jid: XMPPJID!) {
+        NSLog("xmppCapabilities %@",jid.bare());
+    }
+    #endif
     
 }

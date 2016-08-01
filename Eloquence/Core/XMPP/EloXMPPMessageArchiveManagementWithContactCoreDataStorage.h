@@ -1,0 +1,5 @@
+#import "EloXMPPMessageArchiveManagementCoreDataStorage.h"
+
+@interface EloXMPPMessageArchiveManagementWithContactCoreDataStorage : EloXMPPMessageArchiveManagementCoreDataStorage
+
+@end

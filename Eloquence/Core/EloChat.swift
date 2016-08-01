@@ -34,11 +34,11 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
         
         connection.getXMPPStream().addDelegate(self, delegateQueue: GlobalUserInteractiveQueue)
 
-        let moc = XMPPMessageArchiveManagementCoreDataStorage.sharedInstance().mainThreadManagedObjectContext
+        let moc = EloXMPPMessageArchiveManagementWithContactCoreDataStorage.sharedInstance().mainThreadManagedObjectContext
         
         let predicate = NSPredicate(format: "bareJidStr == %@ AND streamBareJidStr = %@",to.xmppJid.bare(),from.xmppJid.bare());
         
-        let request = NSFetchRequest(entityName: "XMPPMessageArchiveManagement_Message_CoreDataObject");
+        let request = NSFetchRequest(entityName: "EloXMPPMessageArchiveManagement_Message_CoreDataObject");
         request.predicate = predicate;
         let departmentSort = NSSortDescriptor(key: "timestamp", ascending: true)
         request.sortDescriptors = [departmentSort]
@@ -82,9 +82,9 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
     
     func getMessage(index: Int) -> EloMessage {
         #if os(iOS)
-            return EloMessage(fetchedResultsController.objectAtIndexPath(NSIndexPath(index: index)) as! XMPPMessageArchiveManagement_Message_CoreDataObject)
+            return EloMessage(fetchedResultsController.objectAtIndexPath(NSIndexPath(index: index)) as! EloXMPPMessageArchiveManagement_Message_CoreDataObject)
         #else
-            return EloMessage(fetchedResultsController.fetchedObjects![index] as! XMPPMessageArchiveManagement_Message_CoreDataObject)
+            return EloMessage(fetchedResultsController.fetchedObjects![index] as! EloXMPPMessageArchiveManagement_Message_CoreDataObject)
         #endif
     }
     
@@ -160,10 +160,10 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
     
     
     
-    private func archivedMessage(contactBareJidStr:NSString, streamBareJidStr:NSString, ascending:Bool)-> XMPPMessageArchiveManagement_Message_CoreDataObject? {
+    private func archivedMessage(contactBareJidStr:NSString, streamBareJidStr:NSString, ascending:Bool)-> EloXMPPMessageArchiveManagement_Message_CoreDataObject? {
     
-        let moc = XMPPMessageArchiveManagementCoreDataStorage.sharedInstance().mainThreadManagedObjectContext
-        let entity = NSEntityDescription.entityForName("XMPPMessageArchiveManagement_Message_CoreDataObject", inManagedObjectContext: moc)
+        let moc = EloXMPPMessageArchiveManagementWithContactCoreDataStorage.sharedInstance().mainThreadManagedObjectContext
+        let entity = NSEntityDescription.entityForName("EloXMPPMessageArchiveManagement_Message_CoreDataObject", inManagedObjectContext: moc)
         
         let predicate = NSPredicate(format: "bareJidStr == %@ AND streamBareJidStr == %@ AND messageId != nil", contactBareJidStr, streamBareJidStr)
     
@@ -180,30 +180,30 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
                 return nil
             }
             
-            return results[0] as? XMPPMessageArchiveManagement_Message_CoreDataObject
+            return results[0] as? EloXMPPMessageArchiveManagement_Message_CoreDataObject
         } catch {
                     //TODO error handling
             return nil
         }
     }
     
-    func oldestArchivedMessage(contactBareJidStr:NSString, streamBareJidStr:NSString)-> XMPPMessageArchiveManagement_Message_CoreDataObject? {
+    func oldestArchivedMessage(contactBareJidStr:NSString, streamBareJidStr:NSString)-> EloXMPPMessageArchiveManagement_Message_CoreDataObject? {
         return archivedMessage(contactBareJidStr, streamBareJidStr: streamBareJidStr, ascending: true)
     }
     
-    func latestArchivedMessage(contactBareJidStr:NSString, streamBareJidStr:NSString)-> XMPPMessageArchiveManagement_Message_CoreDataObject? {
+    func latestArchivedMessage(contactBareJidStr:NSString, streamBareJidStr:NSString)-> EloXMPPMessageArchiveManagement_Message_CoreDataObject? {
         return archivedMessage(contactBareJidStr, streamBareJidStr: streamBareJidStr, ascending: false)
     }
     
-    private func mamQueryLatest100(archive:XMPPMessageArchiveManagement) {
+    private func mamQueryLatest100(archive:EloXMPPMessageArchiveManagement) {
         archive.mamQueryWith(to.xmppJid, andStart: nil, andEnd: NSDate(), andResultSet: XMPPResultSet(max: 100, before: "" ));
     }
     
-    private func mamQueryCatchup(archive:XMPPMessageArchiveManagement, latestArchived:XMPPMessageArchiveManagement_Message_CoreDataObject ) {
+    private func mamQueryCatchup(archive:EloXMPPMessageArchiveManagement, latestArchived:EloXMPPMessageArchiveManagement_Message_CoreDataObject ) {
         archive.mamQueryWith(to.xmppJid, andStart: latestArchived.timestamp, andEnd: NSDate(), andResultSet: nil)
     }
     
-    private func mamQueryNextHistory(archive:XMPPMessageArchiveManagement, oldestArchived:XMPPMessageArchiveManagement_Message_CoreDataObject){
+    private func mamQueryNextHistory(archive:EloXMPPMessageArchiveManagement, oldestArchived:EloXMPPMessageArchiveManagement_Message_CoreDataObject){
         archive.mamQueryWith(to.xmppJid, andStart: oldestArchived.timestamp, andEnd: nil, andResultSet: XMPPResultSet(max: 100))
     }
     

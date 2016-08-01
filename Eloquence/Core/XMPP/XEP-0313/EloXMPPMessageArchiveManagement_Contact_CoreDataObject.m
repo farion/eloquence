@@ -1,7 +1,7 @@
-#import "XMPPMessageArchiveManagement_Contact_CoreDataObject.h"
+#import "EloXMPPMessageArchiveManagement_Contact_CoreDataObject.h"
 
 
-@interface XMPPMessageArchiveManagement_Contact_CoreDataObject ()
+@interface EloXMPPMessageArchiveManagement_Contact_CoreDataObject ()
 
 @property (nonatomic, strong) XMPPJID * primitiveBareJid;
 @property (nonatomic, strong) NSString * primitiveBareJidStr;
@@ -9,7 +9,7 @@
 @end
 
 
-@implementation XMPPMessageArchiveManagement_Contact_CoreDataObject
+@implementation EloXMPPMessageArchiveManagement_Contact_CoreDataObject
 
 @dynamic bareJid, primitiveBareJid;
 @dynamic bareJidStr, primitiveBareJidStr;
@@ -81,13 +81,13 @@
 
 - (void)willInsertObject
 {
-	// If you extend XMPPMessageArchiveManagement_Contact_CoreDataObject,
+	// If you extend EloXMPPMessageArchiveManagement_Contact_CoreDataObject,
 	// you can override this method to use as a hook to set your own custom properties.
 }
 
 - (void)didUpdateObject
 {
-	// If you extend XMPPMessageArchiveManagement_Contact_CoreDataObject,
+	// If you extend EloXMPPMessageArchiveManagement_Contact_CoreDataObject,
 	// you can override this method to use as a hook to update your own custom properties.
 }
 

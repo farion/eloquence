@@ -3,13 +3,13 @@
 #import <XMPPFramework/XMPPResultSet.h>
 #import <XMPPFramework/XMPPIDTracker.h>
 
-#import "XMPPMessage+XEP_0313.h"
+#import "XMPPMessage+Elo_XEP_0313.h"
 
 #define _XMPP_MESSAGE_ARCHIVE_MANAGEMENT_H
 
 @class XMPPIDTracker;
 
-@protocol XMPPMessageArchiveManagementStorage;
+@protocol EloXMPPMessageArchiveManagementStorage;
 
 /**
  * This class provides support for storing message history.
@@ -18,20 +18,20 @@
  * Alltough the XEP-0136 related code was removed.
  */
  
-@interface XMPPMessageArchiveManagement : XMPPModule {
+@interface EloXMPPMessageArchiveManagement : XMPPModule {
     
 @protected
     
-    __strong id <XMPPMessageArchiveManagementStorage> xmppMessageArchiveManagementStorage;
+    __strong id <EloXMPPMessageArchiveManagementStorage> EloXMPPMessageArchiveManagementStorage;
     XMPPIDTracker *responseTracker;    
     
 }
 
 - (void)mamQueryWith: (XMPPJID*) jid andStart: (NSDate*) start andEnd: (NSDate*) end andResultSet: (XMPPResultSet*) resultSet;
-- (id)initWithMessageArchiveManagementStorage:(id <XMPPMessageArchiveManagementStorage>)storage;
-- (id)initWithMessageArchiveManagementStorage:(id <XMPPMessageArchiveManagementStorage>)storage dispatchQueue:(dispatch_queue_t)queue;
+- (id)initWithMessageArchiveManagementStorage:(id <EloXMPPMessageArchiveManagementStorage>)storage;
+- (id)initWithMessageArchiveManagementStorage:(id <EloXMPPMessageArchiveManagementStorage>)storage dispatchQueue:(dispatch_queue_t)queue;
 
-@property (readonly, strong) id <XMPPMessageArchiveManagementStorage> xmppMessageArchiveManagementStorage;
+@property (readonly, strong) id <EloXMPPMessageArchiveManagementStorage> EloXMPPMessageArchiveManagementStorage;
 
 /**
  *
@@ -44,7 +44,7 @@
 #pragma mark -
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@protocol XMPPMessageArchiveManagementStorage <NSObject>
+@protocol EloXMPPMessageArchiveManagementStorage <NSObject>
 @required
 
 //
@@ -62,14 +62,14 @@
 //
 // -- PRIVATE METHODS --
 //
-// These methods are designed to be used ONLY by the XMPPMessageArchiveManagement class.
+// These methods are designed to be used ONLY by the EloXMPPMessageArchiveManagement class.
 //
 //
 
 /**
  * Configures the storage class, passing its parent and parent's dispatch queue.
  *
- * This method is called by the init method of the XMPPMessageArchiveManagement class.
+ * This method is called by the init method of the EloXMPPMessageArchiveManagement class.
  * This method is designed to inform the storage class of its parent
  * and of the dispatch queue the parent will be operating on.
  *
@@ -78,10 +78,10 @@
  *
  * This method should return YES if it was configured properly.
  * If a storage class is designed to be used with a single parent at a time, this method may return NO.
- * The XMPPMessageArchiveManagement class is configured to ignore the passed
+ * The EloXMPPMessageArchiveManagement class is configured to ignore the passed
  * storage class in its init method if this method returns NO.
  **/
-- (BOOL)configureWithParent:(XMPPMessageArchiveManagement *)aParent queue:(dispatch_queue_t)queue;
+- (BOOL)configureWithParent:(EloXMPPMessageArchiveManagement *)aParent queue:(dispatch_queue_t)queue;
 
 /**
  *

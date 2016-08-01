@@ -1,5 +1,5 @@
 #import "EloXMPPRosterCoreDataStorage.h"
-#import "XMPPMessageArchiveManagement.h"
-#import "EloXMPPMessageArchiveManagementCoreDataStorage.h"
+#import "EloXMPPMessageArchiveManagement.h"
+#import "EloXMPPMessageArchiveManagementWithContactCoreDataStorage.h"
 #import "EloContactListCoreDataStorage.h"
 #import "EloContactList_Item_CoreDataObject.h"

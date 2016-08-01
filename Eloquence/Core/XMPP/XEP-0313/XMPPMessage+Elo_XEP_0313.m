@@ -1,6 +1,6 @@
-#import "XMPPMessage+XEP_0313.h"
+#import "XMPPMessage+Elo_XEP_0313.h"
 
-@implementation XMPPMessage (XEP_0313)
+@implementation XMPPMessage (Elo_XEP_0313)
 
 - (NSString *)result
 {

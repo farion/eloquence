@@ -4,7 +4,7 @@
 #import <XMPPFramework/XMPP.h>
 
 
-@interface XMPPMessageArchiveManagement_Contact_CoreDataObject : NSManagedObject
+@interface EloXMPPMessageArchiveManagement_Contact_CoreDataObject : NSManagedObject
 
 @property (nonatomic, strong) XMPPJID * bareJid;      // Transient (proper type, not on disk)
 @property (nonatomic, strong) NSString * bareJidStr;  // Shadow (binary data, written to disk)
@@ -19,7 +19,7 @@
  * This method is called immediately before the object is inserted into the managedObjectContext.
  * At this point, all normal properties have been set.
  * 
- * If you extend XMPPMessageArchiveManagement_Contact_CoreDataObject,
+ * If you extend EloXMPPMessageArchiveManagement_Contact_CoreDataObject,
  * you can use this method as a hook to set your custom properties.
 **/
 - (void)willInsertObject;
@@ -29,7 +29,7 @@
  * due to a message being added to the conversation.
  * At this point, any changed properties have been updated.
  * 
- * If you extend XMPPMessageArchiveManagement_Contact_CoreDataObject,
+ * If you extend EloXMPPMessageArchiveManagement_Contact_CoreDataObject,
  * you can use this method as a hook to update your custom properties.
 **/
 - (void)didUpdateObject;

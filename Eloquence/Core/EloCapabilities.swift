@@ -16,7 +16,7 @@ class EloCapabilities {
         if(!xmppStream.isConnected()){
             return []
         }
-        
+
         let query = XMPPCapabilitiesCoreDataStorage.sharedInstance().capabilitiesForJID(XMPPJID.jidWithUser(nil, domain: xmppStream.myJID.domain, resource: nil) , xmppStream: xmppStream)
 
         var serverCapabilities = [String]()

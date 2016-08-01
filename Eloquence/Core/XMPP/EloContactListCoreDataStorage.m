@@ -88,7 +88,7 @@ static EloContactListCoreDataStorage *sharedInstance;
 }
 
 
-- (void)didUpdateOrInsertMamContact:(XMPPMessageArchiveManagement_Contact_CoreDataObject*) mamContact {
+- (void)didUpdateOrInsertMamContact:(EloXMPPMessageArchiveManagement_Contact_CoreDataObject*) mamContact {
     
     [self scheduleBlock:^{
         

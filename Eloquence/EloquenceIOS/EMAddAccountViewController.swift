@@ -77,12 +77,33 @@ class EMAddAccountViewController:UIViewController {
         
         let safeAccount = account!;
         safeAccount.jid = NSString(UTF8String: jidField.text!)!;
-        safeAccount.priority = Int(priorityField.text!)!;
-        safeAccount.resource = resourceField.text;
+        
+        if(priorityField.text != nil){
+            let priority = Int(priorityField.text!);
+            if(priority != nil){
+                safeAccount.priority = priority!;
+            }
+        }
+        
+        if(priorityField.text != nil){
+            safeAccount.resource = resourceField.text;
+        }
+        
         safeAccount.server = serverField.text;
-        safeAccount.port = Int(portField.text!)!;
+        
+        if(portField.text != nil){
+            let port = Int(portField.text!);
+            if(port != nil){
+                safeAccount.port = port!;
+            }
+        }
+
         safeAccount.autoconnect = 1; //autoConnect.state; TODO
-        safeAccount.setPassword(passwordField.text!);
+        
+        if(passwordField.text != nil){
+            safeAccount.setPassword(passwordField.text!);
+        }
+        
         DataController.sharedInstance.save();
 
         

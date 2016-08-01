@@ -2,12 +2,12 @@
 
 #import <XMPPFramework/XMPPCoreDataStorage.h>
 
-#import "XMPPMessageArchiveManagement.h"
-#import "XMPPMessageArchiveManagement_Message_CoreDataObject.h"
-#import "XMPPMessageArchiveManagement_Contact_CoreDataObject.h"
+#import "EloXMPPMessageArchiveManagement.h"
+#import "EloXMPPMessageArchiveManagement_Message_CoreDataObject.h"
+#import "EloXMPPMessageArchiveManagement_Contact_CoreDataObject.h"
 
 
-@interface XMPPMessageArchiveManagementCoreDataStorage : XMPPCoreDataStorage <XMPPMessageArchiveManagementStorage>
+@interface EloXMPPMessageArchiveManagementCoreDataStorage : XMPPCoreDataStorage <EloXMPPMessageArchiveManagementStorage>
 {
 	/* Inherited protected variables from XMPPCoreDataStorage
 	
@@ -39,13 +39,13 @@
 - (NSEntityDescription *)messageEntity:(NSManagedObjectContext *)moc;
 - (NSEntityDescription *)contactEntity:(NSManagedObjectContext *)moc;
 
-- (XMPPMessageArchiveManagement_Contact_CoreDataObject *)contactForMessage:(XMPPMessageArchiveManagement_Message_CoreDataObject *)msg;
+- (EloXMPPMessageArchiveManagement_Contact_CoreDataObject *)contactForMessage:(EloXMPPMessageArchiveManagement_Message_CoreDataObject *)msg;
 
-- (XMPPMessageArchiveManagement_Contact_CoreDataObject *)contactWithJid:(XMPPJID *)contactJid
+- (EloXMPPMessageArchiveManagement_Contact_CoreDataObject *)contactWithJid:(XMPPJID *)contactJid
                                                               streamJid:(XMPPJID *)streamJid
                                                    managedObjectContext:(NSManagedObjectContext *)moc;
 
-- (XMPPMessageArchiveManagement_Contact_CoreDataObject *)contactWithBareJidStr:(NSString *)contactBareJidStr
+- (EloXMPPMessageArchiveManagement_Contact_CoreDataObject *)contactWithBareJidStr:(NSString *)contactBareJidStr
                                                               streamBareJidStr:(NSString *)streamBareJidStr
                                                           managedObjectContext:(NSManagedObjectContext *)moc;
 

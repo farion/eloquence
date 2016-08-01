@@ -1,8 +1,8 @@
-#import "XMPPMessageArchiveManagement_Message_CoreDataObject.h"
-#import "XMPPMessage+XEP_0313.h"
+#import "EloXMPPMessageArchiveManagement_Message_CoreDataObject.h"
+#import "XMPPMessage+Elo_XEP_0313.h"
 
 
-@interface XMPPMessageArchiveManagement_Message_CoreDataObject ()
+@interface EloXMPPMessageArchiveManagement_Message_CoreDataObject ()
 
 @property(nonatomic,strong) XMPPMessage * primitiveMessage;
 @property(nonatomic,strong) NSString * primitiveMessageStr;
@@ -13,7 +13,7 @@
 
 @end
 
-@implementation XMPPMessageArchiveManagement_Message_CoreDataObject
+@implementation EloXMPPMessageArchiveManagement_Message_CoreDataObject
 
 @dynamic message, primitiveMessage;
 @dynamic messageStr, primitiveMessageStr;
@@ -167,13 +167,13 @@
 
 - (void)willInsertObject
 {
-	// If you extend XMPPMessageArchiveManagement_Message_CoreDataObject,
+	// If you extend EloXMPPMessageArchiveManagement_Message_CoreDataObject,
 	// you can override this method to use as a hook to set your own custom properties.
 }
 
 - (void)didUpdateObject
 {
-	// If you extend XMPPMessageArchiveManagement_Message_CoreDataObject,
+	// If you extend EloXMPPMessageArchiveManagement_Message_CoreDataObject,
 	// you can override this method to use as a hook to set your own custom properties.
 }
 

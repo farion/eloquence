@@ -4,7 +4,7 @@
 #import <XMPPFramework/XMPP.h>
 
 
-@interface XMPPMessageArchiveManagement_Message_CoreDataObject : NSManagedObject
+@interface EloXMPPMessageArchiveManagement_Message_CoreDataObject : NSManagedObject
 
 @property (nonatomic, strong) XMPPMessage * message;  // Transient (proper type, not on disk)
 @property (nonatomic, strong) NSString * messageStr;  // Shadow (binary data, written to disk)
@@ -38,7 +38,7 @@
  * This method is called immediately before the object is inserted into the managedObjectContext.
  * At this point, all normal properties have been set.
  * 
- * If you extend XMPPMessageArchiveManagement_Message_CoreDataObject,
+ * If you extend EloXMPPMessageArchiveManagement_Message_CoreDataObject,
  * you can use this method as a hook to set your custom properties.
 **/
 - (void)willInsertObject;
@@ -47,7 +47,7 @@
  * This method is called immediately after the message has been changed.
  * At this point, all normal properties have been updated.
  * 
- * If you extend XMPPMessageArchiveManagement_Message_CoreDataObject,
+ * If you extend EloXMPPMessageArchiveManagement_Message_CoreDataObject,
  * you can use this method as a hook to set your custom properties.
 **/
 - (void)didUpdateObject;

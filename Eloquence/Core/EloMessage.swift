@@ -10,7 +10,7 @@ class EloMessage:NSObject {
         timestamp = NSDate()
     }
     
-    init(_ object:XMPPMessageArchiveManagement_Message_CoreDataObject){
+    init(_ object:EloXMPPMessageArchiveManagement_Message_CoreDataObject){
         isOutgoing = object.isOutgoing
         timestamp = object.timestamp
         text = object.body

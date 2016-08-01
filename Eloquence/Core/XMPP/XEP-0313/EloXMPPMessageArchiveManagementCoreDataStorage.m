@@ -3,7 +3,7 @@
 #import <XMPPFramework/NSXMLElement+XEP_0203.h>
 #import <XMPPFramework/XMPPMessage+XEP_0085.h>
 
-#import "XMPPMessageArchiveManagementCoreDataStorage.h"
+#import "EloXMPPMessageArchiveManagementCoreDataStorage.h"
 
 #if ! __has_feature(objc_arc)
 #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
@@ -17,7 +17,7 @@
   static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
 #endif
 
-@interface XMPPMessageArchiveManagementCoreDataStorage ()
+@interface EloXMPPMessageArchiveManagementCoreDataStorage ()
 {
 	NSString *messageEntityName;
 	NSString *contactEntityName;
@@ -29,16 +29,16 @@
 #pragma mark -
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@implementation XMPPMessageArchiveManagementCoreDataStorage
+@implementation EloXMPPMessageArchiveManagementCoreDataStorage
 
-static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
+static EloXMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 
 + (instancetype)sharedInstance
 {
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		
-		sharedInstance = [[XMPPMessageArchiveManagementCoreDataStorage alloc] initWithDatabaseFilename:nil storeOptions:nil];
+		sharedInstance = [[EloXMPPMessageArchiveManagementCoreDataStorage alloc] initWithDatabaseFilename:nil storeOptions:nil];
 	});
 	
 	return sharedInstance;
@@ -56,8 +56,8 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 {
 	[super commonInit];
 	
-	messageEntityName = @"XMPPMessageArchiveManagement_Message_CoreDataObject";
-	contactEntityName = @"XMPPMessageArchiveManagement_Contact_CoreDataObject";
+	messageEntityName = @"EloXMPPMessageArchiveManagement_Message_CoreDataObject";
+	contactEntityName = @"EloXMPPMessageArchiveManagement_Contact_CoreDataObject";
 }
 
 /**
@@ -93,7 +93,7 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 	
 	NSUInteger count = 0;
 	
-	for (XMPPMessageArchiveManagement_Message_CoreDataObject *message in messages)
+	for (EloXMPPMessageArchiveManagement_Message_CoreDataObject *message in messages)
 	{
 		[moc deleteObject:message];
 		
@@ -121,27 +121,27 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 #pragma mark Internal API
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (void)willInsertMessage:(XMPPMessageArchiveManagement_Message_CoreDataObject *)message
+- (void)willInsertMessage:(EloXMPPMessageArchiveManagement_Message_CoreDataObject *)message
 {
 	// Override hook
 }
 
-- (void)didUpdateMessage:(XMPPMessageArchiveManagement_Message_CoreDataObject *)message
+- (void)didUpdateMessage:(EloXMPPMessageArchiveManagement_Message_CoreDataObject *)message
 {
 	// Override hook
 }
 
-- (void)willDeleteMessage:(XMPPMessageArchiveManagement_Message_CoreDataObject *)message
+- (void)willDeleteMessage:(EloXMPPMessageArchiveManagement_Message_CoreDataObject *)message
 {
 	// Override hook
 }
 
-- (void)willInsertContact:(XMPPMessageArchiveManagement_Contact_CoreDataObject *)contact
+- (void)willInsertContact:(EloXMPPMessageArchiveManagement_Contact_CoreDataObject *)contact
 {
 	// Override hook
 }
 
-- (void)didUpdateContact:(XMPPMessageArchiveManagement_Contact_CoreDataObject *)contact
+- (void)didUpdateContact:(EloXMPPMessageArchiveManagement_Contact_CoreDataObject *)contact
 {
 	// Override hook
 }
@@ -150,12 +150,12 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 #pragma mark Private API
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (XMPPMessageArchiveManagement_Message_CoreDataObject *)composingMessageWithJid:(XMPPJID *)messageJid
+- (EloXMPPMessageArchiveManagement_Message_CoreDataObject *)composingMessageWithJid:(XMPPJID *)messageJid
                                                                        streamJid:(XMPPJID *)streamJid
                                                                         outgoing:(BOOL)isOutgoing
                                                             managedObjectContext:(NSManagedObjectContext *)moc
 {
-	XMPPMessageArchiveManagement_Message_CoreDataObject *result = nil;
+	EloXMPPMessageArchiveManagement_Message_CoreDataObject *result = nil;
 	
 	NSEntityDescription *messageEntity = [self messageEntity:moc];
 	
@@ -187,7 +187,7 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 	}
 	else
 	{
-		result = (XMPPMessageArchiveManagement_Message_CoreDataObject *)[results lastObject];
+		result = (EloXMPPMessageArchiveManagement_Message_CoreDataObject *)[results lastObject];
 	}
 	
 	return result;
@@ -197,7 +197,7 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 #pragma mark Public API
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (XMPPMessageArchiveManagement_Contact_CoreDataObject *)contactForMessage:(XMPPMessageArchiveManagement_Message_CoreDataObject *)msg
+- (EloXMPPMessageArchiveManagement_Contact_CoreDataObject *)contactForMessage:(EloXMPPMessageArchiveManagement_Message_CoreDataObject *)msg
 {
 	// Potential override hook
 	
@@ -206,7 +206,7 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 	              managedObjectContext:msg.managedObjectContext];
 }
 
-- (XMPPMessageArchiveManagement_Contact_CoreDataObject *)contactWithJid:(XMPPJID *)contactJid
+- (EloXMPPMessageArchiveManagement_Contact_CoreDataObject *)contactWithJid:(XMPPJID *)contactJid
                                                               streamJid:(XMPPJID *)streamJid
                                                    managedObjectContext:(NSManagedObjectContext *)moc
 {
@@ -215,7 +215,7 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 	              managedObjectContext:moc];
 }
 
-- (XMPPMessageArchiveManagement_Contact_CoreDataObject *)contactWithBareJidStr:(NSString *)contactBareJidStr
+- (EloXMPPMessageArchiveManagement_Contact_CoreDataObject *)contactWithBareJidStr:(NSString *)contactBareJidStr
                                                               streamBareJidStr:(NSString *)streamBareJidStr
                                                           managedObjectContext:(NSManagedObjectContext *)moc
 {
@@ -247,7 +247,7 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 	}
 	else
 	{
-		return (XMPPMessageArchiveManagement_Contact_CoreDataObject *)[results lastObject];
+		return (EloXMPPMessageArchiveManagement_Contact_CoreDataObject *)[results lastObject];
 	}
 }
 
@@ -323,7 +323,7 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 	return [NSEntityDescription entityForName:[self contactEntityName] inManagedObjectContext:moc];
 }
 
-- (XMPPMessageArchiveManagement_Message_CoreDataObject* )getMessageByMessageId:(NSString *)messageId
+- (EloXMPPMessageArchiveManagement_Message_CoreDataObject* )getMessageByMessageId:(NSString *)messageId
 {
 
     if(messageId == nil){
@@ -358,7 +358,7 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 #pragma mark Storage Protocol
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (BOOL)configureWithParent:(XMPPMessageArchiveManagement *)aParent queue:(dispatch_queue_t)queue
+- (BOOL)configureWithParent:(EloXMPPMessageArchiveManagement *)aParent queue:(dispatch_queue_t)queue
 {
 	return [super configureWithParent:aParent queue:queue];
 }
@@ -404,7 +404,7 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 		
 		// Fetch-n-Update OR Insert new message
 		
-        XMPPMessageArchiveManagement_Message_CoreDataObject *archivedMessage =
+        EloXMPPMessageArchiveManagement_Message_CoreDataObject *archivedMessage =
 		    [self composingMessageWithJid:messageJid
 		                        streamJid:myJid
 		                         outgoing:isOutgoing
@@ -429,7 +429,7 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 			BOOL didCreateNewArchivedMessage = NO;
             
             // Message with messageIds are from server
-            XMPPMessageArchiveManagement_Message_CoreDataObject *archivedMessageWithSameId =
+            EloXMPPMessageArchiveManagement_Message_CoreDataObject *archivedMessageWithSameId =
                 [self getMessageByMessageId: [message messageId]];
             
             // No need to archive archived messages twice
@@ -439,7 +439,7 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
             
             if (archivedMessage == nil)
 			{
-				archivedMessage = (XMPPMessageArchiveManagement_Message_CoreDataObject *)
+				archivedMessage = (EloXMPPMessageArchiveManagement_Message_CoreDataObject *)
 					[[NSManagedObject alloc] initWithEntity:[self messageEntity:moc]
 				             insertIntoManagedObjectContext:nil];
 				
@@ -492,12 +492,12 @@ static XMPPMessageArchiveManagementCoreDataStorage *sharedInstance;
 			{
 				BOOL didCreateNewContact = NO;
 				
-				XMPPMessageArchiveManagement_Contact_CoreDataObject *contact = [self contactForMessage:archivedMessage];
+				EloXMPPMessageArchiveManagement_Contact_CoreDataObject *contact = [self contactForMessage:archivedMessage];
 				XMPPLogVerbose(@"Previous contact: %@", contact);
 				
 				if (contact == nil)
 				{
-					contact = (XMPPMessageArchiveManagement_Contact_CoreDataObject *)
+					contact = (EloXMPPMessageArchiveManagement_Contact_CoreDataObject *)
 					    [[NSManagedObject alloc] initWithEntity:[self contactEntity:moc]
 					             insertIntoManagedObjectContext:nil];
 					
