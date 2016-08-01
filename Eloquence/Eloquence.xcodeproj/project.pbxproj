@@ -99,6 +99,7 @@
 		BFB630B31C73CF150008179D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB630B21C73CF150008179D /* Security.framework */; };
 		BFB630BE1C73CF920008179D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB630BD1C73CF920008179D /* libresolv.tbd */; };
 		BFD0E6341C770D5E0085A57E /* AccountTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD0E6331C770D5D0085A57E /* AccountTableCellView.swift */; };
+		BFD2C5161D4FB02D00254226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD2C5151D4FB02D00254226 /* Assets.xcassets */; };
 		BFD895C01C88FBC100A6CA05 /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD895BF1C88FBC100A6CA05 /* Shared.storyboard */; };
 		BFD895C21C88FD2F00A6CA05 /* RosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD895C11C88FD2F00A6CA05 /* RosterViewController.swift */; };
 		BFD895C51C896F3800A6CA05 /* EloChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8BB331C86C8ED008CC251 /* EloChat.swift */; };
@@ -128,7 +129,6 @@
 		BFEC352F1C839DA2005CB593 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC352E1C839DA2005CB593 /* AppDelegate.swift */; };
 		BFEC35311C839DA2005CB593 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC35301C839DA2005CB593 /* ViewController.swift */; };
 		BFEC35341C839DA2005CB593 /* Pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEC35321C839DA2005CB593 /* Pad.storyboard */; };
-		BFEC35361C839DA2005CB593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEC35351C839DA2005CB593 /* Assets.xcassets */; };
 		BFEC35391C839DA2005CB593 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEC35371C839DA2005CB593 /* LaunchScreen.storyboard */; };
 		BFEC35441C839DA2005CB593 /* EloquenceIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC35431C839DA2005CB593 /* EloquenceIOSTests.swift */; };
 		BFEC354F1C839DA2005CB593 /* EloquenceIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC354E1C839DA2005CB593 /* EloquenceIOSUITests.swift */; };
@@ -251,6 +251,7 @@
 		BFB630B21C73CF150008179D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BFB630BD1C73CF920008179D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		BFD0E6331C770D5D0085A57E /* AccountTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountTableCellView.swift; path = Preferences/AccountTableCellView.swift; sourceTree = "<group>"; };
+		BFD2C5151D4FB02D00254226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFD895BF1C88FBC100A6CA05 /* Shared.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shared.storyboard; sourceTree = "<group>"; };
 		BFD895C11C88FD2F00A6CA05 /* RosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RosterViewController.swift; sourceTree = "<group>"; };
 		BFD895C81C8A242A00A6CA05 /* Phone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Phone.storyboard; sourceTree = "<group>"; };
@@ -279,7 +280,6 @@
 		BFEC352E1C839DA2005CB593 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEC35301C839DA2005CB593 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFEC35331C839DA2005CB593 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pad.storyboard; sourceTree = "<group>"; };
-		BFEC35351C839DA2005CB593 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFEC35381C839DA2005CB593 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFEC353A1C839DA2005CB593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFEC353F1C839DA2005CB593 /* EloquenceIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EloquenceIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -449,13 +449,13 @@
 		BFB630811C73CE980008179D /* Eloquence */ = {
 			isa = PBXGroup;
 			children = (
+				BFB6308B1C73CE980008179D /* Assets.xcassets */,
 				BFC7C3D01C9B15ED0070666D /* Cells */,
 				BF981C571C803F6C00FF7AC5 /* Dialogs */,
 				BFE55FF91C7466DC00DE25B2 /* Preferences */,
 				BFE5631F1C75D19F00DE25B2 /* AppDelegate.swift */,
 				BFE5601C1C75BE8D00DE25B2 /* Eloquence-Bridging-Header.h */,
 				BFE5632D1C76705500DE25B2 /* Main.storyboard */,
-				BFB6308B1C73CE980008179D /* Assets.xcassets */,
 				BFB630901C73CE980008179D /* Info.plist */,
 				BF7F8CE51C779E7100E5BA61 /* MainWindowController.swift */,
 				BF1565721C84F40C008D6809 /* RosterViewController.swift */,
@@ -547,11 +547,11 @@
 		BFEC352D1C839DA2005CB593 /* EloquenceIOS */ = {
 			isa = PBXGroup;
 			children = (
+				BFD2C5151D4FB02D00254226 /* Assets.xcassets */,
 				BF03C6511C8E3BE100C4EF25 /* EMNotification.swift */,
 				BFD895BC1C88FB0200A6CA05 /* Storyboards */,
 				BFEC352E1C839DA2005CB593 /* AppDelegate.swift */,
 				BFEC35301C839DA2005CB593 /* ViewController.swift */,
-				BFEC35351C839DA2005CB593 /* Assets.xcassets */,
 				BFEC353A1C839DA2005CB593 /* Info.plist */,
 				BFD895C11C88FD2F00A6CA05 /* RosterViewController.swift */,
 				BFD895D61C8A517600A6CA05 /* MessageViewController.swift */,
@@ -653,12 +653,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFB630A91C73CE990008179D /* Build configuration list for PBXNativeTarget "Eloquence" */;
 			buildPhases = (
-				52B8C756277C36DBEC03654C /* Check Pods Manifest.lock */,
+				52B8C756277C36DBEC03654C /* [CP] Check Pods Manifest.lock */,
 				BFB6307B1C73CE980008179D /* Sources */,
 				BFB6307C1C73CE980008179D /* Frameworks */,
 				BFB6307D1C73CE980008179D /* Resources */,
-				2C2FAE2E4EC009560B7628DA /* Embed Pods Frameworks */,
-				BB7CCAFD2D349ED2505355E8 /* Copy Pods Resources */,
+				2C2FAE2E4EC009560B7628DA /* [CP] Embed Pods Frameworks */,
+				BB7CCAFD2D349ED2505355E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -709,12 +709,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFEC35571C839DA2005CB593 /* Build configuration list for PBXNativeTarget "EloquenceIOS" */;
 			buildPhases = (
-				94AFBBAF41FEBDC192B76663 /* Check Pods Manifest.lock */,
+				94AFBBAF41FEBDC192B76663 /* [CP] Check Pods Manifest.lock */,
 				BFEC35281C839DA1005CB593 /* Sources */,
 				BFEC35291C839DA1005CB593 /* Frameworks */,
 				BFEC352A1C839DA1005CB593 /* Resources */,
-				C3D044B9875E8A1D0951E4EC /* Embed Pods Frameworks */,
-				0E9DD5A27933C75A3546AF58 /* Copy Pods Resources */,
+				C3D044B9875E8A1D0951E4EC /* [CP] Embed Pods Frameworks */,
+				0E9DD5A27933C75A3546AF58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -855,13 +855,13 @@
 			files = (
 				BFD895D51C8A4A6F00A6CA05 /* menu@3x.png in Resources */,
 				BFD895D31C8A4A6F00A6CA05 /* menu.png in Resources */,
+				BFD2C5161D4FB02D00254226 /* Assets.xcassets in Resources */,
 				BFD895C91C8A242A00A6CA05 /* Phone.storyboard in Resources */,
 				BFEC35391C839DA2005CB593 /* LaunchScreen.storyboard in Resources */,
 				BFD895D41C8A4A6F00A6CA05 /* menu@2x.png in Resources */,
 				BFD895DC1C8A560E00A6CA05 /* chevron-left@2x.png in Resources */,
 				BFD895C01C88FBC100A6CA05 /* Shared.storyboard in Resources */,
 				BFD895DD1C8A560E00A6CA05 /* chevron-left@3x.png in Resources */,
-				BFEC35361C839DA2005CB593 /* Assets.xcassets in Resources */,
 				BFEC35341C839DA2005CB593 /* Pad.storyboard in Resources */,
 				BFD895DB1C8A560E00A6CA05 /* chevron-left.png in Resources */,
 			);
@@ -884,14 +884,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E9DD5A27933C75A3546AF58 /* Copy Pods Resources */ = {
+		0E9DD5A27933C75A3546AF58 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -899,14 +899,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-EloquenceIOS/Pods-EloquenceIOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2C2FAE2E4EC009560B7628DA /* Embed Pods Frameworks */ = {
+		2C2FAE2E4EC009560B7628DA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -914,14 +914,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Eloquence/Pods-Eloquence-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		52B8C756277C36DBEC03654C /* Check Pods Manifest.lock */ = {
+		52B8C756277C36DBEC03654C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -929,14 +929,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		94AFBBAF41FEBDC192B76663 /* Check Pods Manifest.lock */ = {
+		94AFBBAF41FEBDC192B76663 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -944,14 +944,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BB7CCAFD2D349ED2505355E8 /* Copy Pods Resources */ = {
+		BB7CCAFD2D349ED2505355E8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -959,14 +959,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Eloquence/Pods-Eloquence-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C3D044B9875E8A1D0951E4EC /* Embed Pods Frameworks */ = {
+		C3D044B9875E8A1D0951E4EC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1265,7 +1265,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A5FDE8C9090575DBB3F781A /* Pods-Eloquence.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = MacIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1326,7 +1326,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EBB504F406F01342352BB8D2 /* Pods-Eloquence.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = MacIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1438,7 +1438,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9999746138C218BBFB88AA19 /* Pods-EloquenceIOS.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = iOSIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1482,7 +1482,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A51378B492D5C2B0B9E8AC28 /* Pods-EloquenceIOS.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = iOSIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

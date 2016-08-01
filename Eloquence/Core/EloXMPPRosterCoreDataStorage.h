@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-#import "XMPPRoster.h"
-#import "XMPPCoreDataStorage.h"
-#import "XMPPUserCoreDataStorageObject.h"
+#import <XMPPFramework/XMPPRoster.h>
+#import <XMPPFramework/XMPPCoreDataStorage.h>
+#import <XMPPFramework/XMPPUserCoreDataStorageObject.h>
 #import <XMPPFramework/XMPPRosterCoreDataStorage.h>
 
 /**

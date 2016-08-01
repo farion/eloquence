@@ -22,7 +22,7 @@ class EloCapabilities {
         var serverCapabilities = [String]()
         
         for feature in query.elementsForName("feature") {
-            let capability = (feature as! NSXMLElement).attributeStringValueForName("var")
+            let capability = feature.attributeStringValueForName("var")
             serverCapabilities.append(capability)
             NSLog("%@",capability)
         }

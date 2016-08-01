@@ -16,7 +16,20 @@ class EMAddAccountViewController:UIViewController {
     
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet var advancedSettingsSwitch: UISwitch!
     @IBOutlet weak var infoText: UILabel!
+    
+    @IBOutlet var priorityLabel: UILabel!
+    @IBOutlet var priorityField: UITextField!
+    
+    @IBOutlet var resourceLabel: UILabel!
+    @IBOutlet var resourceField: UITextField!
+    
+    @IBOutlet var serverLabel: UILabel!
+    @IBOutlet var serverField: UITextField!
+    
+    @IBOutlet var portLabel: UILabel!
+    @IBOutlet var portField: UITextField!
     
     override func viewWillAppear(animated: Bool) {
         if(account != nil){
@@ -64,16 +77,38 @@ class EMAddAccountViewController:UIViewController {
         
         let safeAccount = account!;
         safeAccount.jid = NSString(UTF8String: jidField.text!)!;
-/*        safeAccount.priority = priorityText.integerValue;
-        safeAccount.resource = resourceText.stringValue;
-        safeAccount.server = serverText.stringValue;
-        safeAccount.port = portText.integerValue;
-        safeAccount.autoconnect = autoConnect.state;*/
+        safeAccount.priority = Int(priorityField.text!)!;
+        safeAccount.resource = resourceField.text;
+        safeAccount.server = serverField.text;
+        safeAccount.port = Int(portField.text!)!;
+        safeAccount.autoconnect = 1; //autoConnect.state; TODO
         safeAccount.setPassword(passwordField.text!);
         DataController.sharedInstance.save();
 
         
         close();
+    }
+    
+    @IBAction func toggleAdvancedSettings(sender: AnyObject) {
+        if(advancedSettingsSwitch.on){
+            priorityLabel.hidden = false
+            priorityField.hidden = false
+            resourceLabel.hidden = false
+            resourceField.hidden = false
+            serverLabel.hidden = false
+            serverField.hidden = false
+            portLabel.hidden = false
+            portField.hidden = false
+        }else{
+            priorityLabel.hidden = true
+            priorityField.hidden = true
+            resourceLabel.hidden = true
+            resourceField.hidden = true
+            serverLabel.hidden = true
+            serverField.hidden = true
+            portLabel.hidden = true
+            portField.hidden = true
+        }
     }
     
     func close(){

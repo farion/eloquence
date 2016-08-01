@@ -1,5 +1,6 @@
 
 import Cocoa
+import CCNPreferencesWindowController
 
 class PreferencesAccountViewController: NSViewController, CCNPreferencesWindowControllerProtocol {
 
