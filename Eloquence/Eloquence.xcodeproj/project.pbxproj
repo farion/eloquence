@@ -16,6 +16,8 @@
 		BF1565701C84ED39008D6809 /* MulticastDelegateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15656A1C84B04A008D6809 /* MulticastDelegateContainer.swift */; };
 		BF1565731C84F40C008D6809 /* RosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1565721C84F40C008D6809 /* RosterViewController.swift */; };
 		BF1CF77C1D4FFF58007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1CF77B1D4FFF58007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m */; };
+		BF1CF77D1D5002B8007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.h in Sources */ = {isa = PBXBuildFile; fileRef = BF1CF77A1D4FFF58007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.h */; };
+		BF1CF77E1D5002B8007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1CF77B1D4FFF58007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m */; };
 		BF1E87BF1C88EB6800B94E55 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8BB371C8821C6008CC251 /* MessageViewController.swift */; };
 		BF2EB5141CB80B800038F3E2 /* EloContactListCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EB5131CB80B800038F3E2 /* EloContactListCoreDataStorage.m */; };
 		BF2EB5151CB80B800038F3E2 /* EloContactListCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EB5131CB80B800038F3E2 /* EloContactListCoreDataStorage.m */; };
@@ -1055,6 +1057,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1CF77D1D5002B8007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.h in Sources */,
+				BF1CF77E1D5002B8007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m in Sources */,
 				BF7DDAB01CCAD11900A1F9D9 /* EloXMPPRoster.xcdatamodeld in Sources */,
 				BF7DDAAF1CCACD2900A1F9D9 /* EloquenceIOS-Bridging-Header.h in Sources */,
 				BF7DDA991CCACCEC00A1F9D9 /* EloXMPPMessageArchiveManagement_Contact_CoreDataObject.h in Sources */,
