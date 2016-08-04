@@ -1,9 +1,8 @@
 language: objective-c
-osx_image: xcode7.2
-xcode_workspace: Eloquence.xcworkspace
-xcode_scheme: Eloquence
-xcode_sdk: macosx10.11
-podfile: Podfile
+osx_image: xcode7.3
 before_install:
  - pod repo update
-script:  xctool -workspace Eloquence.xcworkspace -scheme Eloquence -sdk macosx10.11 build
+ - pod install
+script:
+ - xctool -workspace Eloquence.xcworkspace -scheme Eloquence -sdk macosx10.11 build  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+ - xctool -workspace Eloquence.xcworkspace -scheme EloquenceIOS -sdk iphoneos9.3 build  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
