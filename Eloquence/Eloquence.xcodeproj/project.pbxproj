@@ -15,6 +15,7 @@
 		BF15656B1C84B04A008D6809 /* MulticastDelegateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15656A1C84B04A008D6809 /* MulticastDelegateContainer.swift */; };
 		BF1565701C84ED39008D6809 /* MulticastDelegateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15656A1C84B04A008D6809 /* MulticastDelegateContainer.swift */; };
 		BF1565731C84F40C008D6809 /* RosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1565721C84F40C008D6809 /* RosterViewController.swift */; };
+		BF1729F31D529CCB009B6B9F /* EMPreferencesButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1729F21D529CCB009B6B9F /* EMPreferencesButtonCell.swift */; };
 		BF1CF77C1D4FFF58007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1CF77B1D4FFF58007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m */; };
 		BF1CF77D1D5002B8007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.h in Sources */ = {isa = PBXBuildFile; fileRef = BF1CF77A1D4FFF58007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.h */; };
 		BF1CF77E1D5002B8007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1CF77B1D4FFF58007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m */; };
@@ -75,7 +76,7 @@
 		BF7DDAB01CCAD11900A1F9D9 /* EloXMPPRoster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF3342EE1CBC4739006BFED5 /* EloXMPPRoster.xcdatamodeld */; };
 		BF7F8CE61C779E7100E5BA61 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F8CE51C779E7100E5BA61 /* MainWindowController.swift */; };
 		BF81700F1CBD967F0020DB02 /* EXMessageViewCellIncoming.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF81700E1CBD967F0020DB02 /* EXMessageViewCellIncoming.xib */; };
-		BF84B0F11C8668410076EAB1 /* Pods_Eloquence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE984B5D505A24AD989997A /* Pods_Eloquence.framework */; };
+		BF84B0F11C8668410076EAB1 /* Pods_Eloquence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE984B5D505A24AD989997A /* Pods_Eloquence.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BF8A874F1CBFFBDC000B0217 /* EXMessageViewCellIncoming.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A874E1CBFFBDC000B0217 /* EXMessageViewCellIncoming.swift */; };
 		BF8A87511CC0266B000B0217 /* EXMessageViewCellOutgoing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A87501CC0266B000B0217 /* EXMessageViewCellOutgoing.swift */; };
 		BF8A87531CC02684000B0217 /* EXMessageViewCellOutgoing.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8A87521CC02684000B0217 /* EXMessageViewCellOutgoing.xib */; };
@@ -192,6 +193,7 @@
 		BF0C5E0E1C8654B0000E2C21 /* MainSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
 		BF15656A1C84B04A008D6809 /* MulticastDelegateContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegateContainer.swift; sourceTree = "<group>"; };
 		BF1565721C84F40C008D6809 /* RosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RosterViewController.swift; sourceTree = "<group>"; };
+		BF1729F21D529CCB009B6B9F /* EMPreferencesButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMPreferencesButtonCell.swift; sourceTree = "<group>"; };
 		BF1CF77A1D4FFF58007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EloXMPPMessageArchiveManagementWithContactCoreDataStorage.h; path = XMPP/EloXMPPMessageArchiveManagementWithContactCoreDataStorage.h; sourceTree = "<group>"; };
 		BF1CF77B1D4FFF58007FB96F /* EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m; path = XMPP/EloXMPPMessageArchiveManagementWithContactCoreDataStorage.m; sourceTree = "<group>"; };
 		BF2EB5121CB80B800038F3E2 /* EloContactListCoreDataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EloContactListCoreDataStorage.h; path = XMPP/EloContactListCoreDataStorage.h; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 				BF03C64F1C8DEA8100C4EF25 /* GlobalMenuCell.swift */,
 				BF03C6551C8E40FD00C4EF25 /* EMPreferencesViewController.swift */,
 				BF3563091C8F1E0700262548 /* EMPreferencesSwitchCell.swift */,
+				BF1729F21D529CCB009B6B9F /* EMPreferencesButtonCell.swift */,
 				BF35630B1C8F567C00262548 /* EMAccountsViewController.swift */,
 				BF35630D1C8F577100262548 /* EMAccountCell.swift */,
 				BF35630F1C8F722A00262548 /* EMAddAccountViewController.swift */,
@@ -652,12 +655,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFB630A91C73CE990008179D /* Build configuration list for PBXNativeTarget "Eloquence" */;
 			buildPhases = (
-				52B8C756277C36DBEC03654C /* [CP] Check Pods Manifest.lock */,
+				0EF6A6A8A726C8576300FDE7 /* [CP] Check Pods Manifest.lock */,
 				BFB6307B1C73CE980008179D /* Sources */,
 				BFB6307C1C73CE980008179D /* Frameworks */,
 				BFB6307D1C73CE980008179D /* Resources */,
-				2C2FAE2E4EC009560B7628DA /* [CP] Embed Pods Frameworks */,
-				BB7CCAFD2D349ED2505355E8 /* [CP] Copy Pods Resources */,
+				DED888697FE7F9B5FF160E31 /* [CP] Embed Pods Frameworks */,
+				0F24B9F0E6C0861E211469D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -772,7 +775,7 @@
 				TargetAttributes = {
 					BFB6307E1C73CE980008179D = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 2BSBBV67ZV;
+						DevelopmentTeam = SN8CHJPDBE;
 					};
 					BFB630941C73CE990008179D = {
 						CreatedOnToolsVersion = 7.2;
@@ -784,6 +787,7 @@
 					};
 					BFEC352B1C839DA1005CB593 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = SN8CHJPDBE;
 					};
 					BFEC353E1C839DA2005CB593 = {
 						CreatedOnToolsVersion = 7.2;
@@ -899,22 +903,7 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-EloquenceIOS/Pods-EloquenceIOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2C2FAE2E4EC009560B7628DA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Eloquence/Pods-Eloquence-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		52B8C756277C36DBEC03654C /* [CP] Check Pods Manifest.lock */ = {
+		0EF6A6A8A726C8576300FDE7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -927,6 +916,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0F24B9F0E6C0861E211469D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Eloquence/Pods-Eloquence-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		94AFBBAF41FEBDC192B76663 /* [CP] Check Pods Manifest.lock */ = {
@@ -944,21 +948,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BB7CCAFD2D349ED2505355E8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Eloquence/Pods-Eloquence-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C3D044B9875E8A1D0951E4EC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -972,6 +961,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-EloquenceIOS/Pods-EloquenceIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DED888697FE7F9B5FF160E31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Eloquence/Pods-Eloquence-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1088,6 +1092,7 @@
 				BFD895C21C88FD2F00A6CA05 /* RosterViewController.swift in Sources */,
 				BFEC359A1C83A91C005CB593 /* DataModel.xcdatamodeld in Sources */,
 				BF30A51F1C8B584E00ADA6E0 /* GlobalMenuViewController.swift in Sources */,
+				BF1729F31D529CCB009B6B9F /* EMPreferencesButtonCell.swift in Sources */,
 				BF30A5211C8B598C00ADA6E0 /* PreferencesAccountViewController.swift in Sources */,
 				BFEC359B1C83A91C005CB593 /* EloAccount.swift in Sources */,
 				BF03C6561C8E40FD00C4EF25 /* EMPreferencesViewController.swift in Sources */,
@@ -1269,6 +1274,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = MacIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1330,6 +1336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = MacIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

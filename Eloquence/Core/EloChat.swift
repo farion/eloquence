@@ -82,7 +82,7 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
     
     func getMessage(index: Int) -> EloMessage {
         #if os(iOS)
-            return EloMessage(fetchedResultsController.objectAtIndexPath(NSIndexPath(index: index)) as! EloXMPPMessageArchiveManagement_Message_CoreDataObject)
+            return EloMessage(fetchedResultsController.objectAtIndexPath(NSIndexPath(forItem: index, inSection: 0)) as! EloXMPPMessageArchiveManagement_Message_CoreDataObject)
         #else
             return EloMessage(fetchedResultsController.fetchedObjects![index] as! EloXMPPMessageArchiveManagement_Message_CoreDataObject)
         #endif
@@ -116,12 +116,31 @@ class EloChat:NSObject, XMPPStreamDelegate, EloFetchedResultsControllerDelegate 
     
     @objc func xmppStream(sender: XMPPStream!, didReceiveMessage message: XMPPMessage!) {
 
-        if(message.from().bare() == to.jid){
+        NSLog("didReceiveMessageXXX");
+        
+        NSLog(message.from().bare());
+        NSLog(message.to().bare());
+        NSLog(to.jid);
+        NSLog(from.jid);
+        
+        var myMessage = message;
+
+        let forwardedMessage = message.forwardedMessage();
+
+        if((message.to().bare() == to.jid && message.from().bare() == from.jid) || (message.from().bare() == to.jid && message.to().bare() == from.jid)){
+            myMessage = message;
+        }else if( //TODO unwrapping
+            forwardedMessage != nil && forwardedMessage.to() != nil && forwardedMessage.from() != nil && ((forwardedMessage.to().bare() == to.jid && forwardedMessage.from().bare() == from.jid) || (forwardedMessage.from().bare() == to.jid && forwardedMessage.to().bare() == from.jid))
+        ){
+            myMessage = forwardedMessage;
+        }
+        
+        if(myMessage != nil){
             if(delegate != nil){
-                if(message.isChatMessageWithBody()){
+                if(myMessage.isChatMessageWithBody()){
                     let msg = EloMessage();
                     msg.author = to.jid;
-                    msg.text = to.jid + ": " + message.body();
+                    msg.text = to.jid + ": " + myMessage.body();
                     delegate!.didReceiveMessage(msg);
                 }
             }

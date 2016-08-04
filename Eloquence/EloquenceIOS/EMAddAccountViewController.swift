@@ -64,6 +64,11 @@ class EMAddAccountViewController:UIViewController {
         }
     }
     
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
+    
     @IBAction func cancelClick(sender: AnyObject) {
         close();
     }

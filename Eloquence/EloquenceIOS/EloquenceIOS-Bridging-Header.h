@@ -3,3 +3,4 @@
 #import "EloXMPPMessageArchiveManagementWithContactCoreDataStorage.h"
 #import "EloContactListCoreDataStorage.h"
 #import "EloContactList_Item_CoreDataObject.h"
+#import "XMPPMessage+Elo_XEP_0313.h"

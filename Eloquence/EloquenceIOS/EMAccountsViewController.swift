@@ -25,6 +25,11 @@ class EMAccountsViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
     
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
+    
     func prepareData(){
         self.data = DataController.sharedInstance.getAccounts();
         tableView.reloadData();

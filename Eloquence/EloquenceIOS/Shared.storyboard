@@ -233,6 +233,46 @@
                                             <outlet property="valueSwitch" destination="Xxe-Fp-KCs" id="I8I-wy-P7t"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PreferencesButtonCell" rowHeight="100" id="lKB-NN-aFd" customClass="EMPreferencesButtonCell" customModule="EloquenceIOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="328" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lKB-NN-aFd" id="quI-PJ-cXc">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rrv-qE-i7N">
+                                                    <rect key="frame" x="17" y="8" width="235" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="XmW-3S-cdn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7v-fc-moP">
+                                                    <rect key="frame" x="17" y="34" width="294" height="57"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="57" id="Zm1-qv-jwM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="A7v-fc-moP" firstAttribute="leading" secondItem="quI-PJ-cXc" secondAttribute="leadingMargin" constant="9" id="Nbb-QE-9ew"/>
+                                                <constraint firstItem="A7v-fc-moP" firstAttribute="top" secondItem="Rrv-qE-i7N" secondAttribute="bottom" constant="5" id="NyU-Rx-4jH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="A7v-fc-moP" secondAttribute="trailing" constant="9" id="UtS-fa-HAn"/>
+                                                <constraint firstItem="Rrv-qE-i7N" firstAttribute="top" secondItem="quI-PJ-cXc" secondAttribute="topMargin" id="fSE-t3-bU0"/>
+                                                <constraint firstItem="Rrv-qE-i7N" firstAttribute="leading" secondItem="quI-PJ-cXc" secondAttribute="leadingMargin" constant="9" id="nEA-QB-AoC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Rrv-qE-i7N" secondAttribute="trailing" constant="68" id="y8d-LV-qFn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionText" destination="A7v-fc-moP" id="bHh-Fq-Gm6"/>
+                                            <outlet property="nameText" destination="Rrv-qE-i7N" id="Wax-qu-YVZ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yj-ig-5Wm">

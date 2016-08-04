@@ -113,7 +113,10 @@ class PhoneMainViewController:UIViewController, WYPopoverControllerDelegate, EMP
             completion: { finished in
                 self.backButton.enabled = true;
         })
-
+        
+        let chatId = notification.object as! EloChatId
+        
+        self.titleItem.title = chatId.to.jid
 
     }
     
@@ -165,6 +168,10 @@ class PhoneMainViewController:UIViewController, WYPopoverControllerDelegate, EMP
         preferencesController = UIStoryboard.init(name: "Shared", bundle: nil).instantiateViewControllerWithIdentifier("Preferences") as? EMPreferencesViewController;
         preferencesController!.delegate = self;
         self.presentViewController(preferencesController!, animated: true, completion: {})
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
     }
     
 

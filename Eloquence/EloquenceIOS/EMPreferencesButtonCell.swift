@@ -1,13 +1,8 @@
-//
-//  EMPreferencesButtonCell.swift
-//  Eloquence
-//
-//  Created by Frieder Reinhold on 03.08.16.
-//  Copyright © 2016 TRIGONmedia. All rights reserved.
-//
+import Foundation
+import UIKit
 
-import Cocoa
-
-class EMPreferencesButtonCell: NSObject {
-
+class EMPreferencesButtonCell:UITableViewCell {
+    
+    @IBOutlet weak var nameText: UILabel!
+    @IBOutlet weak var descriptionText: UILabel!
 }

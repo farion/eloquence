@@ -8,6 +8,7 @@
 import Cocoa
 import CocoaLumberjack
 import CCNPreferencesWindowController
+import HockeySDK
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -16,6 +17,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+
+        BITHockeyManager.sharedHockeyManager().configureWithIdentifier("0fd88936cfd143e381f53122a3ace4a7")
+        // Do some additional configuration if needed here
+        BITHockeyManager.sharedHockeyManager().startManager()
         
         let ddLogLevel:DDLogLevel = DDLogLevel.All;
         

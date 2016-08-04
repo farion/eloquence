@@ -67,7 +67,7 @@
                             <constraint firstItem="P3h-hI-9AY" firstAttribute="top" secondItem="5L6-Cd-E2Z" secondAttribute="bottom" id="rRW-Um-JXP"/>
                         </constraints>
                     </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="9r7-Gs-Qaa" id="0fI-Gv-Rz5"/>

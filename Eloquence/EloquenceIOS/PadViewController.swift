@@ -23,4 +23,8 @@ class PadViewController: UIViewController {
         addChildViewController(message);
         message.didMoveToParentViewController(self);
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
 }

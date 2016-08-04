@@ -24,7 +24,11 @@
     
     NSXMLElement* delayElement = [forwardedElement elementForName:@"delay" xmlns: @"urn:xmpp:delay"];
     
-    [messageElement removeElementForName:@"delay"]; //sometimes server sends additional delay. Noticed on ejabberd.
+    //sometimes server sends additional delay. Noticed on ejabberd.
+    if([messageElement elementForName:@"delay" xmlns: @"urn:xmpp:delay"] != nil){
+        [messageElement removeElementForName:@"delay"];
+    }
+    
     [messageElement addChild: [delayElement copy]];
     
     return [XMPPMessage messageFromElement: messageElement];

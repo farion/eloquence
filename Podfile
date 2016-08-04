@@ -9,6 +9,7 @@ target 'Eloquence' do
   pod 'SwiftyUserDefaults','~> 2.1.3'
   pod 'KSPFetchedResultsController', '~> 1.1.1'
   pod 'JNWCollectionView', :git => 'https://github.com/jwilling/JNWCollectionView.git'
+  pod "HockeySDK-Mac", '~> 4.1.0-beta.4'
 end
 
 target 'EloquenceIOS' do
@@ -23,7 +24,9 @@ target 'EloquenceIOS' do
   pod 'WYPopoverController','~> 0.3.9'
   pod 'SwiftyUserDefaults','~> 2.1.3'
   pod 'SwiftySettings','~> 0.0.3'
-  pod 'JSQMessagesViewController','~> 7.2.0'
+  pod 'JSQMessagesViewController','~> 7.3.4'
+  pod 'MBProgressHUD', '~> 0.9.2'
+  pod 'HockeySDK', '~> 4.1.0-beta.2'
 end
 
 workspace 'Eloquence'
