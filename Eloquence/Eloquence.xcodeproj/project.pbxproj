@@ -775,7 +775,6 @@
 				TargetAttributes = {
 					BFB6307E1C73CE980008179D = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = SN8CHJPDBE;
 					};
 					BFB630941C73CE990008179D = {
 						CreatedOnToolsVersion = 7.2;
@@ -787,7 +786,6 @@
 					};
 					BFEC352B1C839DA1005CB593 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = SN8CHJPDBE;
 					};
 					BFEC353E1C839DA2005CB593 = {
 						CreatedOnToolsVersion = 7.2;
